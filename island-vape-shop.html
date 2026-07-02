@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Island Vape Shop — Charlotte, NC</title>
+<style>
+  :root{
+    --teal:#0e9aa7; --teal-d:#0a7680; --sun:#ff7b3d; --sun-d:#e85f22;
+    --ink:#0d1b2a; --sea:#123c4a; --sand:#f6f4ee; --card:#ffffff; --line:#e6e2d8;
+    --ok:#1f9d55; --muted:#5b6b73;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--sand)}
+  a{color:var(--teal-d);text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+  .btn{background:var(--sun);color:#fff;border:0;border-radius:10px;padding:11px 18px;font-weight:700;cursor:pointer;font-size:15px}
+  .btn:hover{background:var(--sun-d)}
+  .btn.ghost{background:transparent;color:var(--teal-d);border:2px solid var(--teal)}
+  .badge{display:inline-block;background:#ffe8d9;color:var(--sun-d);font-weight:800;border-radius:999px;padding:3px 10px;font-size:12px;letter-spacing:.3px}
+  /* ---------- AGE GATE ---------- */
+  #gate{position:fixed;inset:0;background:linear-gradient(160deg,#0a7680,#123c4a 70%);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px}
+  #gate .box{background:#fff;border-radius:18px;max-width:440px;width:100%;padding:34px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+  #gate h1{margin:.2em 0;font-size:26px}
+  #gate p{color:var(--muted);font-size:14px;line-height:1.5}
+  #gate .dob{display:flex;gap:8px;justify-content:center;margin:16px 0}
+  #gate select{padding:10px;border:1px solid var(--line);border-radius:8px;font-size:15px}
+  #gate .row{display:flex;gap:10px;margin-top:10px}
+  #gate .row .btn{flex:1}
+  .palm{font-size:44px}
+  .deny{color:#c0392b;font-weight:700;margin-top:12px;display:none}
+  /* ---------- HEADER ---------- */
+  header{background:var(--ink);color:#fff;position:sticky;top:0;z-index:40}
+  header .bar{display:flex;align-items:center;gap:14px;padding:12px 0}
+  .logo{font-weight:900;font-size:20px;letter-spacing:.3px}
+  .logo .l{color:var(--sun)}
+  header nav{margin-left:auto;display:flex;gap:18px;align-items:center;font-size:14px}
+  header nav a{color:#cfe6ea}
+  .cartbtn{position:relative;background:var(--teal);color:#fff;border:0;border-radius:9px;padding:8px 14px;font-weight:700;cursor:pointer}
+  .cartbtn .n{position:absolute;top:-8px;right:-8px;background:var(--sun);border-radius:999px;font-size:11px;min-width:19px;height:19px;line-height:19px;text-align:center;font-weight:800}
+  /* ---------- HERO ---------- */
+  .hero{background:linear-gradient(150deg,#0e9aa7,#123c4a);color:#fff;padding:46px 0 40px}
+  .hero h2{font-size:34px;margin:.1em 0}
+  .hero p{font-size:17px;color:#dff1f3;max-width:560px}
+  .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .pill{background:rgba(255,255,255,.14);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600}
+  /* ---------- COMPLIANCE STRIP ---------- */
+  .comply{background:#fff3e9;border-top:2px solid #ffd8bf;border-bottom:2px solid #ffd8bf;padding:12px 0;font-size:13.5px;color:#8a4b1f;text-align:center;font-weight:600}
+  /* ---------- PRODUCTS ---------- */
+  section{padding:34px 0}
+  .h{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .h h3{margin:0;font-size:23px}
+  .cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .cat{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;cursor:pointer;font-size:13px;font-weight:600;color:var(--sea)}
+  .cat.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+  .prod{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .prod .img{height:130px;display:flex;align-items:center;justify-content:center;font-size:46px;color:#fff}
+  .prod .body{padding:13px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .prod .nm{font-weight:700;font-size:15px}
+  .prod .ct{font-size:12px;color:var(--muted)}
+  .prod .pr{font-weight:800;color:var(--teal-d);font-size:18px;margin-top:auto}
+  .prod .add{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:9px;font-weight:700;cursor:pointer}
+  .prod .add:hover{background:var(--teal-d)}
+  /* ---------- CART / MODALS ---------- */
+  .overlay{position:fixed;inset:0;background:rgba(13,27,42,.55);z-index:60;display:none;align-items:center;justify-content:center;padding:16px}
+  .overlay.open{display:flex}
+  .modal{background:#fff;border-radius:16px;max-width:460px;width:100%;max-height:88vh;overflow:auto;padding:22px}
+  .modal h3{margin:.1em 0 .4em}
+  .li{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+  .li .nm{flex:1;font-size:14px}
+  .li .q{display:flex;align-items:center;gap:6px}
+  .li .q button{width:26px;height:26px;border:1px solid var(--line);background:#fff;border-radius:6px;cursor:pointer;font-weight:700}
+  .tot{display:flex;justify-content:space-between;font-weight:800;font-size:18px;margin:14px 0}
+  .field{margin:10px 0}
+  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:4px}
+  .field input,.field select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font-size:15px}
+  .verify{background:#eefaf3;border:1px solid #bfe8d0;border-radius:12px;padding:16px;text-align:center;margin:12px 0}
+  .verify .chk{font-size:34px}
+  .steps{display:flex;gap:6px;margin-bottom:14px}
+  .steps div{flex:1;height:6px;border-radius:4px;background:var(--line)}
+  .steps div.on{background:var(--teal)}
+  .note{font-size:12.5px;color:var(--muted);line-height:1.5}
+  .close{float:right;border:0;background:#eee;border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:18px}
+  /* ---------- ADMIN ---------- */
+  #admin .arow{display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+  #admin .arow input{padding:7px;border:1px solid var(--line);border-radius:7px}
+  #admin .arow .anm{flex:1}
+  #admin .arow .apr{width:80px}
+  #admin .del{background:#fdeaea;color:#c0392b;border:0;border-radius:7px;padding:7px 10px;cursor:pointer;font-weight:700}
+  .adminhint{background:#fff8e6;border:1px solid #f2e2a8;border-radius:10px;padding:10px 12px;font-size:13px;color:#7a5c00;margin-bottom:12px}
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:#cfe6ea;padding:30px 0;margin-top:20px;font-size:14px}
+  footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+  footer h4{color:#fff;margin:.2em 0}
+  .sig{text-align:center;margin-top:22px;font-size:12px;color:#8fb0b6}
+  .demoflag{background:var(--sun);color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
+</style>
+</head>
+<body>
+
+<div class="demoflag">✨ SAMPLE PREVIEW built by Symbio AI for Island Vape Shop — fully interactive: browse, add to cart, checkout, and try the Owner panel (bottom of page)</div>
+
+<!-- ================= AGE GATE ================= -->
+<div id="gate">
+  <div class="box">
+    <div class="palm">🌴</div>
+    <h1>Island Vape Shop</h1>
+    <span class="badge">21+ ONLY</span>
+    <p>You must be <b>21 or older</b> to enter. Please confirm your date of birth.<br>Valid government ID is required at pickup.</p>
+    <div class="dob">
+      <select id="mm"><option value="">Month</option></select>
+      <select id="dd"><option value="">Day</option></select>
+      <select id="yy"><option value="">Year</option></select>
+    </div>
+    <div class="row">
+      <button class="btn ghost" onclick="location.href='https://www.google.com'">I'm under 21</button>
+      <button class="btn" onclick="checkAge()">Enter Site</button>
+    </div>
+    <div class="deny" id="deny">Sorry — you must be 21 or older to enter.</div>
+    <p style="margin-top:14px;font-size:12px">By entering you agree you are of legal age to purchase tobacco/vapor products in North Carolina.</p>
+  </div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="wrap bar">
+    <div class="logo">🌴 Island <span class="l">Vape</span> Shop</div>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#visit">Visit</a>
+      <button class="cartbtn" onclick="openCart()">🛒 Cart <span class="n" id="cn">0</span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <span class="badge">Charlotte, NC · 21+</span>
+    <h2>Island vibes. Premium vapes.</h2>
+    <p>Browse our shelves online, reserve your favorites, and pick them up in-store. Charlotte's spot for disposables, premium e-liquids, mods, glass & more.</p>
+    <div class="pills">
+      <span class="pill">🛒 Buy Online · Pickup In-Store</span>
+      <span class="pill">🪪 ID Verified at Checkout</span>
+      <span class="pill">📍 Charlotte, North Carolina</span>
+    </div>
+  </div>
+</div>
+
+<div class="comply">🪪 All orders require age verification at checkout <b>and</b> a valid 21+ government ID at in-store pickup. We never ship — pickup only.</div>
+
+<!-- ================= SHOP ================= -->
+<section id="shop">
+  <div class="wrap">
+    <div class="h"><h3>Shop the Shelves</h3><span class="badge">Reserve for Pickup</span></div>
+    <div class="cats" id="cats"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- ================= VISIT ================= -->
+<section id="visit" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="h"><h3>Visit Us</h3></div>
+    <div class="cols" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
+      <div><h4>📍 Location</h4><p class="note">Charlotte, North Carolina<br>(exact address on your live site)</p></div>
+      <div><h4>🕒 Hours</h4><p class="note">Mon–Thu 10a–9p<br>Fri–Sat 10a–11p<br>Sun 11a–7p</p></div>
+      <div><h4>📞 Contact</h4><p class="note">Call/text to confirm stock<br>Order online, pay at pickup</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CART MODAL ================= -->
+<div class="overlay" id="cartOv">
+  <div class="modal">
+    <button class="close" onclick="closeAll()">×</button>
+    <h3>Your Reservation 🛒</h3>
+    <div id="cartLines"></div>
+    <div class="tot"><span>Total</span><span id="cartTot">$0.00</span></div>
+    <p class="note">You'll pay in-store at pickup. Bring a valid 21+ ID.</p>
+    <button class="btn" style="width:100%" onclick="startCheckout()">Reserve for Pickup →</button>
+  </div>
+</div>
+
+<!-- ================= CHECKOUT MODAL ================= -->
+<div class="overlay" id="coOv">
+  <div class="modal">
+    <button class="close" onclick="closeAll()">×</button>
+    <div class="steps"><div id="s1" class="on"></div><div id="s2"></div><div id="s3"></div></div>
+
+    <div id="step1">
+      <h3>Pickup Details</h3>
+      <div class="field"><label>Name</label><input id="cName" placeholder="Your name"></div>
+      <div class="field"><label>Mobile (for pickup text)</label><input id="cPhone" placeholder="(704) 555-0123"></div>
+      <button class="btn" style="width:100%" onclick="toVerify()">Continue to Age Verification →</button>
+    </div>
+
+    <div id="step2" style="display:none">
+      <h3>Verify Your Age 🪪</h3>
+      <div class="verify">
+        <div class="chk">🪪</div>
+        <p class="note"><b>Tier-2 ID verification.</b> On your live site this is a secure check (AgeChecker.net / Yoti) — scan or photo your ID, verified in seconds. This is the demo.</p>
+        <button class="btn" onclick="doVerify()">Verify with ID (demo)</button>
+        <div id="vok" style="display:none;color:var(--ok);font-weight:800;margin-top:10px">✓ Age verified — 21+ confirmed</div>
+      </div>
+      <p class="note">Verification is required before an order is accepted, and staff re-check your physical ID at pickup.</p>
+    </div>
+
+    <div id="step3" style="display:none;text-align:center">
+      <div class="chk" style="font-size:44px">🌴✅</div>
+      <h3>Reservation Confirmed!</h3>
+      <p class="note">Thanks, <b id="okName">friend</b>! Your items are reserved at <b>Island Vape Shop</b>, Charlotte, NC.</p>
+      <div class="tot" style="justify-content:center;gap:8px"><span>Pay at pickup:</span><span id="okTot">$0.00</span></div>
+      <p class="note">Bring a valid <b>21+ government ID</b>. We'll text you when it's ready.<br><br>
+      <span class="badge">💳 Online payment coming soon (Phase 2)</span></p>
+      <button class="btn" style="width:100%;margin-top:12px" onclick="closeAll();resetCart()">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ADMIN MODAL ================= -->
+<div class="overlay" id="admOv">
+  <div class="modal" id="admin">
+    <button class="close" onclick="closeAll()">×</button>
+    <h3>🔑 Owner Panel</h3>
+    <div id="admGate">
+      <p class="note">Manage your storefront — add/remove products and change prices anytime, no tech skills needed.</p>
+      <div class="field"><label>Owner password</label><input id="admPw" type="password" placeholder="demo password: island"></div>
+      <button class="btn" style="width:100%" onclick="admLogin()">Log In</button>
+    </div>
+    <div id="admPanel" style="display:none">
+      <div class="adminhint">✏️ This is live — edit a price or remove an item and watch the shop update instantly. On your real site, changes save to your store.</div>
+      <div id="admList"></div>
+      <h4 style="margin-top:16px">➕ Add a product</h4>
+      <div class="field"><input id="nNm" placeholder="Product name"></div>
+      <div style="display:flex;gap:8px">
+        <input id="nPr" class="field" style="width:90px;padding:10px;border:1px solid var(--line);border-radius:8px" placeholder="Price">
+        <select id="nCt" class="field" style="flex:1;padding:10px;border:1px solid var(--line);border-radius:8px"></select>
+      </div>
+      <button class="btn" style="width:100%;margin-top:8px" onclick="admAdd()">Add Product</button>
+      <button class="btn ghost" style="width:100%;margin-top:8px" onclick="admReset()">Reset demo inventory</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><h4>🌴 Island Vape Shop</h4><p>Charlotte, NC · 21+ only. Buy online, pick up in store. We do not ship.</p></div>
+      <div><h4>Compliance</h4><p>Age verified at checkout & pickup. Valid government ID required. Must be 21+ to purchase tobacco/vapor products (NC & federal law).</p></div>
+      <div><h4>Owner</h4><p><a href="#" onclick="openAdmin();return false" style="color:#ffd0b3">Owner Login →</a><br>Manage products & prices yourself.</p></div>
+    </div>
+    <div class="sig">Sample site built by <b>Symbio AI</b> · symbioai.dev — this is a free preview, not a live store.</div>
+  </div>
+</footer>
+
+<script>
+/* ---------------- DATA ---------------- */
+const CATS = ["Disposables","E-Liquids","Vape Devices","Glass & Water Pipes","Hookah & Shisha","CBD & Delta-8","Kratom","Rolling & Wraps","Accessories"];
+const CAT_ICON = {"Disposables":"💨","E-Liquids":"🧃","Vape Devices":"🔋","Glass & Water Pipes":"🌀",
+  "Hookah & Shisha":"💠","CBD & Delta-8":"🌿","Kratom":"🍃","Rolling & Wraps":"📜","Accessories":"⚙️"};
+const CAT_BG = {"Disposables":"linear-gradient(135deg,#0e9aa7,#0a7680)","E-Liquids":"linear-gradient(135deg,#ff7b3d,#e85f22)",
+  "Vape Devices":"linear-gradient(135deg,#123c4a,#0e9aa7)","Glass & Water Pipes":"linear-gradient(135deg,#6a4c93,#8e6cc0)",
+  "Hookah & Shisha":"linear-gradient(135deg,#b5179e,#7209b7)","CBD & Delta-8":"linear-gradient(135deg,#2d6a4f,#40916c)",
+  "Kratom":"linear-gradient(135deg,#386641,#6a994e)","Rolling & Wraps":"linear-gradient(135deg,#9c6644,#7f5539)",
+  "Accessories":"linear-gradient(135deg,#495057,#212529)"};
+const DEFAULT_PRODUCTS = [
+  {id:1,nm:"Island Breeze Disposable 5%",ct:"Disposables",pr:19.99},
+  {id:2,nm:"Tropic 10K Puff Disposable",ct:"Disposables",pr:24.99},
+  {id:3,nm:"Menthol Chill Disposable",ct:"Disposables",pr:18.99},
+  {id:4,nm:"Mango Sunset E-Liquid 60ml",ct:"E-Liquids",pr:22.99},
+  {id:5,nm:"Blue Wave Salt Nic 30ml",ct:"E-Liquids",pr:16.99},
+  {id:6,nm:"Coastal Custard 60ml",ct:"E-Liquids",pr:21.99},
+  {id:7,nm:"Starter Mod Kit 80W",ct:"Vape Devices",pr:49.99},
+  {id:8,nm:"Pod System Kit",ct:"Vape Devices",pr:34.99},
+  {id:9,nm:"Sub-Ohm Tank",ct:"Vape Devices",pr:27.99},
+  {id:10,nm:'12" Beaker Water Pipe',ct:"Glass & Water Pipes",pr:59.99},
+  {id:11,nm:"Mini Dab Rig",ct:"Glass & Water Pipes",pr:44.99},
+  {id:12,nm:"Silicone Hand Pipe",ct:"Glass & Water Pipes",pr:14.99},
+  {id:13,nm:"Hookah Set + Bowl",ct:"Hookah & Shisha",pr:79.99},
+  {id:14,nm:"Shisha Flavor 250g",ct:"Hookah & Shisha",pr:24.99},
+  {id:15,nm:"Coconut Coals (box)",ct:"Hookah & Shisha",pr:11.99},
+  {id:16,nm:"Delta-8 Gummies 25mg",ct:"CBD & Delta-8",pr:29.99},
+  {id:17,nm:"CBD Tincture 1000mg",ct:"CBD & Delta-8",pr:39.99},
+  {id:18,nm:"Delta-8 Cartridge 1g",ct:"CBD & Delta-8",pr:34.99},
+  {id:19,nm:"Kratom Capsules 60ct",ct:"Kratom",pr:24.99},
+  {id:20,nm:"Kratom Powder 100g",ct:"Kratom",pr:19.99},
+  {id:21,nm:"Kratom Extract Shot",ct:"Kratom",pr:9.99},
+  {id:22,nm:"King Size Rolling Papers",ct:"Rolling & Wraps",pr:3.99},
+  {id:23,nm:"Hemp Wraps (2pk)",ct:"Rolling & Wraps",pr:2.99},
+  {id:24,nm:"Pre-Rolled Cones (6pk)",ct:"Rolling & Wraps",pr:5.99},
+  {id:25,nm:"Replacement Coils (5pk)",ct:"Accessories",pr:12.99},
+  {id:26,nm:"18650 Battery",ct:"Accessories",pr:14.99},
+  {id:27,nm:"4-Piece Herb Grinder",ct:"Accessories",pr:16.99},
+  {id:28,nm:"Torch Lighter",ct:"Accessories",pr:13.99}
+];
+let PRODUCTS = load("iv_products", DEFAULT_PRODUCTS);
+let cart = {}; let activeCat = "All"; let coTotal = 0;
+
+function load(k,def){try{return JSON.parse(localStorage.getItem(k))||def}catch(e){return def}}
+function save(){localStorage.setItem("iv_products",JSON.stringify(PRODUCTS))}
+function money(n){return "$"+Number(n).toFixed(2)}
+
+/* ---------------- AGE GATE ---------------- */
+(function initGate(){
+  const mm=document.getElementById("mm"),dd=document.getElementById("dd"),yy=document.getElementById("yy");
+  ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].forEach((m,i)=>mm.add(new Option(m,i+1)));
+  for(let d=1;d<=31;d++)dd.add(new Option(d,d));
+  const now=2026; for(let y=now;y>=now-90;y--)yy.add(new Option(y,y));
+  if(localStorage.getItem("iv_age_ok")==="1"){document.getElementById("gate").style.display="none";}
+})();
+function checkAge(){
+  const m=+mm.value,d=+dd.value,y=+yy.value;
+  if(!m||!d||!y){document.getElementById("deny").style.display="block";document.getElementById("deny").textContent="Please enter your full date of birth.";return;}
+  const age=2026-y-((7<m||(7===m&&1<d))?1:0);
+  if(age>=21){localStorage.setItem("iv_age_ok","1");document.getElementById("gate").style.display="none";}
+  else{document.getElementById("deny").style.display="block";document.getElementById("deny").textContent="Sorry — you must be 21 or older to enter.";}
+}
+
+/* ---------------- STORE RENDER ---------------- */
+function renderCats(){
+  const el=document.getElementById("cats");
+  el.innerHTML="";
+  ["All",...CATS].forEach(c=>{
+    const b=document.createElement("div");b.className="cat"+(c===activeCat?" active":"");
+    b.textContent=c;b.onclick=()=>{activeCat=c;renderCats();renderGrid()};el.appendChild(b);
+  });
+}
+function renderGrid(){
+  const g=document.getElementById("grid");g.innerHTML="";
+  PRODUCTS.filter(p=>activeCat==="All"||p.ct===activeCat).forEach(p=>{
+    const d=document.createElement("div");d.className="prod";
+    d.innerHTML=`<div class="img" style="background:${CAT_BG[p.ct]||'#0e9aa7'}">${CAT_ICON[p.ct]||"💨"}</div>
+      <div class="body"><div class="nm">${esc(p.nm)}</div><div class="ct">${esc(p.ct)}</div>
+      <div class="pr">${money(p.pr)}</div><button class="add" onclick="addCart(${p.id})">Add to Cart</button></div>`;
+    g.appendChild(d);
+  });
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+/* ---------------- CART ---------------- */
+function addCart(id){cart[id]=(cart[id]||0)+1;updateCartCount();openCart();}
+function updateCartCount(){document.getElementById("cn").textContent=Object.values(cart).reduce((a,b)=>a+b,0);}
+function cartArr(){return Object.entries(cart).map(([id,q])=>({p:PRODUCTS.find(x=>x.id==id),q})).filter(x=>x.p);}
+function cartTotal(){return cartArr().reduce((a,x)=>a+x.p.pr*x.q,0);}
+function openCart(){
+  const box=document.getElementById("cartLines");box.innerHTML="";
+  const items=cartArr();
+  if(!items.length){box.innerHTML='<p class="note">Your cart is empty — add something from the shop.</p>';}
+  items.forEach(x=>{
+    const r=document.createElement("div");r.className="li";
+    r.innerHTML=`<div class="nm">${esc(x.p.nm)}<br><span class="note">${money(x.p.pr)}</span></div>
+      <div class="q"><button onclick="chg(${x.p.id},-1)">−</button><b>${x.q}</b><button onclick="chg(${x.p.id},1)">+</button></div>`;
+    box.appendChild(r);
+  });
+  document.getElementById("cartTot").textContent=money(cartTotal());
+  show("cartOv");
+}
+function chg(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updateCartCount();openCart();}
+function resetCart(){cart={};updateCartCount();}
+
+/* ---------------- CHECKOUT ---------------- */
+function startCheckout(){if(!cartArr().length){alert("Add something first!");return;}coTotal=cartTotal();stepTo(1);show("coOv");}
+function stepTo(n){[1,2,3].forEach(i=>{document.getElementById("step"+i).style.display=i===n?"block":"none";document.getElementById("s"+i).className=i<=n?"on":"";});}
+function toVerify(){if(!document.getElementById("cName").value){alert("Enter your name");return;}stepTo(2);}
+function doVerify(){document.getElementById("vok").style.display="block";setTimeout(()=>{
+  document.getElementById("okName").textContent=document.getElementById("cName").value||"friend";
+  document.getElementById("okTot").textContent=money(coTotal);stepTo(3);},700);}
+
+/* ---------------- ADMIN ---------------- */
+function openAdmin(){document.getElementById("admGate").style.display="block";document.getElementById("admPanel").style.display="none";document.getElementById("admPw").value="";show("admOv");}
+function admLogin(){if(document.getElementById("admPw").value.trim().toLowerCase()==="island"){document.getElementById("admGate").style.display="none";document.getElementById("admPanel").style.display="block";renderAdmin();}else{alert("Demo password is: island");}}
+function renderAdmin(){
+  const l=document.getElementById("admList");l.innerHTML="";
+  PRODUCTS.forEach(p=>{
+    const r=document.createElement("div");r.className="arow";
+    r.innerHTML=`<input class="anm" value="${esc(p.nm)}" onchange="admEdit(${p.id},'nm',this.value)">
+      <input class="apr" type="number" step="0.01" value="${p.pr}" onchange="admEdit(${p.id},'pr',this.value)">
+      <button class="del" onclick="admDel(${p.id})">Remove</button>`;
+    l.appendChild(r);
+  });
+  const sel=document.getElementById("nCt");sel.innerHTML="";CATS.forEach(c=>sel.add(new Option(c,c)));
+}
+function admEdit(id,f,v){const p=PRODUCTS.find(x=>x.id==id);if(!p)return;p[f]=f==="pr"?parseFloat(v)||0:v;save();renderGrid();}
+function admDel(id){PRODUCTS=PRODUCTS.filter(x=>x.id!=id);save();renderAdmin();renderGrid();}
+function admAdd(){const nm=document.getElementById("nNm").value.trim();const pr=parseFloat(document.getElementById("nPr").value);const ct=document.getElementById("nCt").value;
+  if(!nm||!pr){alert("Enter a name and price");return;}
+  PRODUCTS.push({id:Date.now(),nm,ct,pr});save();document.getElementById("nNm").value="";document.getElementById("nPr").value="";renderAdmin();renderGrid();}
+function admReset(){if(confirm("Reset demo inventory to defaults?")){PRODUCTS=JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));save();renderAdmin();renderGrid();}}
+
+/* ---------------- MODAL HELPERS ---------------- */
+function show(id){closeAll();document.getElementById(id).classList.add("open");}
+function closeAll(){document.querySelectorAll(".overlay").forEach(o=>o.classList.remove("open"));}
+document.querySelectorAll(".overlay").forEach(o=>o.addEventListener("click",e=>{if(e.target===o)closeAll();}));
+
+/* ---------------- INIT ---------------- */
+renderCats();renderGrid();updateCartCount();
+</script>
+</body>
+</html>
