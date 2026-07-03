@@ -29,6 +29,21 @@
   .price .amt{font-family:Poppins;font-weight:800;font-size:46px;color:#4fd1c5}
   .price .mo{font-size:16px;color:#ffd0b3;margin-top:4px}
   .price small{display:block;color:#9fb0b6;margin-top:8px;font-size:13px}
+  /* --- pricing tiers --- */
+  .tiers-band{width:min(1080px,96vw);position:relative;left:50%;transform:translateX(-50%);margin:18px 0 8px}
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:stretch}
+  .tier{position:relative;background:#fff;border:1px solid #e6e2d8;border-radius:16px;padding:24px 22px;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(13,27,42,.06)}
+  .tier h3{font-size:19px;color:#0d1b2a;margin:0 0 2px}
+  .tier .who{font-size:13px;color:#5b6b73;margin-bottom:10px}
+  .tier .amt{font-family:Poppins;font-weight:800;font-size:34px;color:#0a7680}
+  .tier .amt small{font-size:15px;font-weight:600;color:#5b6b73}
+  .tier .mo{font-size:13.5px;color:#8a4b1f;font-weight:600;margin:2px 0 12px}
+  .tier ul{margin:0 0 14px 18px;padding:0;font-size:14px}
+  .tier li{margin:7px 0;line-height:1.45}
+  .tier .fit{margin-top:auto;background:#f6f4ee;border-radius:10px;padding:10px 12px;font-size:13px;color:#123c4a;font-style:italic}
+  .tier.popular{border:2px solid #0e9aa7;box-shadow:0 14px 36px rgba(14,154,167,.18)}
+  .tier .flag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#ff7b3d;color:#331200;font-weight:800;font-size:12px;border-radius:999px;padding:4px 14px;white-space:nowrap}
+  .tiers-note{text-align:center;font-size:13px;color:#5b6b73;margin-top:14px}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:12px}
   .card{border:1px solid #e6e2d8;background:#fff;border-radius:14px;padding:18px}
   .card h3{color:#0a7680;font-size:16px;margin-bottom:5px}
@@ -55,18 +70,21 @@
   <p>The safest setup for a smoke shop is <b>pickup-only, never ship</b> — that alone sidesteps the PACT Act shipping laws. Age is verified in three layers:</p>
   <div class="flow">
     <div class="s"><b>1. Browse gate</b><br>21+ date-of-birth check to enter the site.</div>
-    <div class="s"><b>2. ID verification</b><br>Tier-2 ID check (AgeChecker/Yoti) at checkout, before an order is accepted.</div>
+    <div class="s"><b>2. ID verification</b><br>Real ID check (AgeChecker.net / Yoti) at checkout, before an order is accepted.</div>
     <div class="s"><b>3. Pickup ID check</b><br>Your staff verifies a valid 21+ ID in-store, like they already do.</div>
   </div>
   <p style="margin-top:10px" class="muted">We build to this standard; for your exact NC obligations a short attorney review is recommended — we implement whatever standard that sets.</p>
 
   <h2>What you'll get</h2>
   <ul>
-    <li><b>Storefront catalog site</b> — product grid with photos, prices & categories (disposables, e-liquids, devices, glass, hookah, CBD/Delta-8, kratom, rolling, accessories)</li>
+    <li><b>Storefront catalog site</b> — product grid with photos, prices & categories covering everything you carry (THCA flower, Delta-9 & edibles, disposables, e-liquids, devices, cigarettes, cigars, hookah, glass, kratom, rolling, exotic snacks & drinks, accessories)</li>
     <li><b>Owner admin panel</b> — add/remove products and change prices yourself, anytime, no tech skills</li>
     <li><b>Buy-online, pickup-in-store</b> ordering with order management</li>
-    <li><b>Tier-2 age/ID verification</b> integrated at checkout</li>
+    <li><b>SMS "order ready" texts</b> to customers when their pickup is pulled and waiting</li>
+    <li><b>Age/ID verification</b> (AgeChecker.net / Yoti) integrated at checkout</li>
+    <li><b>Lab COA links</b> on every THCA / Delta-9 / hemp product page</li>
     <li><b>Google Business Profile + local SEO</b> — win "smoke shop near me" in Charlotte</li>
+    <li><b>Google reviews synced</b> to your site automatically</li>
     <li>Hours, map, click-to-call, and compliant ToS / privacy / 21+ pages</li>
     <li>Fast, mobile-first, and hosted & maintained by us</li>
   </ul>
@@ -81,11 +99,65 @@
     Smoke shops need a <b>high-risk merchant account</b> (Square/Stripe/PayPal ban online tobacco). You start that application now; the day it clears we flip on online payment — the checkout is already built.
   </div>
 
-  <div class="price">
-    <div>Your investment</div>
-    <div class="amt">$4,500</div>
-    <div class="mo">+ $150/mo — hosting, verification service, updates & backups</div>
-    <small>Age-verification checks (~$0.10–0.50 each) billed at cost. Phase-2 payment hookup included when your processor clears. Free project scan included.</small>
+  <h2>Your investment — three ways to start</h2>
+  <p>Same tiers as our public pricing at <b>symbioai.dev</b> — no smoke-shop markup. Start where it fits today; every tier upgrades to the next without rebuilding.</p>
+
+  <div class="tiers-band">
+    <div class="tiers">
+
+      <div class="tier">
+        <h3>🌱 Entry / Light</h3>
+        <div class="who">Look legit &amp; get found</div>
+        <div class="amt">$1,500</div>
+        <div class="mo">+ $75/mo — hosting, updates &amp; backups</div>
+        <ul>
+          <li>Clean storefront site — your brand, hours, map, click-to-call</li>
+          <li>21+ age gate + compliant ToS / privacy / FDA notices</li>
+          <li>Product &amp; category showcase (browse-only, no online ordering)</li>
+          <li>Google Business Profile setup + local SEO basics</li>
+          <li>Mobile-first, live in about 1 week</li>
+        </ul>
+        <div class="fit">Fits: "I just need a real website that shows what we carry."</div>
+      </div>
+
+      <div class="tier popular">
+        <span class="flag">★ Recommended — this demo</span>
+        <h3>🌴 Growth</h3>
+        <div class="who">Order online, pick up in store</div>
+        <div class="amt">$4,500</div>
+        <div class="mo">+ $150/mo — hosting, verification service, updates &amp; backups</div>
+        <ul>
+          <li><b>Everything in Entry</b>, plus:</li>
+          <li>Full catalog with photos &amp; prices — every category you carry</li>
+          <li>Owner panel — change products &amp; prices yourself, from your phone</li>
+          <li>Reserve-for-pickup ordering + order management</li>
+          <li>ID/age verification at checkout (AgeChecker.net / Yoti)</li>
+          <li>SMS "order ready" texts + Google reviews synced to the site</li>
+          <li>Lab COA links on every THCA / Delta-9 product</li>
+          <li>Payment-ready checkout — flips on when your merchant account clears</li>
+        </ul>
+        <div class="fit">Fits: "customers should reserve online and pick up in-store" — exactly what the sample site shows.</div>
+      </div>
+
+      <div class="tier">
+        <h3>🚀 Premium</h3>
+        <div class="who">The website becomes a second register</div>
+        <div class="amt">from $7,500 <small>quoted</small></div>
+        <div class="mo">+ $250/mo — fully managed for you</div>
+        <ul>
+          <li><b>Everything in Growth</b>, plus:</li>
+          <li>Online payments live from day one (high-risk processor integration)</li>
+          <li>24/7 AI shop assistant — answers "is this in stock?", takes reservations</li>
+          <li>POS / inventory sync — shelf and site always match</li>
+          <li>SMS loyalty &amp; win-back campaigns (compliance-checked)</li>
+          <li>Sales analytics dashboard — what sells, when</li>
+          <li>Priority support + quarterly strategy check-ins</li>
+        </ul>
+        <div class="fit">Fits: "I want the site selling as hard as my counter does."</div>
+      </div>
+
+    </div>
+    <p class="tiers-note">All ordering tiers: age-verification checks (~$0.10–0.50 each) billed at cost · 50% deposit starts the build, balance on launch · free project scan included.</p>
   </div>
 
   <h2>Why Symbio AI</h2>
