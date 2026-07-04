@@ -3,253 +3,103 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<meta name="description" content="Island Vape Shop — Charlotte's smoke shop for THCA flower, Delta-9, vapes, cigars, cigarettes, hookah, glass, kratom, exotic snacks & more. Order online, pick up in store. 21+.">
-<meta property="og:title" content="Island Vape Shop — Charlotte, NC · 21+">
-<meta property="og:description" content="Browse the shelves online, reserve for pickup, pay in store. Sample preview by Symbio AI.">
-<title>Island Vape Shop — Smoke Shop &amp; Vapes · Charlotte, NC</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Island Vape Shop — Charlotte, NC</title>
 <style>
   :root{
     --teal:#0e9aa7; --teal-d:#0a7680; --sun:#ff7b3d; --sun-d:#e85f22;
     --ink:#0d1b2a; --sea:#123c4a; --sand:#f6f4ee; --card:#ffffff; --line:#e6e2d8;
-    --ok:#1f9d55; --muted:#5b6b73; --gold:#c8912a;
-    --shadow:0 10px 30px rgba(13,27,42,.08);
-    --radius:16px;
+    --ok:#1f9d55; --muted:#5b6b73;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:84px}
-  html,body{overflow-x:clip}
-  body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--sand);-webkit-font-smoothing:antialiased}
-  h1,h2,h3,h4,.logo{font-family:Poppins,Inter,sans-serif}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--sand)}
   a{color:var(--teal-d);text-decoration:none}
-  img{max-width:100%}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-  .btn{display:inline-block;background:var(--sun);color:var(--ink);border:0;border-radius:12px;padding:12px 20px;font-weight:800;cursor:pointer;font-size:15px;font-family:inherit;transition:background .15s,transform .15s,box-shadow .15s;box-shadow:0 6px 16px rgba(232,95,34,.28)}
-  .btn:hover{background:var(--sun-d);transform:translateY(-1px)}
-  .btn:focus-visible,.cat:focus-visible,.cartbtn:focus-visible,.close:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
-  .btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55);box-shadow:none}
-  .btn.ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
-  .btn.ghost.dark{color:var(--teal-d);border-color:var(--teal)}
-  .btn.ghost.dark:hover{background:#e8f6f7}
-  .badge{display:inline-block;background:#ffe8d9;color:#963f00;font-weight:800;border-radius:999px;padding:4px 12px;font-size:12px;letter-spacing:.4px}
-  .kicker{font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-d)}
-
-  /* ---------- PREVIEW FLAG + FDA WARNING ---------- */
-  .demoflag{background:linear-gradient(90deg,var(--sun),var(--sun-d));color:#331200;text-align:center;font-size:12.5px;font-weight:700;padding:7px 12px}
-  .demoflag a{color:inherit;text-decoration:underline;font-weight:800}
-  .fda{background:#111;color:#fff;border:0;padding:10px 14px;text-align:center;font-weight:800;font-size:13.5px;letter-spacing:.2px}
-  .fda span{display:inline-block;border:2px solid #fff;padding:6px 12px}
-
+  .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+  .btn{background:var(--sun);color:#fff;border:0;border-radius:10px;padding:11px 18px;font-weight:700;cursor:pointer;font-size:15px}
+  .btn:hover{background:var(--sun-d)}
+  .btn.ghost{background:transparent;color:var(--teal-d);border:2px solid var(--teal)}
+  .badge{display:inline-block;background:#ffe8d9;color:var(--sun-d);font-weight:800;border-radius:999px;padding:3px 10px;font-size:12px;letter-spacing:.3px}
   /* ---------- AGE GATE ---------- */
-  #gate{position:fixed;inset:0;background:
-    radial-gradient(1200px 500px at 80% -10%,rgba(255,123,61,.35),transparent 60%),
-    linear-gradient(160deg,#0a7680,#123c4a 70%);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px}
-  #gate .box{background:#fff;border-radius:22px;max-width:460px;width:100%;padding:36px 32px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.45)}
-  #gate h1{margin:.2em 0;font-size:27px}
-  #gate p{color:var(--muted);font-size:14px;line-height:1.55}
+  #gate{position:fixed;inset:0;background:linear-gradient(160deg,#0a7680,#123c4a 70%);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px}
+  #gate .box{background:#fff;border-radius:18px;max-width:440px;width:100%;padding:34px 30px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+  #gate h1{margin:.2em 0;font-size:26px}
+  #gate p{color:var(--muted);font-size:14px;line-height:1.5}
   #gate .dob{display:flex;gap:8px;justify-content:center;margin:16px 0}
-  #gate select{padding:11px 8px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-family:inherit;background:#fff}
-  #gate .row{display:flex;gap:10px;margin-top:12px}
+  #gate select{padding:10px;border:1px solid var(--line);border-radius:8px;font-size:15px}
+  #gate .row{display:flex;gap:10px;margin-top:10px}
   #gate .row .btn{flex:1}
-  #gate .row .btn.ghost{color:var(--teal-d);border-color:var(--teal)}
-  #gate .row .btn.ghost:hover{background:#e8f6f7}
-  .palm{font-size:46px}
+  .palm{font-size:44px}
   .deny{color:#c0392b;font-weight:700;margin-top:12px;display:none}
-  .gate-hint{background:#fff8e6;border:1px solid #f2e2a8;border-radius:10px;padding:8px 12px;font-size:12.5px;color:#7a5c00;margin-top:14px}
-
-  /* ---------- 24H PREVIEW LOCK ---------- */
-  #lock{position:fixed;inset:0;background:
-    radial-gradient(1200px 500px at 80% -10%,rgba(255,123,61,.35),transparent 60%),
-    linear-gradient(160deg,#0a7680,#123c4a 70%);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
-  #lock .box{background:#fff;border-radius:22px;max-width:460px;width:100%;padding:36px 32px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.45)}
-  #lock h1{margin:.2em 0;font-size:24px}
-  #lock p{color:var(--muted);font-size:14px;line-height:1.6}
-
   /* ---------- HEADER ---------- */
-  header{background:var(--ink);color:#fff;position:sticky;top:0;z-index:40;box-shadow:0 4px 18px rgba(0,0,0,.25)}
-  header .bar{display:flex;align-items:center;gap:14px;padding:13px 0}
-  .logo{font-weight:800;font-size:20px;letter-spacing:.2px}
+  header{background:var(--ink);color:#fff;position:sticky;top:0;z-index:40}
+  header .bar{display:flex;align-items:center;gap:14px;padding:12px 0}
+  .logo{font-weight:900;font-size:20px;letter-spacing:.3px}
   .logo .l{color:var(--sun)}
-  header nav{margin-left:auto;display:flex;gap:20px;align-items:center;font-size:14px;font-weight:600}
-  header nav a{color:#cfe6ea;transition:color .15s}
-  header nav a:hover{color:#fff}
-  .cartbtn{position:relative;background:var(--teal-d);color:#fff;border:0;border-radius:11px;padding:9px 16px;font-weight:700;cursor:pointer;font-family:inherit;font-size:14px;transition:background .15s}
-  .cartbtn:hover{background:#085059}
-  .cartbtn .n{position:absolute;top:-8px;right:-8px;background:var(--sun);color:var(--ink);border-radius:999px;font-size:11px;min-width:19px;height:19px;line-height:19px;text-align:center;font-weight:800;transition:transform .2s}
-  .cartbtn .n.pop{transform:scale(1.45)}
-  @media(max-width:640px){
-    html{scroll-padding-top:120px}
-    header nav a.hideS{display:none}
-    header .bar{flex-wrap:wrap;gap:10px}
-    .logo{font-size:17px}
-    header nav{gap:12px;font-size:13px}
-    .cartbtn{padding:8px 12px;font-size:13px}
-  }
-
+  header nav{margin-left:auto;display:flex;gap:18px;align-items:center;font-size:14px}
+  header nav a{color:#cfe6ea}
+  .cartbtn{position:relative;background:var(--teal);color:#fff;border:0;border-radius:9px;padding:8px 14px;font-weight:700;cursor:pointer}
+  .cartbtn .n{position:absolute;top:-8px;right:-8px;background:var(--sun);border-radius:999px;font-size:11px;min-width:19px;height:19px;line-height:19px;text-align:center;font-weight:800}
   /* ---------- HERO ---------- */
-  .hero{background:
-    radial-gradient(900px 420px at 85% -20%,rgba(255,123,61,.28),transparent 60%),
-    radial-gradient(700px 380px at -10% 110%,rgba(255,255,255,.10),transparent 55%),
-    linear-gradient(150deg,#0e9aa7,#123c4a 72%);color:#fff;padding:56px 0 48px}
-  .hero h2{font-size:clamp(30px,4.6vw,44px);margin:.25em 0 .2em;line-height:1.12}
-  .hero h2 .accent{color:#ffd0b3}
-  .hero p{font-size:17px;color:#dff1f3;max-width:600px;line-height:1.6;margin:.4em 0 0}
-  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-  .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
-  .pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 15px;font-size:13px;font-weight:600;backdrop-filter:blur(4px)}
-
+  .hero{background:linear-gradient(150deg,#0e9aa7,#123c4a);color:#fff;padding:46px 0 40px}
+  .hero h2{font-size:34px;margin:.1em 0}
+  .hero p{font-size:17px;color:#dff1f3;max-width:560px}
+  .pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .pill{background:rgba(255,255,255,.14);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600}
   /* ---------- COMPLIANCE STRIP ---------- */
   .comply{background:#fff3e9;border-top:2px solid #ffd8bf;border-bottom:2px solid #ffd8bf;padding:12px 0;font-size:13.5px;color:#8a4b1f;text-align:center;font-weight:600}
-
-  /* ---------- SECTIONS ---------- */
-  section{padding:44px 0}
-  .h{display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap}
-  .h h3{margin:0;font-size:26px}
-  .sub{color:var(--muted);font-size:14.5px;margin:0 0 20px}
-
-  /* ---------- FEATURED ROW ---------- */
-  #featured{padding:36px 0 8px}
-  .featrow{display:grid;grid-auto-flow:column;grid-auto-columns:236px;gap:14px;overflow-x:auto;padding:6px 2px 16px;scroll-snap-type:x proximity}
-  .featrow .prod{scroll-snap-align:start}
-  .featrow::-webkit-scrollbar{height:8px}
-  .featrow::-webkit-scrollbar-thumb{background:#d8d2c4;border-radius:8px}
-
-  /* ---------- SHOP ---------- */
-  .toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
-  .search{flex:1;min-width:220px;position:relative}
-  .search input{width:100%;padding:12px 14px 12px 42px;border:1px solid var(--line);border-radius:12px;font-size:15px;font-family:inherit;background:#fff;box-shadow:var(--shadow)}
-  .search input:focus{outline:2px solid var(--teal);border-color:var(--teal)}
-  .search .ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:.55}
-  .cats{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;padding:2px 2px 12px;margin-bottom:10px;-webkit-overflow-scrolling:touch}
-  .cats::-webkit-scrollbar{height:6px}
-  .cats::-webkit-scrollbar-thumb{background:#d8d2c4;border-radius:8px}
-  .cat{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 15px;cursor:pointer;font-size:13px;font-weight:600;color:var(--sea);transition:all .15s;user-select:none;font-family:inherit}
-  .cat:hover{border-color:var(--teal);color:var(--teal-d)}
-  .cat.active{background:var(--teal-d);color:#fff;border-color:var(--teal-d)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:16px}
-  @media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr);gap:11px}}
-  .prod{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
-  .prod:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-  .prod .img{height:126px;display:flex;align-items:center;justify-content:center;font-size:48px;color:#fff;position:relative}
-  .prod .img::after{content:"";position:absolute;inset:0;background:radial-gradient(320px 90px at 50% -20%,rgba(255,255,255,.35),transparent 60%)}
-  .prod .tag{position:absolute;top:10px;left:10px;z-index:2;font-size:10.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;border-radius:6px;padding:3px 8px;color:#fff}
-  .tag.best{background:var(--sun);color:var(--ink)}
-  .tag.new{background:var(--teal-d)}
-  .tag.lab{background:#157a40}
-  .tag.pick{background:#6a4c93}
-  .prod .body{padding:13px 14px 14px;display:flex;flex-direction:column;gap:5px;flex:1}
-  .prod .nm{font-weight:700;font-size:14.5px;line-height:1.35}
-  .prod .ct{font-size:11.5px;color:var(--muted);font-weight:600;letter-spacing:.3px;text-transform:uppercase}
-  .prod .row2{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:8px}
-  .prod .pr{font-weight:800;color:var(--teal-d);font-size:18px;font-family:Poppins}
-  .prod .add{background:var(--teal-d);color:#fff;border:0;border-radius:9px;padding:8px 13px;font-weight:700;cursor:pointer;font-family:inherit;font-size:13px;transition:background .15s}
-  .prod .add:hover{background:#085059}
-  .empty{background:#fff;border:1px dashed var(--line);border-radius:var(--radius);padding:34px;text-align:center;color:var(--muted);grid-column:1/-1}
-  .hemp-note{margin-top:18px;background:#eefaf3;border:1px solid #bfe8d0;border-radius:12px;padding:12px 16px;font-size:13px;color:#1c5b3a;line-height:1.55}
-
-  /* ---------- HOW IT WORKS ---------- */
-  #how{background:var(--ink);color:#fff}
-  #how .h h3{color:#fff}
-  #how .sub{color:#9fc3ca}
-  .steps3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:8px}
-  .step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:22px}
-  .step .num{width:34px;height:34px;border-radius:999px;background:var(--sun);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-family:Poppins}
-  .step b{display:block;font-size:16px;margin-bottom:6px;font-family:Poppins}
-  .step p{margin:0;font-size:14px;color:#c9dde1;line-height:1.55}
-
-  /* ---------- REVIEWS ---------- */
-  .revgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-  .rev{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-  .rev .stars{color:#f5a623;font-size:15px;letter-spacing:2px}
-  .rev p{font-size:14.5px;line-height:1.6;color:var(--sea);margin:10px 0 12px}
-  .rev .who{font-size:13px;font-weight:700}
-  .rev .who span{color:var(--muted);font-weight:500}
-
-  /* ---------- VISIT ---------- */
-  #visit{background:#fff;border-top:1px solid var(--line)}
-  .visitgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-  .vcard{background:var(--sand);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-  .vcard h4{margin:.1em 0 .4em;font-size:16px}
-  .note{font-size:13px;color:var(--muted);line-height:1.6}
-
+  /* ---------- PRODUCTS ---------- */
+  section{padding:34px 0}
+  .h{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .h h3{margin:0;font-size:23px}
+  .cats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+  .cat{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;cursor:pointer;font-size:13px;font-weight:600;color:var(--sea)}
+  .cat.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+  .prod{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .prod .img{height:130px;display:flex;align-items:center;justify-content:center;font-size:46px;color:#fff}
+  .prod .body{padding:13px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .prod .nm{font-weight:700;font-size:15px}
+  .prod .ct{font-size:12px;color:var(--muted)}
+  .prod .pr{font-weight:800;color:var(--teal-d);font-size:18px;margin-top:auto}
+  .prod .add{background:var(--teal);color:#fff;border:0;border-radius:8px;padding:9px;font-weight:700;cursor:pointer}
+  .prod .add:hover{background:var(--teal-d)}
   /* ---------- CART / MODALS ---------- */
   .overlay{position:fixed;inset:0;background:rgba(13,27,42,.55);z-index:60;display:none;align-items:center;justify-content:center;padding:16px}
   .overlay.open{display:flex}
-  .modal{background:#fff;border-radius:18px;max-width:470px;width:100%;max-height:88vh;overflow:auto;padding:24px}
-  .modal:focus{outline:none}
-  .modal h3{margin:.1em 0 .4em;font-size:21px}
-  .li{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
-  .li .nm{flex:1;font-size:14px;font-weight:600}
-  .li .nm .note{font-weight:500}
-  .li .q{display:flex;align-items:center;gap:7px}
-  .li .q button{width:27px;height:27px;border:1px solid var(--line);background:#fff;border-radius:7px;cursor:pointer;font-weight:700;font-size:15px}
-  .li .q button:hover{border-color:var(--teal);color:var(--teal-d)}
-  .tot{display:flex;justify-content:space-between;font-weight:800;font-size:18px;margin:14px 0;font-family:Poppins}
+  .modal{background:#fff;border-radius:16px;max-width:460px;width:100%;max-height:88vh;overflow:auto;padding:22px}
+  .modal h3{margin:.1em 0 .4em}
+  .li{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+  .li .nm{flex:1;font-size:14px}
+  .li .q{display:flex;align-items:center;gap:6px}
+  .li .q button{width:26px;height:26px;border:1px solid var(--line);background:#fff;border-radius:6px;cursor:pointer;font-weight:700}
+  .tot{display:flex;justify-content:space-between;font-weight:800;font-size:18px;margin:14px 0}
   .field{margin:10px 0}
   .field label{display:block;font-size:13px;font-weight:600;margin-bottom:4px}
-  .field input,.field select{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-family:inherit}
-  .field input:focus{outline:2px solid var(--teal);border-color:var(--teal)}
+  .field input,.field select{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font-size:15px}
   .verify{background:#eefaf3;border:1px solid #bfe8d0;border-radius:12px;padding:16px;text-align:center;margin:12px 0}
   .verify .chk{font-size:34px}
-  .msteps{display:flex;gap:6px;margin-bottom:14px}
-  .msteps div{flex:1;height:6px;border-radius:4px;background:var(--line);transition:background .3s}
-  .msteps div.on{background:var(--teal)}
-  .close{float:right;border:0;background:#eee;border-radius:9px;width:32px;height:32px;cursor:pointer;font-size:18px;line-height:1}
-  .close:hover{background:#e0e0e0}
-
-  /* ---------- TOAST ---------- */
-  #toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,80px);background:var(--ink);color:#fff;border-radius:12px;padding:12px 20px;font-size:14px;font-weight:600;z-index:70;opacity:0;transition:all .3s;box-shadow:0 12px 30px rgba(0,0,0,.35);pointer-events:none;max-width:92vw;text-align:center}
-  #toast.show{opacity:1;transform:translate(-50%,0)}
-  #toast b{color:#7fe3d0}
-
+  .steps{display:flex;gap:6px;margin-bottom:14px}
+  .steps div{flex:1;height:6px;border-radius:4px;background:var(--line)}
+  .steps div.on{background:var(--teal)}
+  .note{font-size:12.5px;color:var(--muted);line-height:1.5}
+  .close{float:right;border:0;background:#eee;border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:18px}
   /* ---------- ADMIN ---------- */
   #admin .arow{display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
-  #admin .arow input{padding:8px;border:1px solid var(--line);border-radius:8px;font-family:inherit;font-size:13.5px}
-  #admin .arow .anm{flex:1;min-width:0}
-  #admin .arow .apr{width:78px}
-  #admin .del{background:#fdeaea;color:#c0392b;border:0;border-radius:8px;padding:8px 10px;cursor:pointer;font-weight:700;font-size:12.5px}
-  #admin .del:hover{background:#fad4d4}
-  .adminhint{background:#fff8e6;border:1px solid #f2e2a8;border-radius:10px;padding:10px 12px;font-size:13px;color:#7a5c00;margin-bottom:12px;line-height:1.5}
-
-  /* ---------- CTA BAND ---------- */
-  .ctaband{background:
-    radial-gradient(700px 300px at 85% -20%,rgba(255,123,61,.30),transparent 60%),
-    linear-gradient(150deg,var(--teal),var(--sea));color:#fff;border-radius:22px;padding:40px 30px;text-align:center;box-shadow:var(--shadow)}
-  .ctaband h3{margin:.1em 0 .3em;font-size:27px}
-  .ctaband p{color:#dff1f3;max-width:560px;margin:0 auto;line-height:1.6}
-  .ctaband .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-
+  #admin .arow input{padding:7px;border:1px solid var(--line);border-radius:7px}
+  #admin .arow .anm{flex:1}
+  #admin .arow .apr{width:80px}
+  #admin .del{background:#fdeaea;color:#c0392b;border:0;border-radius:7px;padding:7px 10px;cursor:pointer;font-weight:700}
+  .adminhint{background:#fff8e6;border:1px solid #f2e2a8;border-radius:10px;padding:10px 12px;font-size:13px;color:#7a5c00;margin-bottom:12px}
   /* ---------- FOOTER ---------- */
-  footer{background:var(--ink);color:#cfe6ea;padding:38px 0 30px;margin-top:8px;font-size:14px}
-  footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
-  footer h4{color:#fff;margin:.2em 0 .5em;font-size:15px}
-  footer p{line-height:1.6;margin:.3em 0}
-  .fda-foot{border-top:1px solid rgba(255,255,255,.14);margin-top:26px;padding-top:18px;font-size:12px;color:#8fb0b6;line-height:1.7}
-  .sig{text-align:center;margin-top:20px;font-size:12px;color:#8fb0b6}
-  .sig b{color:#cfe6ea}
+  footer{background:var(--ink);color:#cfe6ea;padding:30px 0;margin-top:20px;font-size:14px}
+  footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+  footer h4{color:#fff;margin:.2em 0}
+  .sig{text-align:center;margin-top:22px;font-size:12px;color:#8fb0b6}
+  .demoflag{background:var(--sun);color:#fff;text-align:center;font-size:12px;font-weight:700;padding:6px}
 </style>
 </head>
 <body>
 
-<div class="demoflag">✨ FREE SAMPLE PREVIEW built by Symbio AI for Island Vape Shop — fully interactive: browse, add to cart, check out · <a href="#" onclick="openAdmin();return false">🔑 Try the Owner Panel</a> · <a href="island-vape-shop-proposal.html">📋 Pricing &amp; proposal →</a><span id="pvleft"></span></div>
-
-<!-- ================= 24H PREVIEW LOCK ================= -->
-<div id="lock">
-  <div class="box">
-    <div class="palm">🔒</div>
-    <h1>This private preview has ended</h1>
-    <span class="badge">Island Vape Shop · Sample Store</span>
-    <p>Preview links for this demo are active for <b>24 hours</b> — yours has expired, but the site hasn't gone anywhere.</p>
-    <p><b>Want back in?</b> Text or call Symbio AI and we'll send a fresh link in ten seconds — or grab a time below.</p>
-    <a class="btn" style="width:100%;margin-top:8px" href="https://cal.com/ravi-kumar-dwed2m">📅 Book a free 15-min call</a>
-    <p style="margin-top:14px;font-size:12px">Built by <b>Symbio AI</b> · symbioai.dev</p>
-  </div>
-</div>
-
-<div class="fda"><span>WARNING: This product contains nicotine. Nicotine is an addictive chemical.</span></div>
+<div class="demoflag">✨ SAMPLE PREVIEW built by Symbio AI for Island Vape Shop — fully interactive: browse, add to cart, checkout, and try the Owner panel (bottom of page)</div>
 
 <!-- ================= AGE GATE ================= -->
 <div id="gate">
@@ -259,17 +109,16 @@
     <span class="badge">21+ ONLY</span>
     <p>You must be <b>21 or older</b> to enter. Please confirm your date of birth.<br>Valid government ID is required at pickup.</p>
     <div class="dob">
-      <select id="mm" aria-label="Month"><option value="">Month</option></select>
-      <select id="dd" aria-label="Day"><option value="">Day</option></select>
-      <select id="yy" aria-label="Year"><option value="">Year</option></select>
+      <select id="mm"><option value="">Month</option></select>
+      <select id="dd"><option value="">Day</option></select>
+      <select id="yy"><option value="">Year</option></select>
     </div>
     <div class="row">
       <button class="btn ghost" onclick="location.href='https://www.google.com'">I'm under 21</button>
       <button class="btn" onclick="checkAge()">Enter Site</button>
     </div>
     <div class="deny" id="deny">Sorry — you must be 21 or older to enter.</div>
-    <p style="margin-top:14px;font-size:12px">By entering you agree you are of legal age to purchase tobacco, vapor, and hemp-derived THC products in North Carolina.</p>
-    <div class="gate-hint">👋 <b>Previewing your site?</b> This is your real 21+ gate — enter any 21+ birthdate to walk through it, just like your customers will.</div>
+    <p style="margin-top:14px;font-size:12px">By entering you agree you are of legal age to purchase tobacco/vapor products in North Carolina.</p>
   </div>
 </div>
 
@@ -279,8 +128,6 @@
     <div class="logo">🌴 Island <span class="l">Vape</span> Shop</div>
     <nav>
       <a href="#shop">Shop</a>
-      <a href="#how" class="hideS">Pickup</a>
-      <a href="#reviews" class="hideS">Reviews</a>
       <a href="#visit">Visit</a>
       <button class="cartbtn" onclick="openCart()">🛒 Cart <span class="n" id="cn">0</span></button>
     </nav>
@@ -290,91 +137,44 @@
 <!-- ================= HERO ================= -->
 <div class="hero">
   <div class="wrap">
-    <span class="badge">Charlotte, NC · 21+ Smoke Shop</span>
-    <h2>Island vibes.<br>Everything a <span class="accent">real smoke shop</span> carries.</h2>
-    <p>THCA flower &amp; Delta-9, disposables and premium e-liquids, cigars and cigarettes, hookah, glass, kratom, exotic snacks — browse our shelves online, reserve your favorites, and pick them up in-store the same day.</p>
-    <div class="ctas">
-      <a class="btn" href="#shop">Shop the Shelves →</a>
-      <a class="btn ghost" href="#visit">📍 Hours &amp; Location</a>
-    </div>
+    <span class="badge">Charlotte, NC · 21+</span>
+    <h2>Island vibes. Premium vapes.</h2>
+    <p>Browse our shelves online, reserve your favorites, and pick them up in-store. Charlotte's spot for disposables, premium e-liquids, mods, glass & more.</p>
     <div class="pills">
-      <span class="pill">🛒 Order Online · Pick Up In-Store</span>
-      <span class="pill">🪪 ID Verified at Checkout &amp; Pickup</span>
-      <span class="pill">🌿 Lab-Tested THCA &amp; Delta-9</span>
-      <span class="pill">🍭 Exotic Snacks &amp; Drinks</span>
+      <span class="pill">🛒 Buy Online · Pickup In-Store</span>
+      <span class="pill">🪪 ID Verified at Checkout</span>
+      <span class="pill">📍 Charlotte, North Carolina</span>
     </div>
   </div>
 </div>
 
-<div class="comply">🪪 Every order is age-verified at checkout <b>and</b> re-checked with a valid 21+ government ID at in-store pickup. We never ship — pickup only.</div>
-
-<!-- ================= FEATURED ================= -->
-<section id="featured">
-  <div class="wrap">
-    <div class="h"><h3>🔥 Hot This Week</h3><span class="badge">Staff Favorites</span></div>
-    <p class="sub">What Charlotte keeps coming back for — reserve yours before it sells out.</p>
-    <div class="featrow" id="featrow"></div>
-  </div>
-</section>
+<div class="comply">🪪 All orders require age verification at checkout <b>and</b> a valid 21+ government ID at in-store pickup. We never ship — pickup only.</div>
 
 <!-- ================= SHOP ================= -->
-<section id="shop" style="padding-top:10px">
+<section id="shop">
   <div class="wrap">
     <div class="h"><h3>Shop the Shelves</h3><span class="badge">Reserve for Pickup</span></div>
-    <p class="sub">The full wall — same shelves you see in the shop. Search it or browse by category.</p>
-    <div class="toolbar">
-      <div class="search"><span class="ico">🔎</span><input id="q" type="search" placeholder="Search the shop — try &quot;THCA&quot;, &quot;Backwoods&quot;, &quot;Geek Bar&quot;…" oninput="renderGrid()" aria-label="Search products"></div>
-    </div>
     <div class="cats" id="cats"></div>
     <div class="grid" id="grid"></div>
-    <div class="hemp-note">🌿 <b>Hemp compliance, built in:</b> every cannabinoid product sold (THCA, Delta-9, Delta-8, THC-P) is hemp-derived and 2018 Farm Bill compliant (≤0.3% Δ9-THC by dry weight), with third-party lab COAs available in-store and linked on each product page of your live site.</div>
-  </div>
-</section>
-
-<!-- ================= HOW IT WORKS ================= -->
-<section id="how">
-  <div class="wrap">
-    <div class="h"><h3>Skip the guesswork — order ahead</h3></div>
-    <p class="sub">No more driving over to find it sold out. Reserve online, we set it aside.</p>
-    <div class="steps3">
-      <div class="step"><div class="num">1</div><b>Browse &amp; reserve</b><p>Pick your items online in under two minutes. No payment needed — you pay in-store.</p></div>
-      <div class="step"><div class="num">2</div><b>We text you when it's ready</b><p>Your order is pulled from the shelf and held at the counter — usually within 15 minutes.</p></div>
-      <div class="step"><div class="num">3</div><b>Show ID, pay, go</b><p>Flash a valid 21+ ID, pay at the register, and you're out the door. Easy.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= REVIEWS ================= -->
-<section id="reviews">
-  <div class="wrap">
-    <div class="h"><h3>What Charlotte Says</h3><span class="badge">★ 4.8 · 355 Google reviews</span></div>
-    <p class="sub">That 4.8★ rating is real — it's yours, from your Google listing. The three quotes below are samples; your live site syncs your real reviews automatically.</p>
-    <div class="revgrid">
-      <div class="rev"><div class="stars">★★★★★</div><p>"Finally a smoke shop where I can check what's actually in stock before I drive over. Best THCA selection I've found in Charlotte, hands down."</p><div class="who">Marcus T. <span>· Google review</span></div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>"Reserved on my lunch break, walked in, showed my ID, and was out in two minutes. Staff is professional and they always card — respect."</p><div class="who">Ashley R. <span>· Google review</span></div></div>
-      <div class="rev"><div class="stars">★★★★★</div><p>"My whole hookah setup came from here and the exotic snack wall is dangerous. Fair prices, real ones behind the counter."</p><div class="who">Dee W. <span>· Google review</span></div></div>
-    </div>
   </div>
 </section>
 
 <!-- ================= VISIT ================= -->
-<section id="visit">
+<section id="visit" style="background:#fff;border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="h"><h3>Visit Us</h3></div>
-    <p class="sub">Charlotte's island for everything smoke — come say hi.</p>
-    <div class="visitgrid">
-      <div class="vcard"><h4>📍 Location</h4><p class="note">6400 South Blvd, Ste B<br>Charlotte, NC 28217<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Island+Vape+Shop+6400+South+Blvd+Ste+B+Charlotte+NC+28217"><b>Open in Google Maps →</b></a></p></div>
-      <div class="vcard"><h4>🕒 Hours</h4><p class="note">Open daily<br>8:00 am – 12:00 midnight<br><em>(from your Google Business listing)</em></p></div>
-      <div class="vcard"><h4>📞 Contact</h4><p class="note"><a href="tel:+17049103935"><b>(704) 910-3935</b></a><br>Call or text to confirm stock — reserve online, pay at pickup.</p></div>
-      <div class="vcard"><h4>🪪 Bring</h4><p class="note">A valid government-issued 21+ ID. Required for every pickup, every time — no exceptions.</p></div>
+    <div class="cols" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
+      <div><h4>📍 Location</h4><p class="note">Charlotte, North Carolina<br>(exact address on your live site)</p></div>
+      <div><h4>🕒 Hours</h4><p class="note">Mon–Thu 10a–9p<br>Fri–Sat 10a–11p<br>Sun 11a–7p</p></div>
+      <div><h4>📞 Contact</h4><p class="note">Call/text to confirm stock<br>Order online, pay at pickup</p></div>
     </div>
   </div>
 </section>
 
 <!-- ================= CART MODAL ================= -->
 <div class="overlay" id="cartOv">
-  <div class="modal" role="dialog" aria-modal="true" aria-label="Your reservation" tabindex="-1">
-    <button class="close" onclick="closeAll()" aria-label="Close">×</button>
+  <div class="modal">
+    <button class="close" onclick="closeAll()">×</button>
     <h3>Your Reservation 🛒</h3>
     <div id="cartLines"></div>
     <div class="tot"><span>Total</span><span id="cartTot">$0.00</span></div>
@@ -385,14 +185,14 @@
 
 <!-- ================= CHECKOUT MODAL ================= -->
 <div class="overlay" id="coOv">
-  <div class="modal" role="dialog" aria-modal="true" aria-label="Checkout" tabindex="-1">
-    <button class="close" onclick="closeAll()" aria-label="Close">×</button>
-    <div class="msteps"><div id="s1" class="on"></div><div id="s2"></div><div id="s3"></div></div>
+  <div class="modal">
+    <button class="close" onclick="closeAll()">×</button>
+    <div class="steps"><div id="s1" class="on"></div><div id="s2"></div><div id="s3"></div></div>
 
     <div id="step1">
       <h3>Pickup Details</h3>
-      <div class="field"><label for="cName">Name</label><input id="cName" placeholder="Your name"></div>
-      <div class="field"><label for="cPhone">Mobile (we text you when it's ready)</label><input id="cPhone" placeholder="(704) 555-0123"></div>
+      <div class="field"><label>Name</label><input id="cName" placeholder="Your name"></div>
+      <div class="field"><label>Mobile (for pickup text)</label><input id="cPhone" placeholder="(704) 555-0123"></div>
       <button class="btn" style="width:100%" onclick="toVerify()">Continue to Age Verification →</button>
     </div>
 
@@ -400,21 +200,20 @@
       <h3>Verify Your Age 🪪</h3>
       <div class="verify">
         <div class="chk">🪪</div>
-        <p class="note"><b>Real ID verification.</b> On your live site this is a secure ID check (AgeChecker.net / Yoti) — customers scan or photograph their ID and are verified in seconds. This button simulates it for the preview.</p>
+        <p class="note"><b>Tier-2 ID verification.</b> On your live site this is a secure check (AgeChecker.net / Yoti) — scan or photo your ID, verified in seconds. This is the demo.</p>
         <button class="btn" onclick="doVerify()">Verify with ID (demo)</button>
         <div id="vok" style="display:none;color:var(--ok);font-weight:800;margin-top:10px">✓ Age verified — 21+ confirmed</div>
       </div>
-      <p class="note">Three layers, zero gray area: the 21+ gate at the door, ID verification here at checkout, and staff re-checking the physical ID at pickup.</p>
+      <p class="note">Verification is required before an order is accepted, and staff re-check your physical ID at pickup.</p>
     </div>
 
     <div id="step3" style="display:none;text-align:center">
-      <div style="font-size:44px">🌴✅</div>
+      <div class="chk" style="font-size:44px">🌴✅</div>
       <h3>Reservation Confirmed!</h3>
-      <p class="note">Thanks, <b id="okName">friend</b>! Order <b id="okNum">IV-0000</b> is being pulled from the shelf at <b>Island Vape Shop</b>, Charlotte, NC.</p>
+      <p class="note">Thanks, <b id="okName">friend</b>! Your items are reserved at <b>Island Vape Shop</b>, Charlotte, NC.</p>
       <div class="tot" style="justify-content:center;gap:8px"><span>Pay at pickup:</span><span id="okTot">$0.00</span></div>
-      <p class="note">Bring a valid <b>21+ government ID</b>. We'll text you the moment it's ready.<br><br>
-      <span class="badge">💳 Online payment coming in Phase 2</span></p>
-      <p class="note" style="margin-top:10px">👀 That was your <b>customer's</b> side. Now try <b>yours</b> — <a href="#" onclick="openAdmin();return false"><b>open the Owner Panel →</b></a></p>
+      <p class="note">Bring a valid <b>21+ government ID</b>. We'll text you when it's ready.<br><br>
+      <span class="badge">💳 Online payment coming soon (Phase 2)</span></p>
       <button class="btn" style="width:100%;margin-top:12px" onclick="closeAll();resetCart()">Done</button>
     </div>
   </div>
@@ -422,238 +221,138 @@
 
 <!-- ================= ADMIN MODAL ================= -->
 <div class="overlay" id="admOv">
-  <div class="modal" id="admin" role="dialog" aria-modal="true" aria-label="Owner panel" tabindex="-1">
-    <button class="close" onclick="closeAll()" aria-label="Close">×</button>
+  <div class="modal" id="admin">
+    <button class="close" onclick="closeAll()">×</button>
     <h3>🔑 Owner Panel</h3>
     <div id="admGate">
-      <p class="note">This is <b>your</b> side of the site — add or remove products and change prices anytime, from your phone, no tech skills needed. No calling a developer, no waiting.</p>
-      <div class="field"><label for="admPw">Owner password</label><input id="admPw" type="password" placeholder="demo password: island" onkeydown="if(event.key==='Enter')admLogin()"></div>
+      <p class="note">Manage your storefront — add/remove products and change prices anytime, no tech skills needed.</p>
+      <div class="field"><label>Owner password</label><input id="admPw" type="password" placeholder="demo password: island"></div>
       <button class="btn" style="width:100%" onclick="admLogin()">Log In</button>
     </div>
     <div id="admPanel" style="display:none">
-      <div class="adminhint">✏️ <b>This is live.</b> Change a price or remove an item, close this panel, and watch the shop update instantly. On your real site, changes save to your store — and this panel also shows incoming pickup orders.</div>
+      <div class="adminhint">✏️ This is live — edit a price or remove an item and watch the shop update instantly. On your real site, changes save to your store.</div>
       <div id="admList"></div>
       <h4 style="margin-top:16px">➕ Add a product</h4>
       <div class="field"><input id="nNm" placeholder="Product name"></div>
       <div style="display:flex;gap:8px">
-        <input id="nPr" style="width:90px;padding:10px;border:1px solid var(--line);border-radius:10px;font-family:inherit" placeholder="Price" type="number" step="0.01" min="0">
-        <select id="nCt" style="flex:1;padding:10px;border:1px solid var(--line);border-radius:10px;font-family:inherit"></select>
+        <input id="nPr" class="field" style="width:90px;padding:10px;border:1px solid var(--line);border-radius:8px" placeholder="Price">
+        <select id="nCt" class="field" style="flex:1;padding:10px;border:1px solid var(--line);border-radius:8px"></select>
       </div>
-      <button class="btn" style="width:100%;margin-top:10px" onclick="admAdd()">Add Product</button>
-      <button class="btn ghost dark" style="width:100%;margin-top:8px" onclick="admReset()">Reset demo inventory</button>
+      <button class="btn" style="width:100%;margin-top:8px" onclick="admAdd()">Add Product</button>
+      <button class="btn ghost" style="width:100%;margin-top:8px" onclick="admReset()">Reset demo inventory</button>
     </div>
   </div>
 </div>
-
-<div id="toast" inert></div>
-
-<!-- ================= CTA BAND ================= -->
-<section id="cta" style="padding:10px 0 44px">
-  <div class="wrap">
-    <div class="ctaband">
-      <h3>Like what you see? 🌴</h3>
-      <p>This exact site — your real products, your prices, your hours — can be live for <b>Island Vape Shop</b> in about two weeks, with you in full control of the shelves.</p>
-      <div class="ctas">
-        <a class="btn" href="island-vape-shop-proposal.html">See your proposal &amp; pricing →</a>
-        <a class="btn ghost" href="https://cal.com/ravi-kumar-dwed2m">📅 Book a free 15-min call</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="wrap">
     <div class="cols">
-      <div><h4>🌴 Island Vape Shop</h4><p>6400 South Blvd, Ste B<br>Charlotte, NC 28217<br><a href="tel:+17049103935" style="color:#7fe3d0">(704) 910-3935</a><br>21+ only · order online, pick up in store. We do not ship.</p></div>
-      <div><h4>Hours</h4><p>Open daily<br>8:00 am – 12:00 midnight</p></div>
-      <div><h4>Compliance</h4><p>Age verified at checkout &amp; pickup — valid government ID required. 21+ required for tobacco and vapor products (federal law); 21+ required for all hemp-derived THC and kratom products (store policy). Pickup only, never shipped.</p></div>
-      <div><h4>Owner</h4><p><a href="#" onclick="openAdmin();return false" style="color:#ffd0b3">Owner Login →</a><br>Manage products, prices &amp; orders yourself — from any phone.</p></div>
+      <div><h4>🌴 Island Vape Shop</h4><p>Charlotte, NC · 21+ only. Buy online, pick up in store. We do not ship.</p></div>
+      <div><h4>Compliance</h4><p>Age verified at checkout & pickup. Valid government ID required. Must be 21+ to purchase tobacco/vapor products (NC & federal law).</p></div>
+      <div><h4>Owner</h4><p><a href="#" onclick="openAdmin();return false" style="color:#ffd0b3">Owner Login →</a><br>Manage products & prices yourself.</p></div>
     </div>
-    <div class="fda-foot">
-      WARNING: This product contains nicotine. Nicotine is an addictive chemical. · All hemp-derived cannabinoid products (THCA, Δ9, Δ8, THC-P) are 2018 Farm Bill compliant: ≤0.3% Δ9-THC by dry weight; third-party lab COAs available in-store. · CBD and kratom products have not been evaluated by the FDA and are not intended to diagnose, treat, cure, or prevent any disease. · Keep all products away from children and pets. Do not drive or operate machinery after using THC products.
-    </div>
-    <div class="sig">Sample site built with 🌴 by <b>Symbio AI</b> · symbioai.dev — this is a free preview, not a live store. <a href="island-vape-shop-proposal.html" style="color:#7fe3d0">See your full proposal →</a></div>
+    <div class="sig">Sample site built by <b>Symbio AI</b> · symbioai.dev — this is a free preview, not a live store.</div>
   </div>
 </footer>
 
 <script>
 /* ---------------- DATA ---------------- */
-const CATS = ["THCA Flower","Hemp THC & CBD","Disposable Vapes","E-Liquids","Devices & Pods","Cigarettes","Cigars & Cigarillos","Hookah & Shisha","Glass & Pipes","Kratom & Botanicals","Rolling & Wraps","Snacks & Drinks","Accessories"];
-const CAT_ICON = {
-  "THCA Flower":"🌿","Hemp THC & CBD":"🍬","Disposable Vapes":"💨","E-Liquids":"🧃",
-  "Devices & Pods":"🔋","Cigarettes":"🚬","Cigars & Cigarillos":"🍂","Hookah & Shisha":"💠",
-  "Glass & Pipes":"🌀","Kratom & Botanicals":"🍃","Rolling & Wraps":"📜","Snacks & Drinks":"🍭","Accessories":"⚙️"};
-const CAT_BG = {
-  "THCA Flower":"linear-gradient(135deg,#2d6a4f,#40916c)",
-  "Hemp THC & CBD":"linear-gradient(135deg,#b5179e,#f72585)",
-  "Disposable Vapes":"linear-gradient(135deg,#0e9aa7,#0a7680)",
-  "E-Liquids":"linear-gradient(135deg,#ff7b3d,#e85f22)",
-  "Devices & Pods":"linear-gradient(135deg,#123c4a,#0e9aa7)",
-  "Cigarettes":"linear-gradient(135deg,#590d22,#9d0208)",
-  "Cigars & Cigarillos":"linear-gradient(135deg,#582f0e,#7f5539)",
-  "Hookah & Shisha":"linear-gradient(135deg,#3a0ca3,#4361ee)",
-  "Glass & Pipes":"linear-gradient(135deg,#6a4c93,#8e6cc0)",
-  "Kratom & Botanicals":"linear-gradient(135deg,#386641,#6a994e)",
-  "Rolling & Wraps":"linear-gradient(135deg,#7f5539,#b08968)",
-  "Snacks & Drinks":"linear-gradient(135deg,#fb8500,#ffb703)",
-  "Accessories":"linear-gradient(135deg,#212529,#495057)"};
-/* tags: best = Best Seller · new = New · lab = Lab Tested · pick = Staff Pick · feat = shows in Hot This Week */
+const CATS = ["Disposables","E-Liquids","Vape Devices","Glass & Water Pipes","Hookah & Shisha","CBD & Delta-8","Kratom","Rolling & Wraps","Accessories"];
+const CAT_ICON = {"Disposables":"💨","E-Liquids":"🧃","Vape Devices":"🔋","Glass & Water Pipes":"🌀",
+  "Hookah & Shisha":"💠","CBD & Delta-8":"🌿","Kratom":"🍃","Rolling & Wraps":"📜","Accessories":"⚙️"};
+const CAT_BG = {"Disposables":"linear-gradient(135deg,#0e9aa7,#0a7680)","E-Liquids":"linear-gradient(135deg,#ff7b3d,#e85f22)",
+  "Vape Devices":"linear-gradient(135deg,#123c4a,#0e9aa7)","Glass & Water Pipes":"linear-gradient(135deg,#6a4c93,#8e6cc0)",
+  "Hookah & Shisha":"linear-gradient(135deg,#b5179e,#7209b7)","CBD & Delta-8":"linear-gradient(135deg,#2d6a4f,#40916c)",
+  "Kratom":"linear-gradient(135deg,#386641,#6a994e)","Rolling & Wraps":"linear-gradient(135deg,#9c6644,#7f5539)",
+  "Accessories":"linear-gradient(135deg,#495057,#212529)"};
 const DEFAULT_PRODUCTS = [
-  /* THCA Flower */
-  {id:1, nm:"THCA Flower — Ice Cream Cake 3.5g", ct:"THCA Flower", pr:34.99, tag:"lab", feat:1},
-  {id:2, nm:"THCA Flower — Gelato 41 · 7g", ct:"THCA Flower", pr:59.99, tag:"lab"},
-  {id:3, nm:"THCA Pre-Rolls 1g (2-pack)", ct:"THCA Flower", pr:14.99, tag:"best", feat:1},
-  {id:4, nm:"THCA Diamond-Infused Blunt 2g", ct:"THCA Flower", pr:19.99, tag:"new"},
-  /* Hemp THC & CBD */
-  {id:5, nm:"Delta-9 Gummies 300mg (30ct)", ct:"Hemp THC & CBD", pr:29.99, tag:"best", feat:1},
-  {id:6, nm:"Delta-9 THC Seltzer 10mg", ct:"Hemp THC & CBD", pr:7.99, tag:"new"},
-  {id:7, nm:"Delta-8 Vape Cartridge 1g", ct:"Hemp THC & CBD", pr:24.99},
-  {id:8, nm:"THC-P Disposable 2g", ct:"Hemp THC & CBD", pr:34.99},
-  {id:9, nm:"CBD Tincture 1000mg — Full Spectrum", ct:"Hemp THC & CBD", pr:39.99},
-  /* Disposable Vapes */
-  {id:10, nm:"Geek Bar Pulse 15,000 Puff", ct:"Disposable Vapes", pr:21.99, tag:"best", feat:1},
-  {id:11, nm:"Lost Mary MO20000 Pro", ct:"Disposable Vapes", pr:22.99},
-  {id:12, nm:"RAZ TN9000", ct:"Disposable Vapes", pr:19.99},
-  {id:13, nm:"Elf Bar BC5000", ct:"Disposable Vapes", pr:17.99},
-  /* E-Liquids */
-  {id:14, nm:"Naked 100 — Lava Flow 60ml", ct:"E-Liquids", pr:21.99},
-  {id:15, nm:"Juice Head — Peach Pear 100ml", ct:"E-Liquids", pr:24.99},
-  {id:16, nm:"Pod Juice — Jewel Mint Salt 30ml", ct:"E-Liquids", pr:18.99},
-  {id:17, nm:"Menthol Salt Nic 50mg 30ml", ct:"E-Liquids", pr:16.99},
-  /* Devices & Pods */
-  {id:18, nm:"GeekVape Aegis Legend 2 Kit", ct:"Devices & Pods", pr:59.99},
-  {id:19, nm:"Uwell Caliburn G3 Pod Kit", ct:"Devices & Pods", pr:32.99, tag:"best"},
-  {id:20, nm:"SMOK Nord 5 Kit", ct:"Devices & Pods", pr:39.99},
-  /* Cigarettes */
-  {id:21, nm:"Marlboro Red — Pack", ct:"Cigarettes", pr:8.99},
-  {id:22, nm:"Newport Menthol — Pack", ct:"Cigarettes", pr:8.99},
-  {id:23, nm:"American Spirit Blue — Pack", ct:"Cigarettes", pr:9.99},
-  {id:24, nm:"Marlboro Red — Carton", ct:"Cigarettes", pr:79.99},
-  /* Cigars & Cigarillos */
-  {id:25, nm:"Backwoods Honey Berry (5-pack)", ct:"Cigars & Cigarillos", pr:9.99, tag:"best", feat:1},
-  {id:26, nm:"Swisher Sweets (2-pack)", ct:"Cigars & Cigarillos", pr:2.49},
-  {id:27, nm:"Dutch Masters Green (3-pack)", ct:"Cigars & Cigarillos", pr:3.99},
-  {id:28, nm:"Premium Hand-Rolled — Humidor Pick", ct:"Cigars & Cigarillos", pr:12.99, tag:"pick"},
-  /* Hookah & Shisha */
-  {id:29, nm:'2-Hose Hookah Set — 22"', ct:"Hookah & Shisha", pr:79.99},
-  {id:30, nm:"Al Fakher — Double Apple 250g", ct:"Hookah & Shisha", pr:24.99, tag:"best"},
-  {id:31, nm:"Starbuzz — Blue Mist 100g", ct:"Hookah & Shisha", pr:12.99},
-  {id:32, nm:"Coconut Coals (72ct)", ct:"Hookah & Shisha", pr:11.99},
-  /* Glass & Pipes */
-  {id:33, nm:'12" Beaker Water Pipe', ct:"Glass & Pipes", pr:59.99},
-  {id:34, nm:"Mini Dab Rig w/ Quartz Banger", ct:"Glass & Pipes", pr:44.99},
-  {id:35, nm:"Glass Hand Pipe", ct:"Glass & Pipes", pr:12.99},
-  {id:36, nm:"Silicone Bong — Unbreakable", ct:"Glass & Pipes", pr:24.99},
-  /* Kratom & Botanicals */
-  {id:37, nm:"Kratom Capsules 65ct — Maeng Da", ct:"Kratom & Botanicals", pr:24.99},
-  {id:38, nm:"Kratom Powder 100g — Green Vein", ct:"Kratom & Botanicals", pr:19.99},
-  {id:39, nm:"Kratom Extract Shot", ct:"Kratom & Botanicals", pr:9.99},
-  /* Rolling & Wraps */
-  {id:40, nm:"RAW Classic King Size + Tips", ct:"Rolling & Wraps", pr:3.99, tag:"best"},
-  {id:41, nm:"King Palm Mini Rolls (2-pack)", ct:"Rolling & Wraps", pr:4.99},
-  {id:42, nm:"Hemp Wraps (2-pack)", ct:"Rolling & Wraps", pr:2.99},
-  {id:43, nm:"Pre-Rolled Cones (6-pack)", ct:"Rolling & Wraps", pr:5.99},
-  /* Snacks & Drinks */
-  {id:44, nm:"Exotic Chips — International Flavors", ct:"Snacks & Drinks", pr:6.99, tag:"new", feat:1},
-  {id:45, nm:"Japanese Kit Kat — Assorted", ct:"Snacks & Drinks", pr:5.99},
-  {id:46, nm:"Mexican Candy Mix Bag", ct:"Snacks & Drinks", pr:7.99},
-  {id:47, nm:"Ramune Soda — Original", ct:"Snacks & Drinks", pr:3.49},
-  {id:48, nm:"Imported Exotic Sodas", ct:"Snacks & Drinks", pr:4.49},
-  /* Accessories */
-  {id:49, nm:"4-Piece Herb Grinder", ct:"Accessories", pr:16.99},
-  {id:50, nm:"Dual-Flame Torch Lighter", ct:"Accessories", pr:13.99},
-  {id:51, nm:"18650 Battery + Charger", ct:"Accessories", pr:19.99},
-  {id:52, nm:"Replacement Coils (5-pack)", ct:"Accessories", pr:12.99},
-  {id:53, nm:"Smell-Proof Stash Bag", ct:"Accessories", pr:14.99, tag:"pick"}
+  {id:1,nm:"Island Breeze Disposable 5%",ct:"Disposables",pr:19.99},
+  {id:2,nm:"Tropic 10K Puff Disposable",ct:"Disposables",pr:24.99},
+  {id:3,nm:"Menthol Chill Disposable",ct:"Disposables",pr:18.99},
+  {id:4,nm:"Mango Sunset E-Liquid 60ml",ct:"E-Liquids",pr:22.99},
+  {id:5,nm:"Blue Wave Salt Nic 30ml",ct:"E-Liquids",pr:16.99},
+  {id:6,nm:"Coastal Custard 60ml",ct:"E-Liquids",pr:21.99},
+  {id:7,nm:"Starter Mod Kit 80W",ct:"Vape Devices",pr:49.99},
+  {id:8,nm:"Pod System Kit",ct:"Vape Devices",pr:34.99},
+  {id:9,nm:"Sub-Ohm Tank",ct:"Vape Devices",pr:27.99},
+  {id:10,nm:'12" Beaker Water Pipe',ct:"Glass & Water Pipes",pr:59.99},
+  {id:11,nm:"Mini Dab Rig",ct:"Glass & Water Pipes",pr:44.99},
+  {id:12,nm:"Silicone Hand Pipe",ct:"Glass & Water Pipes",pr:14.99},
+  {id:13,nm:"Hookah Set + Bowl",ct:"Hookah & Shisha",pr:79.99},
+  {id:14,nm:"Shisha Flavor 250g",ct:"Hookah & Shisha",pr:24.99},
+  {id:15,nm:"Coconut Coals (box)",ct:"Hookah & Shisha",pr:11.99},
+  {id:16,nm:"Delta-8 Gummies 25mg",ct:"CBD & Delta-8",pr:29.99},
+  {id:17,nm:"CBD Tincture 1000mg",ct:"CBD & Delta-8",pr:39.99},
+  {id:18,nm:"Delta-8 Cartridge 1g",ct:"CBD & Delta-8",pr:34.99},
+  {id:19,nm:"Kratom Capsules 60ct",ct:"Kratom",pr:24.99},
+  {id:20,nm:"Kratom Powder 100g",ct:"Kratom",pr:19.99},
+  {id:21,nm:"Kratom Extract Shot",ct:"Kratom",pr:9.99},
+  {id:22,nm:"King Size Rolling Papers",ct:"Rolling & Wraps",pr:3.99},
+  {id:23,nm:"Hemp Wraps (2pk)",ct:"Rolling & Wraps",pr:2.99},
+  {id:24,nm:"Pre-Rolled Cones (6pk)",ct:"Rolling & Wraps",pr:5.99},
+  {id:25,nm:"Replacement Coils (5pk)",ct:"Accessories",pr:12.99},
+  {id:26,nm:"18650 Battery",ct:"Accessories",pr:14.99},
+  {id:27,nm:"4-Piece Herb Grinder",ct:"Accessories",pr:16.99},
+  {id:28,nm:"Torch Lighter",ct:"Accessories",pr:13.99}
 ];
-const TAG_LABEL = {best:"Best Seller", new:"New", lab:"Lab Tested", pick:"Staff Pick"};
-let PRODUCTS = load("iv_products_v2", DEFAULT_PRODUCTS);
+let PRODUCTS = load("iv_products", DEFAULT_PRODUCTS);
 let cart = {}; let activeCat = "All"; let coTotal = 0;
 
-function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
-function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
-function load(k,def){try{return JSON.parse(lsGet(k))||JSON.parse(JSON.stringify(def))}catch(e){return JSON.parse(JSON.stringify(def))}}
-function save(){lsSet("iv_products_v2",JSON.stringify(PRODUCTS))}
+function load(k,def){try{return JSON.parse(localStorage.getItem(k))||def}catch(e){return def}}
+function save(){localStorage.setItem("iv_products",JSON.stringify(PRODUCTS))}
 function money(n){return "$"+Number(n).toFixed(2)}
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 
 /* ---------------- AGE GATE ---------------- */
 (function initGate(){
   const mm=document.getElementById("mm"),dd=document.getElementById("dd"),yy=document.getElementById("yy");
   ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].forEach((m,i)=>mm.add(new Option(m,i+1)));
   for(let d=1;d<=31;d++)dd.add(new Option(d,d));
-  const nowY=new Date().getFullYear();
-  for(let y=nowY;y>=nowY-100;y--)yy.add(new Option(y,y));
-  if(lsGet("iv_age_ok")==="1"){document.getElementById("gate").style.display="none";}
+  const now=2026; for(let y=now;y>=now-90;y--)yy.add(new Option(y,y));
+  if(localStorage.getItem("iv_age_ok")==="1"){document.getElementById("gate").style.display="none";}
 })();
 function checkAge(){
   const m=+mm.value,d=+dd.value,y=+yy.value;
-  const deny=document.getElementById("deny");
-  if(!m||!d||!y){deny.style.display="block";deny.textContent="Please enter your full date of birth.";return;}
-  const t=new Date();
-  let age=t.getFullYear()-y;
-  if(t.getMonth()+1<m||(t.getMonth()+1===m&&t.getDate()<d))age--;
-  if(age>=21){lsSet("iv_age_ok","1");document.getElementById("gate").style.display="none";}
-  else{deny.style.display="block";deny.textContent="Sorry — you must be 21 or older to enter.";}
+  if(!m||!d||!y){document.getElementById("deny").style.display="block";document.getElementById("deny").textContent="Please enter your full date of birth.";return;}
+  const age=2026-y-((7<m||(7===m&&1<d))?1:0);
+  if(age>=21){localStorage.setItem("iv_age_ok","1");document.getElementById("gate").style.display="none";}
+  else{document.getElementById("deny").style.display="block";document.getElementById("deny").textContent="Sorry — you must be 21 or older to enter.";}
 }
 
 /* ---------------- STORE RENDER ---------------- */
-function prodCard(p){
-  const d=document.createElement("div");d.className="prod";
-  const tag=p.tag&&TAG_LABEL[p.tag]?`<span class="tag ${p.tag}">${TAG_LABEL[p.tag]}</span>`:"";
-  d.innerHTML=`${tag}<div class="img" style="background:${CAT_BG[p.ct]||'linear-gradient(135deg,#0e9aa7,#0a7680)'}">${CAT_ICON[p.ct]||"💨"}</div>
-    <div class="body"><div class="ct">${esc(p.ct)}</div><div class="nm">${esc(p.nm)}</div>
-    <div class="row2"><span class="pr">${money(p.pr)}</span><button class="add" onclick="addCart(${p.id})">+ Add</button></div></div>`;
-  return d;
-}
 function renderCats(){
   const el=document.getElementById("cats");
   el.innerHTML="";
   ["All",...CATS].forEach(c=>{
-    const b=document.createElement("button");b.type="button";
-    b.className="cat"+(c===activeCat?" active":"");
-    b.setAttribute("aria-pressed",c===activeCat?"true":"false");
-    b.textContent=c==="All"?"All Products":c;
-    b.onclick=()=>{activeCat=c;renderCats();renderGrid()};el.appendChild(b);
+    const b=document.createElement("div");b.className="cat"+(c===activeCat?" active":"");
+    b.textContent=c;b.onclick=()=>{activeCat=c;renderCats();renderGrid()};el.appendChild(b);
   });
 }
 function renderGrid(){
   const g=document.getElementById("grid");g.innerHTML="";
-  const q=(document.getElementById("q").value||"").trim().toLowerCase();
-  const list=PRODUCTS.filter(p=>(activeCat==="All"||p.ct===activeCat)&&(!q||p.nm.toLowerCase().includes(q)||p.ct.toLowerCase().includes(q)));
-  if(!list.length){g.innerHTML='<div class="empty">Nothing matches that search — but on your live site, customers can text you to ask. 📱</div>';return;}
-  list.forEach(p=>g.appendChild(prodCard(p)));
+  PRODUCTS.filter(p=>activeCat==="All"||p.ct===activeCat).forEach(p=>{
+    const d=document.createElement("div");d.className="prod";
+    d.innerHTML=`<div class="img" style="background:${CAT_BG[p.ct]||'#0e9aa7'}">${CAT_ICON[p.ct]||"💨"}</div>
+      <div class="body"><div class="nm">${esc(p.nm)}</div><div class="ct">${esc(p.ct)}</div>
+      <div class="pr">${money(p.pr)}</div><button class="add" onclick="addCart(${p.id})">Add to Cart</button></div>`;
+    g.appendChild(d);
+  });
 }
-function renderFeat(){
-  const f=document.getElementById("featrow");f.innerHTML="";
-  PRODUCTS.filter(p=>p.feat).forEach(p=>f.appendChild(prodCard(p)));
-}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 
 /* ---------------- CART ---------------- */
-function addCart(id){
-  cart[id]=(cart[id]||0)+1;updateCartCount();
-  const p=PRODUCTS.find(x=>x.id==id);
-  toast(`Added <b>${esc(p?p.nm:"item")}</b> to your reservation`);
-  const n=document.getElementById("cn");n.classList.remove("pop");void n.offsetWidth;n.classList.add("pop");
-}
-let toastTimer=null;
-function toast(html){
-  const t=document.getElementById("toast");t.innerHTML=html+' · <a href="#" style="color:#7fe3d0" onclick="openCart();return false">View cart</a>';
-  t.classList.add("show");t.style.pointerEvents="auto";t.removeAttribute("inert");
-  clearTimeout(toastTimer);toastTimer=setTimeout(()=>{t.classList.remove("show");t.style.pointerEvents="none";t.setAttribute("inert","");},2600);
-}
-function updateCartCount(){document.getElementById("cn").textContent=cartArr().reduce((a,x)=>a+x.q,0);}
+function addCart(id){cart[id]=(cart[id]||0)+1;updateCartCount();openCart();}
+function updateCartCount(){document.getElementById("cn").textContent=Object.values(cart).reduce((a,b)=>a+b,0);}
 function cartArr(){return Object.entries(cart).map(([id,q])=>({p:PRODUCTS.find(x=>x.id==id),q})).filter(x=>x.p);}
 function cartTotal(){return cartArr().reduce((a,x)=>a+x.p.pr*x.q,0);}
 function openCart(){
   const box=document.getElementById("cartLines");box.innerHTML="";
   const items=cartArr();
-  if(!items.length){box.innerHTML='<p class="note">Your cart is empty — add something from the shelves.</p>';}
+  if(!items.length){box.innerHTML='<p class="note">Your cart is empty — add something from the shop.</p>';}
   items.forEach(x=>{
     const r=document.createElement("div");r.className="li";
-    r.innerHTML=`<div class="nm">${esc(x.p.nm)}<br><span class="note">${money(x.p.pr)} each</span></div>
-      <div class="q"><button onclick="chg(${x.p.id},-1)" aria-label="Less">−</button><b>${x.q}</b><button onclick="chg(${x.p.id},1)" aria-label="More">+</button></div>`;
+    r.innerHTML=`<div class="nm">${esc(x.p.nm)}<br><span class="note">${money(x.p.pr)}</span></div>
+      <div class="q"><button onclick="chg(${x.p.id},-1)">−</button><b>${x.q}</b><button onclick="chg(${x.p.id},1)">+</button></div>`;
     box.appendChild(r);
   });
   document.getElementById("cartTot").textContent=money(cartTotal());
@@ -665,11 +364,10 @@ function resetCart(){cart={};updateCartCount();}
 /* ---------------- CHECKOUT ---------------- */
 function startCheckout(){if(!cartArr().length){alert("Add something first!");return;}coTotal=cartTotal();stepTo(1);show("coOv");}
 function stepTo(n){[1,2,3].forEach(i=>{document.getElementById("step"+i).style.display=i===n?"block":"none";document.getElementById("s"+i).className=i<=n?"on":"";});}
-function toVerify(){if(!document.getElementById("cName").value.trim()){alert("Enter your name");return;}document.getElementById("vok").style.display="none";stepTo(2);}
+function toVerify(){if(!document.getElementById("cName").value){alert("Enter your name");return;}stepTo(2);}
 function doVerify(){document.getElementById("vok").style.display="block";setTimeout(()=>{
-  document.getElementById("okName").textContent=document.getElementById("cName").value.trim()||"friend";
-  document.getElementById("okNum").textContent="IV-"+(1000+Math.floor(Math.random()*9000));
-  document.getElementById("okTot").textContent=money(coTotal);stepTo(3);resetCart();},700);}
+  document.getElementById("okName").textContent=document.getElementById("cName").value||"friend";
+  document.getElementById("okTot").textContent=money(coTotal);stepTo(3);},700);}
 
 /* ---------------- ADMIN ---------------- */
 function openAdmin(){document.getElementById("admGate").style.display="block";document.getElementById("admPanel").style.display="none";document.getElementById("admPw").value="";show("admOv");}
@@ -679,82 +377,26 @@ function renderAdmin(){
   PRODUCTS.forEach(p=>{
     const r=document.createElement("div");r.className="arow";
     r.innerHTML=`<input class="anm" value="${esc(p.nm)}" onchange="admEdit(${p.id},'nm',this.value)">
-      <input class="apr" type="number" step="0.01" min="0" value="${p.pr}" onchange="admEdit(${p.id},'pr',this.value)">
+      <input class="apr" type="number" step="0.01" value="${p.pr}" onchange="admEdit(${p.id},'pr',this.value)">
       <button class="del" onclick="admDel(${p.id})">Remove</button>`;
     l.appendChild(r);
   });
-  const sel=document.getElementById("nCt");const keep=sel.value;sel.innerHTML="";CATS.forEach(c=>sel.add(new Option(c,c)));
-  if(keep&&CATS.includes(keep))sel.value=keep;
+  const sel=document.getElementById("nCt");sel.innerHTML="";CATS.forEach(c=>sel.add(new Option(c,c)));
 }
-function admEdit(id,f,v){const p=PRODUCTS.find(x=>x.id==id);if(!p)return;
-  if(f==="pr"){const n=parseFloat(v);if(!isFinite(n)||n<=0){alert("Enter a price above $0");renderAdmin();return;}p.pr=n;}
-  else{p[f]=v;}
-  save();renderGrid();renderFeat();}
-function admDel(id){PRODUCTS=PRODUCTS.filter(x=>x.id!=id);delete cart[id];updateCartCount();save();renderAdmin();renderGrid();renderFeat();}
+function admEdit(id,f,v){const p=PRODUCTS.find(x=>x.id==id);if(!p)return;p[f]=f==="pr"?parseFloat(v)||0:v;save();renderGrid();}
+function admDel(id){PRODUCTS=PRODUCTS.filter(x=>x.id!=id);save();renderAdmin();renderGrid();}
 function admAdd(){const nm=document.getElementById("nNm").value.trim();const pr=parseFloat(document.getElementById("nPr").value);const ct=document.getElementById("nCt").value;
-  if(!nm||!(pr>0)){alert("Enter a name and price");return;}
-  PRODUCTS.push({id:Date.now(),nm,ct,pr});save();document.getElementById("nNm").value="";document.getElementById("nPr").value="";renderAdmin();renderGrid();toast(`<b>${esc(nm)}</b> added to your shop`);}
-function admReset(){if(confirm("Reset demo inventory to defaults?")){PRODUCTS=JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
-  Object.keys(cart).forEach(k=>{if(!PRODUCTS.find(p=>p.id==k))delete cart[k];});updateCartCount();
-  save();renderAdmin();renderGrid();renderFeat();}}
+  if(!nm||!pr){alert("Enter a name and price");return;}
+  PRODUCTS.push({id:Date.now(),nm,ct,pr});save();document.getElementById("nNm").value="";document.getElementById("nPr").value="";renderAdmin();renderGrid();}
+function admReset(){if(confirm("Reset demo inventory to defaults?")){PRODUCTS=JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));save();renderAdmin();renderGrid();}}
 
 /* ---------------- MODAL HELPERS ---------------- */
-let lastFocus=null;
-function show(id){
-  closeAll();
-  const ov=document.getElementById(id);ov.classList.add("open");
-  lastFocus=document.activeElement;
-  document.body.style.overflow="hidden";
-  const m=ov.querySelector(".modal");if(m)m.focus();
-}
-function closeAll(){
-  const wasOpen=document.querySelector(".overlay.open");
-  document.querySelectorAll(".overlay").forEach(o=>o.classList.remove("open"));
-  document.body.style.overflow="";
-  if(wasOpen&&lastFocus&&lastFocus.focus){lastFocus.focus();lastFocus=null;}
-}
+function show(id){closeAll();document.getElementById(id).classList.add("open");}
+function closeAll(){document.querySelectorAll(".overlay").forEach(o=>o.classList.remove("open"));}
 document.querySelectorAll(".overlay").forEach(o=>o.addEventListener("click",e=>{if(e.target===o)closeAll();}));
-document.addEventListener("keydown",e=>{
-  if(e.key==="Escape"){closeAll();return;}
-  if(e.key!=="Tab")return;
-  const ov=document.querySelector(".overlay.open");if(!ov)return;
-  const f=[...ov.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')].filter(el=>el.offsetParent!==null);
-  if(!f.length)return;
-  const first=f[0],last=f[f.length-1];
-  if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault();}
-  else if(!e.shiftKey&&(document.activeElement===last||!ov.contains(document.activeElement))){first.focus();e.preventDefault();}
-});
-
-/* ---------------- 24H PREVIEW LINK ---------------- */
-const LINK_SALT="symbio-iv-2026", LINK_HOURS=24;
-function linkSig(s){let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h).toString(36).padStart(6,"0").slice(0,6)}
-function linkCheck(){
-  try{
-    const k=new URLSearchParams(location.search).get("k");
-    if(k){
-      const p=k.split("."),t=parseInt(p[0],36);
-      if(t&&p[1]===linkSig(LINK_SALT+p[0])){
-        const exp=(t+LINK_HOURS*60)*60000;
-        if(t*60000<Date.now()+3600000&&Date.now()<exp){lsSet("iv_link_until",String(exp));return exp;}
-      }
-    }
-    const until=+lsGet("iv_link_until")||0;
-    if(Date.now()<until)return until;
-  }catch(e){}
-  return 0;
-}
-const PREVIEW_UNTIL=linkCheck();
-if(!PREVIEW_UNTIL){
-  document.getElementById("lock").style.display="flex";
-  document.getElementById("gate").style.display="none";
-  document.body.style.overflow="hidden";
-}else{
-  const hl=Math.max(1,Math.round((PREVIEW_UNTIL-Date.now())/3600000));
-  document.getElementById("pvleft").textContent=" · ⏳ private preview: ~"+hl+"h left";
-}
 
 /* ---------------- INIT ---------------- */
-renderCats();renderGrid();renderFeat();updateCartCount();
+renderCats();renderGrid();updateCartCount();
 </script>
 </body>
 </html>
