@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Superior Bakery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--a:#D4702F}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,sans-serif;color:#1a1a2e;line-height:1.6}
+h1,h2,h3{font-family:Poppins,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;background:#fffffff2;backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #eee}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+nav .logo{font-family:Poppins;font-weight:800;font-size:20px;color:var(--a)}
+nav a{margin-left:22px;text-decoration:none;color:#444;font-weight:500;font-size:15px}
+.btn{background:var(--a);color:#fff;padding:12px 22px;border-radius:30px;text-decoration:none;font-weight:600;display:inline-block;box-shadow:0 6px 18px #0002;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.hero{background:linear-gradient(135deg,var(--a),#1a1a2e);color:#fff;padding:96px 0;text-align:center}
+.hero h1{font-size:clamp(34px,6vw,60px);font-weight:800;margin-bottom:14px}
+.hero p{font-size:20px;opacity:.92;max-width:640px;margin:0 auto 30px}
+section{padding:70px 0}
+.sec-label{text-align:center;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--a);font-weight:600;margin-bottom:8px}
+h2{text-align:center;font-size:34px;margin-bottom:42px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{border:1px solid #eee;border-radius:16px;padding:28px;transition:.2s;background:#fff}
+.card:hover{box-shadow:0 12px 30px #0001;transform:translateY(-4px)}
+.card h3{font-size:19px;margin-bottom:8px;color:var(--a)}
+.card p{color:#555;font-size:15px}
+.about{background:#f7f8fa}
+.about .wrap{max-width:760px;text-align:center}
+.about p{font-size:18px;color:#444}
+.cta-band{background:var(--a);color:#fff;text-align:center;padding:64px 0}
+.cta-band h2{color:#fff}.cta-band .btn{background:#fff;color:var(--a);margin-top:10px}
+.hours{text-align:center;font-size:18px;color:#444;margin-top:18px}
+footer{background:#1a1a2e;color:#cbd5e1;text-align:center;padding:40px 0;font-size:14px}
+.ribbon{position:fixed;bottom:14px;right:14px;background:#1a1a2e;color:#fff;padding:8px 14px;border-radius:24px;font-size:12px;opacity:.85;z-index:20}
+.ribbon b{color:var(--a)}
+</style></head><body>
+<nav><div class="wrap"><span class="logo">La Superior Bakery</span><div><a href="#about">About</a><a href="#offer">Our Specialties</a><a class="btn" href="tel:+1-210-924-1616">📞 Call</a></div></div></nav>
+<header class="hero"><div class="wrap"><h1>San Antonio&#x27;s Soul in Every Bite Since 1967</h1><p>Handcrafted pan dulce, crusty bolillos, and fresh conchas baked daily with recipes passed down through generations.</p><a class="btn" href="tel:+1-210-924-1616">Order Now</a></div></header>
+<section id="offer"><div class="wrap"><div class="sec-label">Our Specialties</div><h2>Our Specialties</h2><div class="grid"><div class="card"><h3>Pan Dulce &amp; Pastries</h3><p>Colorful conchas, orejas, polvorones, and more—each piece a work of art baked fresh daily.</p></div><div class="card"><h3>Bolillos &amp; Sandwich Rolls</h3><p>Crispy-outside, soft-inside rolls perfect for tortas, breakfast, or dinner.</p></div><div class="card"><h3>Breads &amp; Specialty Loaves</h3><p>Traditional pan de muerto, rosca de reyes, and custom orders for weddings and events.</p></div><div class="card"><h3>Tres Leches &amp; Sheet Cakes</h3><p>Moist, flavorful cakes available for celebrations—order ahead for custom designs.</p></div><div class="card"><h3>Empanadas &amp; Savory Pastries</h3><p>Handheld treasures filled with cheese, meat, and seasonal fillings.</p></div><div class="card"><h3>Custom Orders</h3><p>Planning a party, quinceañera, or special event? We create beautiful cakes and platters to order.</p></div></div></div></section>
+<section class="about" id="about"><div class="wrap"><div class="sec-label">About Us</div><h2>La Superior Bakery</h2><p>La Superior Bakery has been a cornerstone of San Antonio&#x27;s community for over 55 years, filling our neighborhood with the irresistible aroma of traditional Mexican breads and pastries. Every morning, our bakers arrive before dawn to mix, shape, and bake using time-honored techniques and the finest ingredients. Whether you&#x27;re grabbing breakfast or stocking up for a celebration, you&#x27;ll taste the difference that tradition and care make.</p><div class="hours">🕒 Daily 6am–9pm</div></div></section>
+<section><div class="wrap"><div class="sec-label">Why Choose Us</div><h2>What Sets Us Apart</h2><div class="grid"><div class="card"><h3>Four Generations of Tradition</h3><p>Our recipes and techniques have been perfected and loved by San Antonio families for decades.</p></div><div class="card"><h3>Baked Fresh Every Morning</h3><p>We arrive early to bake while you sleep—so you get warm, authentic pan dulce exactly as it should taste.</p></div><div class="card"><h3>Part of Your Neighborhood</h3><p>We&#x27;re not a chain—we&#x27;re your local bakery, rooted in this community and committed to feeding it well.</p></div></div></div></section>
+<section class="cta-band"><div class="wrap"><h2>Ready to visit La Superior Bakery?</h2><p>We'd love to hear from you.</p><a class="btn" href="tel:+1-210-924-1616">Order Now</a></div></section>
+<footer><div class="wrap">La Superior Bakery · San Antonio, TX · <a href="tel:+1-210-924-1616" style="color:#fff">+1-210-924-1616</a><br><br>© 2026 La Superior Bakery. All rights reserved.</div></footer>
+<div class="ribbon">Sample built by <b>Symbio AI</b></div>
+</body></html>

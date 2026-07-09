@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>John&#x27;s Cafe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--a:#6F4E37}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,sans-serif;color:#1a1a2e;line-height:1.6}
+h1,h2,h3{font-family:Poppins,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;background:#fffffff2;backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #eee}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+nav .logo{font-family:Poppins;font-weight:800;font-size:20px;color:var(--a)}
+nav a{margin-left:22px;text-decoration:none;color:#444;font-weight:500;font-size:15px}
+.btn{background:var(--a);color:#fff;padding:12px 22px;border-radius:30px;text-decoration:none;font-weight:600;display:inline-block;box-shadow:0 6px 18px #0002;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.hero{background:linear-gradient(135deg,var(--a),#1a1a2e);color:#fff;padding:96px 0;text-align:center}
+.hero h1{font-size:clamp(34px,6vw,60px);font-weight:800;margin-bottom:14px}
+.hero p{font-size:20px;opacity:.92;max-width:640px;margin:0 auto 30px}
+section{padding:70px 0}
+.sec-label{text-align:center;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--a);font-weight:600;margin-bottom:8px}
+h2{text-align:center;font-size:34px;margin-bottom:42px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{border:1px solid #eee;border-radius:16px;padding:28px;transition:.2s;background:#fff}
+.card:hover{box-shadow:0 12px 30px #0001;transform:translateY(-4px)}
+.card h3{font-size:19px;margin-bottom:8px;color:var(--a)}
+.card p{color:#555;font-size:15px}
+.about{background:#f7f8fa}
+.about .wrap{max-width:760px;text-align:center}
+.about p{font-size:18px;color:#444}
+.cta-band{background:var(--a);color:#fff;text-align:center;padding:64px 0}
+.cta-band h2{color:#fff}.cta-band .btn{background:#fff;color:var(--a);margin-top:10px}
+.hours{text-align:center;font-size:18px;color:#444;margin-top:18px}
+footer{background:#1a1a2e;color:#cbd5e1;text-align:center;padding:40px 0;font-size:14px}
+.ribbon{position:fixed;bottom:14px;right:14px;background:#1a1a2e;color:#fff;padding:8px 14px;border-radius:24px;font-size:12px;opacity:.85;z-index:20}
+.ribbon b{color:var(--a)}
+</style></head><body>
+<nav><div class="wrap"><span class="logo">John&#x27;s Cafe</span><div><a href="#about">About</a><a href="#offer">What We Serve</a><a class="btn" href="tel:+1-214-874-0800">📞 Call</a></div></div></nav>
+<header class="hero"><div class="wrap"><h1>Where Dallas gathers for real coffee and real conversation</h1><p>Locally roasted espresso, fresh pastries, and a seat at the table since 2008.</p><a class="btn" href="tel:+1-214-874-0800">Visit Us Today</a></div></header>
+<section id="offer"><div class="wrap"><div class="sec-label">What We Serve</div><h2>What We Serve</h2><div class="grid"><div class="card"><h3>Specialty Coffee</h3><p>Single-origin beans roasted in-house, pulled by baristas who actually care about your drink.</p></div><div class="card"><h3>Breakfast &amp; Brunch</h3><p>Eggs done right, house-made pastries, and avocado toast that tastes like more than Instagram.</p></div><div class="card"><h3>Lunch Sandwiches</h3><p>Seasonal, made-to-order sandwiches on bread from the best bakeries in Dallas.</p></div><div class="card"><h3>Pastries &amp; Sweets</h3><p>Croissants, cinnamon rolls, and cookies baked fresh every morning in our kitchen.</p></div><div class="card"><h3>WiFi &amp; Workspace</h3><p>Reliable internet and tables built for laptops—stay as long as you need.</p></div><div class="card"><h3>Catering &amp; Events</h3><p>Coffee service and custom pastry platters for your Dallas office or gathering.</p></div></div></div></section>
+<section class="about" id="about"><div class="wrap"><div class="sec-label">About Us</div><h2>John&#x27;s Cafe</h2><p>John&#x27;s Cafe has been a Dallas institution for over 15 years, roasting our own beans and baking fresh daily in our open kitchen. We&#x27;re the kind of place where regulars know your order and strangers become friends over a shared table. Whether you&#x27;re catching up before work or settling in with a book, you&#x27;re home here.</p><div class="hours">🕒 Mon–Fri 6:30am–6pm, Sat–Sun 7:30am–5pm</div></div></section>
+<section><div class="wrap"><div class="sec-label">Why Choose Us</div><h2>What Sets Us Apart</h2><div class="grid"><div class="card"><h3>We Roast Our Own</h3><p>No middleman, no stale beans. You taste the difference in every cup.</p></div><div class="card"><h3>Built for Community</h3><p>This isn&#x27;t a chain. It&#x27;s a place where people actually know each other and the owner knows your name.</p></div><div class="card"><h3>Quality Over Trends</h3><p>We&#x27;ve stayed true to good coffee, good food, and good people for 15+ years.</p></div></div></div></section>
+<section class="cta-band"><div class="wrap"><h2>Ready to visit John&#x27;s Cafe?</h2><p>We'd love to hear from you.</p><a class="btn" href="tel:+1-214-874-0800">Visit Us Today</a></div></section>
+<footer><div class="wrap">John&#x27;s Cafe · Dallas, TX · <a href="tel:+1-214-874-0800" style="color:#fff">+1-214-874-0800</a><br><br>© 2026 John&#x27;s Cafe. All rights reserved.</div></footer>
+<div class="ribbon">Sample built by <b>Symbio AI</b></div>
+</body></html>
