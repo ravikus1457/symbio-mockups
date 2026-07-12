@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Perfect Salon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--a:#D1A7A7}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,sans-serif;color:#1a1a2e;line-height:1.6}
+h1,h2,h3{font-family:Poppins,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:0;background:#fffffff2;backdrop-filter:blur(8px);z-index:10;border-bottom:1px solid #eee}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+nav .logo{font-family:Poppins;font-weight:800;font-size:20px;color:var(--a)}
+nav a{margin-left:22px;text-decoration:none;color:#444;font-weight:500;font-size:15px}
+.btn{background:var(--a);color:#fff;padding:12px 22px;border-radius:30px;text-decoration:none;font-weight:600;display:inline-block;box-shadow:0 6px 18px #0002;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.hero{background:linear-gradient(135deg,var(--a),#1a1a2e);color:#fff;padding:96px 0;text-align:center}
+.hero h1{font-size:clamp(34px,6vw,60px);font-weight:800;margin-bottom:14px}
+.hero p{font-size:20px;opacity:.92;max-width:640px;margin:0 auto 30px}
+section{padding:70px 0}
+.sec-label{text-align:center;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--a);font-weight:600;margin-bottom:8px}
+h2{text-align:center;font-size:34px;margin-bottom:42px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{border:1px solid #eee;border-radius:16px;padding:28px;transition:.2s;background:#fff}
+.card:hover{box-shadow:0 12px 30px #0001;transform:translateY(-4px)}
+.card h3{font-size:19px;margin-bottom:8px;color:var(--a)}
+.card p{color:#555;font-size:15px}
+.about{background:#f7f8fa}
+.about .wrap{max-width:760px;text-align:center}
+.about p{font-size:18px;color:#444}
+.cta-band{background:var(--a);color:#fff;text-align:center;padding:64px 0}
+.cta-band h2{color:#fff}.cta-band .btn{background:#fff;color:var(--a);margin-top:10px}
+.hours{text-align:center;font-size:18px;color:#444;margin-top:18px}
+footer{background:#1a1a2e;color:#cbd5e1;text-align:center;padding:40px 0;font-size:14px}
+.ribbon{position:fixed;bottom:14px;right:14px;background:#1a1a2e;color:#fff;padding:8px 14px;border-radius:24px;font-size:12px;opacity:.85;z-index:20}
+.ribbon b{color:var(--a)}
+</style></head><body>
+<nav><div class="wrap"><span class="logo">Perfect Salon</span><div><a href="#about">About</a><a href="#offer">Our Signature Hair Services</a><a class="btn" href="tel:+1-503-777-3666">📞 Call</a></div></div></nav>
+<header class="hero"><div class="wrap"><h1>Crafting Your Perfect Look, Right Here in Portland.</h1><p>Step into Perfect Salon for an unforgettable experience where precision styling meets personalized care.</p><a class="btn" href="tel:+1-503-777-3666">Book Your Perfect Look</a></div></header>
+<section id="offer"><div class="wrap"><div class="sec-label">Our Signature Hair Services</div><h2>Our Signature Hair Services</h2><div class="grid"><div class="card"><h3>Precision Haircuts &amp; Styling</h3><p>From a chic, modern bob to elegant layers, our expert stylists deliver tailored cuts and stunning blowouts that perfectly complement your individual style and face shape.</p></div><div class="card"><h3>Custom Color &amp; Highlights</h3><p>Discover your ideal shade with our bespoke color services, including vibrant all-over color, sun-kissed balayage, delicate highlights, and seamless root touch-ups.</p></div><div class="card"><h3>Restorative Hair Treatments</h3><p>Revitalize your locks with our range of deep conditioning, Olaplex, and customized strengthening treatments designed to restore health, shine, and manageability.</p></div><div class="card"><h3>Special Occasion Updos</h3><p>Look and feel your absolute best for weddings, proms, or any special event with our elegant updos and sophisticated styling, crafted to last all day and night.</p></div><div class="card"><h3>Men&#x27;s Modern Grooming</h3><p>Experience sharp, refined looks with our precision men&#x27;s haircuts, classic trims, and expert beard detailing, ensuring you leave feeling confident and polished.</p></div></div></div></section>
+<section class="about" id="about"><div class="wrap"><div class="sec-label">About Us</div><h2>Perfect Salon</h2><p>Nestled in the vibrant heart of Portland, Perfect Salon is your destination for exceptional hair artistry. Our passionate team of expert stylists is dedicated to enhancing your natural beauty and bringing your hair vision to life, ensuring every visit leaves you feeling confident and radiant. We pride ourselves on creating a welcoming atmosphere where you can relax, be pampered, and truly enjoy your transformation.</p><div class="hours">🕒 Tuesday - Saturday: For your perfect hair day.</div></div></section>
+<section><div class="wrap"><div class="sec-label">Why Choose Us</div><h2>What Sets Us Apart</h2><div class="grid"><div class="card"><h3>Portland&#x27;s Trusted Experts</h3><p>Our team boasts years of experience, staying ahead of the latest trends and techniques to ensure you receive top-tier service right here in the local community.</p></div><div class="card"><h3>Personalized Approach</h3><p>We believe every client is unique. We take the time to listen to your vision and provide a customized look that truly reflects your personality and makes you shine.</p></div><div class="card"><h3>Relaxing Atmosphere</h3><p>Step into our inviting salon, a tranquil escape where you can unwind, be pampered, and leave feeling refreshed, confident, and utterly beautiful.</p></div></div></div></section>
+<section class="cta-band"><div class="wrap"><h2>Ready to visit Perfect Salon?</h2><p>We'd love to hear from you.</p><a class="btn" href="tel:+1-503-777-3666">Book Your Perfect Look</a></div></section>
+<footer><div class="wrap">Perfect Salon · Portland, OR · <a href="tel:+1-503-777-3666" style="color:#fff">+1-503-777-3666</a><br><br>© 2026 Perfect Salon. All rights reserved.</div></footer>
+<div class="ribbon">Sample built by <b>Symbio AI</b></div>
+</body></html>
