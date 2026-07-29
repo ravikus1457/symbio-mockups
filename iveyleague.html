@@ -241,16 +241,25 @@
     .statbar{gap:26px}
     .mrow h3 small{display:none}
   }
+  /* Reduced motion = CALMER, not dead. We drop the vestibular triggers
+     (parallax, scroll-skew, tilt, big travel, clip wipes) but keep the
+     ambient light, shimmer, and gentle opacity work so the page still feels
+     alive. Ravi's laptop had OS reduce-motion on and saw a frozen page
+     (2026-07-28) — all-or-nothing was the wrong call. */
   @media (prefers-reduced-motion:reduce){
-    *,*::before,*::after{animation:none!important;transition:none!important}
-    .display .ln>span{transform:none}
-    .kicker,.hero .sub,.hero .cta-row,.statbar{opacity:1}
-    .rv,h2 .w,.cinema blockquote .w,.cinema .attr{opacity:1!important;transform:none!important}
+    /* no large positional travel */
+    .display .ln>span{transform:none;animation:fadeUp .8s var(--ease) both}
+    .rv{transform:none}
+    h2 .w,.cinema blockquote .w{transform:none}
     .piece{clip-path:none}
-    #veil{display:none}
-    #aurora,#orb{display:none}
-    #bookbar{transform:none}
+    .arch,.piece img,.arch img{animation:none!important}
+    #veil{transition:opacity .5s ease}
+    #veil.gone{clip-path:none;opacity:0}
+    #bookbar{transition:opacity .3s;transform:none;opacity:0}
+    #bookbar.show{opacity:1}
     html{scroll-behavior:auto}
+    /* keep: #aurora ambient drift, gold shimmer, dust, marquees (slowed in JS),
+       count-ups, opacity reveals */
   }
 </style>
 </head>
@@ -417,17 +426,21 @@
 
 <script>
 (function(){
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // "reduced" now means CALM, not OFF. Vestibular effects (parallax, scroll
+  // skew, tilt, magnetic) switch off; ambient light + marquees stay, slower.
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduced = false;                 // ambient engine always runs
+  const CALM = calm ? 0.45 : 1;          // global speed scale
   const fine = matchMedia('(pointer: fine)').matches;
 
   /* veil */
   const veil = document.getElementById('veil');
-  addEventListener('load', () => setTimeout(() => veil.classList.add('gone'), reduced ? 0 : 1250));
+  addEventListener('load', () => setTimeout(() => veil.classList.add('gone'), calm ? 350 : 1250));
   setTimeout(() => veil.classList.add('gone'), 2600);
 
   /* h2 word choreography */
   document.querySelectorAll('h2[data-words]').forEach(h => {
-    if (reduced) { h.classList.add('in'); return; }
+    
     const walk = node => {
       [...node.childNodes].forEach(n => {
         if (n.nodeType === 3) {
@@ -448,7 +461,7 @@
 
   /* quote words */
   const cq = document.getElementById('cq');
-  if (cq && !reduced) {
+  if (cq) {
     cq.innerHTML = cq.textContent.split(' ').map((w,i) =>
       '<span class="w" style="transition-delay:'+(i*.045)+'s">'+w+'</span>').join(' ');
   }
@@ -510,35 +523,37 @@
         actx.beginPath(); actx.arc(bx,by,b.r*W,0,7); actx.fill();
       });
     }
-    paras.forEach(el => {
+    if (!calm) paras.forEach(el => {
       const sp = parseFloat(el.dataset.para);
       const r = el.getBoundingClientRect();
       if (r.bottom < -100 || r.top > innerHeight + 100) return;
       const c = r.top + r.height/2 - innerHeight/2;
       el.style.transform = 'translateY(' + (c * sp * -1).toFixed(1) + 'px)';
     });
-    const sk = Math.max(-3.5, Math.min(3.5, vel * .1));
-    document.querySelectorAll('.collage, .menu').forEach(el => {
-      el.style.transform = 'skewY(' + sk.toFixed(2) + 'deg)';
-    });
+    if (!calm) {
+      const sk = Math.max(-3.5, Math.min(3.5, vel * .1));
+      document.querySelectorAll('.collage, .menu').forEach(el => {
+        el.style.transform = 'skewY(' + sk.toFixed(2) + 'deg)';
+      });
+    }
     tracks.forEach((tr,i) => {
       const dir = parseFloat(tr.dataset.mq);
       const half = tr.scrollWidth/2 || 1;
-      mqOff[i] = (mqOff[i] + (0.6 + Math.min(Math.abs(vel)*.06, 2.6))) % half;
+      mqOff[i] = (mqOff[i] + (0.6 + Math.min(Math.abs(vel)*.06, 2.6)) * CALM) % half;
       tr.style.transform = 'translateX(' + (dir > 0 ? -mqOff[i] : -half + mqOff[i]) + 'px)';
     });
     if (river && riverW && !riverPaused) {
-      riverOff = (riverOff + .45 + Math.min(Math.abs(vel)*.03, 1.2)) % riverW;
+      riverOff = (riverOff + (.45 + Math.min(Math.abs(vel)*.03, 1.2)) * CALM) % riverW;
       river.style.transform = 'translateX(' + (-riverOff) + 'px)';
     }
-    if (cinema) {
+    if (cinema && !calm) {
       const r = cinema.getBoundingClientRect();
       if (r.top < innerHeight && r.bottom > 0) {
         const p = (r.top + r.height/2 - innerHeight/2) / innerHeight;
         cinemaBg.style.transform = 'translateY(' + (p * 56) + 'px)';
       }
     }
-    if (fine && orb) {
+    if (fine && orb && !calm) {
       ox += (mx - ox) * .08; oy += (my - oy) * .08;
       orb.style.transform = 'translate(' + (ox - 190) + 'px,' + (oy - 190) + 'px)';
     }
@@ -561,7 +576,7 @@
     if (!e.isIntersecting) return;
     const el = e.target, target = parseFloat(el.dataset.count), dec = (el.dataset.count.includes('.')) ? 1 : 0;
     cio.unobserve(el);
-    if (reduced){ el.textContent = el.dataset.count; return; }
+    
     const t0 = performance.now(), dur = 1400;
     requestAnimationFrame(function tick(t){
       const p = Math.min((t - t0) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
@@ -572,7 +587,7 @@
   document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
 
   /* magnetic */
-  if (fine && !reduced) document.querySelectorAll('[data-mag]').forEach(b => {
+  if (fine && !calm) document.querySelectorAll('[data-mag]').forEach(b => {
     b.addEventListener('pointermove', e => {
       const r = b.getBoundingClientRect();
       const dx = e.clientX - (r.left + r.width/2), dy = e.clientY - (r.top + r.height/2);
@@ -582,7 +597,7 @@
   });
 
   /* living portrait */
-  if (!reduced && !(navigator.connection && navigator.connection.saveData)) {
+  if (!(navigator.connection && navigator.connection.saveData)) {
     setTimeout(() => {
       const a = document.getElementById('arch');
       if (!a) return;
