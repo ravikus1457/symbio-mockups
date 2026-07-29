@@ -88,12 +88,12 @@
   h1 .row{display:block;overflow:hidden;padding-bottom:.08em}
   h1 .ch{display:inline-block;opacity:0;transform:translateY(105%) rotate(4deg);animation:chIn .8s var(--ease) forwards}
   @keyframes chIn{to{opacity:1;transform:none}}
-  h1 .it{font-style:italic;
+  h1 .it{font-style:italic;display:inline-block;opacity:0;transform:translateY(60%) rotate(2deg);
     background:linear-gradient(100deg,var(--gold) 20%,var(--gold-hi) 40%,#fff8e2 50%,var(--gold-hi) 60%,var(--gold) 80%);
     background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
-    animation:shimmer 5.5s linear infinite}
-  h1 .it .ch{color:transparent}
+    animation:shimmer 5.5s linear infinite, itUp .8s var(--ease) .5s forwards}
   @keyframes shimmer{to{background-position:-220% 0}}
+  @keyframes itUp{to{opacity:1;transform:none}}
   .lede{margin:26px 0 0;font-size:clamp(16px,2.2vw,19px);color:var(--mut);max-width:46ch;font-family:var(--sans);font-weight:400}
   .lede b{color:var(--cream);font-weight:600}
   .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
@@ -241,7 +241,7 @@
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation:none!important;transition:none!important}
-    .rise,.rv,h1 .ch{opacity:1!important;transform:none!important}
+    .rise,.rv,h1 .ch,h1 .it{opacity:1!important;transform:none!important}
     .shot{clip-path:none}
     .shot img{transform:none}
     .campus blockquote .w{opacity:1;transform:none}
@@ -434,7 +434,7 @@
   /* split hero title into staggered letters */
   if (!reduced) {
     let delay = .15;
-    document.querySelectorAll('[data-split]').forEach(el => {
+    document.querySelectorAll('[data-split]:not(.it)').forEach(el => {
       const text = el.textContent;
       el.textContent = '';
       [...text].forEach(ch => {
