@@ -346,7 +346,7 @@
       <span class="go">Book this →</span>
     </a>
   </div>
-  <p class="menu-note rv">Live pricing from Ivey's Booksy menu — kids' cuts &amp; more available when booking. Concept page by Symbio AI.</p>
+  <p class="menu-note rv">Portfolio photos are Ivey's own work from his Booksy profile. Live pricing from Ivey's Booksy menu — kids' cuts &amp; more available when booking. Concept page by Symbio AI.</p>
 </section>
 
 <!-- ============ THE DEAN ============ -->
@@ -354,7 +354,7 @@
   <div class="dean">
     <div class="rv" data-para="-.04">
       <div class="arch" id="arch">
-        <img src="images/ivey/hero.jpg" alt="Quinton “Q” Ivey — master barber" width="1024" height="1024">
+        <img src="images/ivey/hero.jpg" alt="Quinton “Q” Ivey, master barber and owner of The Ivey League" width="1024" height="1024">
         <span class="plate">The Dean · Q Ivey</span>
       </div>
     </div>
@@ -376,9 +376,9 @@
   <h2 data-words>Proof you can <span class="it">see across the room.</span></h2>
   <div class="collage">
     <span class="wm">❦</span>
-    <figure class="piece" style="transition-delay:.05s" data-para=".03"><img src="images/ivey/fade.jpg" alt="Crisp skin fade and lineup detail" loading="lazy"><span class="tag">01 · Definition</span></figure>
-    <figure class="piece" style="transition-delay:.2s" data-para="-.04"><img src="images/ivey/beard.jpg" alt="Hot towel beard sculpting" loading="lazy"><span class="tag">02 · Ritual</span></figure>
-    <figure class="piece" style="transition-delay:.35s" data-para=".05"><img src="images/ivey/result.jpg" alt="The reveal in the mirror" loading="lazy"><span class="tag">03 · The Reveal</span></figure>
+    <figure class="piece" style="transition-delay:.05s" data-para=".03"><img src="images/ivey/cut-lineup.jpg" alt="Razor-sharp lineup and fade by Q Ivey" loading="lazy"><span class="tag">01 · The Lineup</span></figure>
+    <figure class="piece" style="transition-delay:.2s" data-para="-.04"><img src="images/ivey/cut-waves.jpg" alt="Wave work blended into the beard" loading="lazy"><span class="tag">02 · Wave Work</span></figure>
+    <figure class="piece" style="transition-delay:.35s" data-para=".05"><img src="images/ivey/cut-taper.jpg" alt="Crisp taper and lineup, finished" loading="lazy"><span class="tag">03 · The Finish</span></figure>
   </div>
 </section>
 
@@ -596,21 +596,9 @@
     b.addEventListener('pointerleave', () => { b.style.transform = ''; });
   });
 
-  /* living portrait */
-  if (!(navigator.connection && navigator.connection.saveData)) {
-    setTimeout(() => {
-      const a = document.getElementById('arch');
-      if (!a) return;
-      const v = document.createElement('video');
-      v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true;
-      v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('aria-hidden','true');
-      v.preload = 'auto';
-      v.addEventListener('canplaythrough', () => { v.classList.add('on'); v.play().catch(()=>{}); }, {once:true});
-      v.addEventListener('error', () => v.remove(), {once:true});
-      v.src = 'images/ivey/hero-loop.mp4';
-      a.insertBefore(v, a.querySelector('.plate'));
-    }, 1600);
-  }
+  /* (the old cinemagraph showed a stock AI barber — removed once Q's real
+     likeness became the face of the site; a loop can be regenerated from HIS
+     portrait if he wants one) */
 
   /* gold dust in hero */
   const cv = document.getElementById('dust');
