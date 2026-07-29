@@ -566,10 +566,20 @@
   }, {passive:true});
 
   /* reveals */
+  // NOTE: never observe an element that hides itself with clip-path — a clipped
+  // element reports a zero intersection rect, so the observer that's meant to
+  // reveal it never fires (cost us the whole gallery, 2026-07-28). Observe the
+  // .collage container and reveal its clipped children instead.
   const io = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    if (!e.isIntersecting) return;
+    if (e.target.classList.contains('collage')) {
+      e.target.querySelectorAll('.piece').forEach(p => p.classList.add('in'));
+    } else {
+      e.target.classList.add('in');
+    }
+    io.unobserve(e.target);
   }), {threshold:.12, rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.rv, .piece, h2, #cinema').forEach(el => io.observe(el));
+  document.querySelectorAll('.rv, .collage, h2, #cinema').forEach(el => io.observe(el));
 
   /* count-up */
   const cio = new IntersectionObserver(es => es.forEach(e => {
