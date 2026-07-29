@@ -116,6 +116,11 @@
   .arch img{border-radius:990px 990px 4px 4px;filter:saturate(1.04);
     animation:kenburns 22s ease-in-out infinite alternate;transform-origin:50% 30%}
   @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.07) translateY(-6px)}}
+  /* living portrait: video overlays the still once playable; still = poster + fallback */
+  .arch video{position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);
+    object-fit:cover;border-radius:990px 990px 4px 4px;opacity:0;transition:opacity 1.2s var(--ease);
+    z-index:1;filter:saturate(1.04)}
+  .arch video.on{opacity:1}
   .arch .plate{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);white-space:nowrap;z-index:3;
     background:var(--ivy);border:1px solid var(--gold);color:var(--gold-hi);
     font:600 10.5px/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;padding:11px 22px;border-radius:2px}
@@ -263,7 +268,7 @@
     <span class="shield">IL</span>
     <span class="wm">Ivey League<small>Barber · Charlotte</small></span>
   </a>
-  <a class="nav-cta shine" href="https://bookthecut.co/iveyleague" target="_blank" rel="noopener">Book the Chair</a>
+  <a class="nav-cta shine" href="https://booksy.com/en-us/82993_ivey-league-barber_barber-shop_26844_charlotte" target="_blank" rel="noopener">Book the Chair</a>
 </nav>
 
 <header id="top">
@@ -277,13 +282,13 @@
     </h1>
     <p class="lede rise d4">Welcome to <b>The Ivey League</b> — where a haircut is an education in detail. Precision fades, razor lineups, and beard work held to a higher standard.</p>
     <div class="cta-row rise d5">
-      <a class="btn gold shine" href="https://bookthecut.co/iveyleague" target="_blank" rel="noopener">Book the Chair →</a>
+      <a class="btn gold shine" href="https://booksy.com/en-us/82993_ivey-league-barber_barber-shop_26844_charlotte" target="_blank" rel="noopener">Book the Chair →</a>
       <a class="btn ghost" href="tel:3368097847">336.809.7847</a>
     </div>
     <div class="stats rise d6">
-      <div class="stat"><b><span data-count="5.0">0.0</span> ★</b><span>Client rating</span></div>
-      <div class="stat"><b><span data-count="10">0</span>+ yrs</b><span>Behind the chair</span></div>
-      <div class="stat"><b>@iveyleague_barber</b><span>Instagram</span></div>
+      <div class="stat"><b><span data-count="5.0">0.0</span> ★</b><span>Booksy rating</span></div>
+      <div class="stat"><b><span data-count="176">0</span></b><span>5-star reviews</span></div>
+      <div class="stat"><b>@iveyleaguebarber</b><span>Instagram</span></div>
     </div>
   </div>
   <div class="hero-visual rise d3">
@@ -314,30 +319,30 @@
   <div class="courses">
     <div class="course rv dl1" data-tilt>
       <span class="code">FDE·101</span>
-      <h3>The Ivey Standard</h3>
-      <p>The signature fade or taper — consulted, mapped, and cut to your head shape. The one that carries the room.</p>
-      <div class="price"><b>$60</b><span>45 min</span></div>
+      <h3>Fade / Taper</h3>
+      <p>The signature — consulted, mapped, and cut to your head shape. The one that carries the room.</p>
+      <div class="price"><b>$60</b><span>The standard</span></div>
     </div>
     <div class="course rv dl2" data-tilt>
+      <span class="code">CUT·102</span>
+      <h3>All-Even Cut</h3>
+      <p>Clean, uniform, dialed to the guard that suits you — finished with a crisp lineup.</p>
+      <div class="price"><b>$50</b><span>Adult</span></div>
+    </div>
+    <div class="course rv dl3" data-tilt>
       <span class="code">GRM·201</span>
-      <h3>Cut + Beard Honors</h3>
-      <p>The full curriculum: signature cut plus hot-towel beard sculpting and a straight-razor finish.</p>
-      <div class="price"><b>$55</b><span>60 min</span></div>
+      <h3>Line-Up + Beard Trim</h3>
+      <p>Edges squared, beard shaped and sharpened. In the chair and back to business.</p>
+      <div class="price"><b>$40</b><span>The refresh</span></div>
     </div>
     <div class="course rv dl3" data-tilt>
-      <span class="code">LNP·110</span>
-      <h3>The Lineup</h3>
-      <p>Crisp edges restored between full cuts. In the chair, sharpened, and back to business.</p>
-      <div class="price"><b>$40</b><span>25 min</span></div>
-    </div>
-    <div class="course rv dl3" data-tilt>
-      <span class="code">SHV·210</span>
-      <h3>Hot Towel Shave</h3>
-      <p>Old-school ritual, modern precision — steam, straight razor, and skin left better than we found it.</p>
-      <div class="price"><b>$45</b><span>40 min</span></div>
+      <span class="code">AFT·500</span>
+      <h3>After-Hours Service</h3>
+      <p>The chair, after dark — a private appointment on your schedule, when the shop is yours alone.</p>
+      <div class="price"><b>$100</b><span>By request</span></div>
     </div>
   </div>
-  <p class="menu-note rv">Concept menu — final services &amp; pricing set by Ivey.</p>
+  <p class="menu-note rv">Pricing from Ivey's live Booksy menu (kids' cuts &amp; more available when booking) — concept page by Symbio AI.</p>
 </section>
 
 <section id="work">
@@ -354,7 +359,7 @@
   <img class="bg" id="campusBg" src="images/ivey/interior.jpg" alt="" loading="lazy">
   <div class="inner">
     <blockquote id="campusQuote">"A cut is thirty minutes. Carrying it is the whole week. I cut for the whole week."</blockquote>
-    <p class="attr">— Ivey · Founder, The Ivey League</p>
+    <p class="attr">— Quinton “Q” Ivey · The Ivey League</p>
   </div>
 </div>
 
@@ -406,12 +411,12 @@
   <div class="laurel">❦</div>
   <h2 class="rv in">Ready to <span class="it">enroll?</span></h2>
   <p class="contact">
-    5544 University City Blvd · Charlotte, NC 28213<br>
-    <a href="tel:3368097847">336.809.7847</a> · <a href="https://instagram.com/iveyleague_barber" target="_blank" rel="noopener">@iveyleague_barber</a>
+    9711 David Taylor Dr, Suite 235 · Charlotte, NC 28262<br>
+    <a href="tel:3368097847">336.809.7847</a> · <a href="https://instagram.com/iveyleague_barber" target="_blank" rel="noopener">@iveyleaguebarber</a>
   </p>
   <div class="cta-row">
-    <a class="btn gold shine" href="https://bookthecut.co/iveyleague" target="_blank" rel="noopener">Book the Chair →</a>
-    <a class="btn ghost" href="https://maps.google.com/?q=5544+University+City+Blvd+Charlotte+NC+28213" target="_blank" rel="noopener">Get Directions</a>
+    <a class="btn gold shine" href="https://booksy.com/en-us/82993_ivey-league-barber_barber-shop_26844_charlotte" target="_blank" rel="noopener">Book the Chair →</a>
+    <a class="btn ghost" href="https://maps.google.com/?q=9711+David+Taylor+Dr+Suite+235+Charlotte+NC+28262" target="_blank" rel="noopener">Get Directions</a>
   </div>
 </section>
 
@@ -419,7 +424,7 @@
   Concept preview · crafted by <a href="https://symbioai.dev" target="_blank" rel="noopener">Symbio AI</a> · 2026
 </footer>
 
-<div id="bookbar"><a href="https://bookthecut.co/iveyleague" target="_blank" rel="noopener">Book the Chair →</a></div>
+<div id="bookbar"><a href="https://booksy.com/en-us/82993_ivey-league-barber_barber-shop_26844_charlotte" target="_blank" rel="noopener">Book the Chair →</a></div>
 
 <script>
 (function(){
@@ -499,6 +504,22 @@
     });
   }), {threshold:.6});
   document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+
+  /* living portrait: swap in the cinemagraph loop when conditions allow */
+  if (!reduced && !(navigator.connection && navigator.connection.saveData)) {
+    setTimeout(() => {
+      const a = document.getElementById('arch');
+      if (!a) return;
+      const v = document.createElement('video');
+      v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true;
+      v.setAttribute('muted',''); v.setAttribute('playsinline',''); v.setAttribute('aria-hidden','true');
+      v.preload = 'auto';
+      v.addEventListener('canplaythrough', () => { v.classList.add('on'); v.play().catch(()=>{}); }, {once:true});
+      v.addEventListener('error', () => v.remove(), {once:true});
+      v.src = 'images/ivey/hero-loop.mp4';
+      a.insertBefore(v, a.querySelector('.plate'));
+    }, 1400); // let the hero paint first
+  }
 
   /* hero arch: pointer tilt + glare */
   const arch = document.getElementById('arch');
