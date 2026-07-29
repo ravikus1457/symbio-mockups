@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Ivey League — Charlotte's Sharpest Chair</title>
+<meta name="description" content="Ivey League Barber · precision fades, razor lineups & beard sculpting in University City, Charlotte NC. Book the chair.">
+<style>
+  :root{
+    --ivy:#0a1f17; --ivy2:#0e2a1f; --ivy3:#123527;
+    --gold:#c9a24b; --gold-hi:#ecd39a; --cream:#f0e8d6; --mut:#8fa398;
+    --oxblood:#8c3241;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--ivy);color:var(--cream);font-family:var(--serif);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- nav ---------- */
+  nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+    padding:14px clamp(18px,4vw,44px);background:rgba(10,31,23,.82);backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(201,162,75,.18)}
+  .crest{display:flex;align-items:center;gap:12px}
+  .crest .shield{width:40px;height:44px;flex:none;display:grid;place-items:center;
+    background:linear-gradient(160deg,var(--ivy3),var(--ivy2));border:1.5px solid var(--gold);
+    border-radius:6px 6px 50% 50%/6px 6px 42% 42%;
+    font:700 15px/1 var(--serif);color:var(--gold-hi);letter-spacing:.04em}
+  .crest .wm{font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+  .crest .wm small{display:block;font:500 9px/1.4 var(--mono);letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+  .nav-cta{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ivy);
+    background:linear-gradient(160deg,var(--gold-hi),var(--gold));padding:12px 20px;border-radius:3px;
+    transition:transform .25s,box-shadow .25s}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px -6px rgba(201,162,75,.5)}
+
+  /* ---------- hero ---------- */
+  header{position:relative;min-height:100svh;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,60px);
+    align-items:center;padding:110px clamp(18px,5vw,64px) 60px;max-width:1280px;margin:0 auto}
+  .laurel-bg{position:absolute;right:-8%;top:6%;font-size:min(52vw,560px);opacity:.045;pointer-events:none;user-select:none;line-height:1}
+  .eyebrow{font:600 11.5px/1 var(--mono);letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:flex;align-items:center;gap:14px}
+  .eyebrow::before{content:"";width:44px;height:1px;background:var(--gold)}
+  h1{font-size:clamp(48px,8.5vw,108px);line-height:.96;letter-spacing:-.015em;font-weight:600;text-wrap:balance}
+  h1 .it{font-style:italic;color:var(--gold-hi)}
+  h1 .row{display:block}
+  .lede{margin:26px 0 0;font-size:clamp(16px,2.2vw,19px);color:var(--mut);max-width:46ch;font-family:var(--sans);font-weight:400}
+  .lede b{color:var(--cream);font-weight:600}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:3px;
+    font:600 13px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;transition:transform .25s,box-shadow .25s,background .25s}
+  .btn.gold{background:linear-gradient(160deg,var(--gold-hi),var(--gold));color:var(--ivy)}
+  .btn.gold:hover{transform:translateY(-3px);box-shadow:0 14px 34px -8px rgba(201,162,75,.55)}
+  .btn.ghost{border:1px solid rgba(201,162,75,.45);color:var(--gold-hi)}
+  .btn.ghost:hover{background:rgba(201,162,75,.1);transform:translateY(-3px)}
+  .stats{display:flex;gap:clamp(18px,3.5vw,44px);margin-top:44px;flex-wrap:wrap}
+  .stat b{display:block;font-size:clamp(20px,3vw,28px);color:var(--gold-hi);font-weight:600;font-variant-numeric:tabular-nums}
+  .stat span{font:500 10.5px/1.5 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+  .hero-visual{position:relative}
+  .arch{position:relative;border:2px solid var(--gold);border-radius:999px 999px 8px 8px;padding:10px;
+    background:linear-gradient(180deg,rgba(201,162,75,.08),transparent 40%)}
+  .arch::before{content:"";position:absolute;inset:-14px;border:1px solid rgba(201,162,75,.28);border-radius:999px 999px 12px 12px;pointer-events:none}
+  .arch img{border-radius:990px 990px 4px 4px;filter:saturate(1.04)}
+  .arch .plate{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);white-space:nowrap;
+    background:var(--ivy);border:1px solid var(--gold);color:var(--gold-hi);
+    font:600 10.5px/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;padding:11px 22px;border-radius:2px}
+
+  /* hero load sequence */
+  .rise{opacity:0;transform:translateY(28px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.22s}.d3{animation-delay:.36s}.d4{animation-delay:.5s}.d5{animation-delay:.64s}.d6{animation-delay:.8s}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* ---------- marquee ---------- */
+  .ribbon{overflow:hidden;background:linear-gradient(90deg,var(--gold),var(--gold-hi),var(--gold));padding:13px 0;border-block:1px solid rgba(10,31,23,.3)}
+  .ribbon .track{display:flex;gap:0;width:max-content;animation:mq 26s linear infinite}
+  .ribbon span{font:700 12.5px/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;color:var(--ivy);white-space:nowrap;padding:0 18px}
+  @keyframes mq{to{transform:translateX(-50%)}}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(70px,10vw,130px) clamp(18px,5vw,64px);max-width:1280px;margin:0 auto}
+  .sec-eyebrow{font:600 11px/1 var(--mono);letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+  h2{font-size:clamp(32px,5vw,54px);line-height:1.04;font-weight:600;letter-spacing:-.01em;text-wrap:balance;max-width:18ch}
+  h2 .it{font-style:italic;color:var(--gold-hi)}
+  .sec-sub{margin-top:16px;color:var(--mut);font-family:var(--sans);font-size:15.5px;max-width:52ch}
+
+  /* reveals */
+  .rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  /* ---------- curriculum ---------- */
+  .courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:52px}
+  .course{position:relative;background:var(--ivy2);border:1px solid rgba(201,162,75,.2);border-radius:8px;
+    padding:28px 26px 24px;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+  .course::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:3px;
+    background:linear-gradient(90deg,var(--gold),var(--gold-hi));transition:right .45s cubic-bezier(.2,.7,.2,1)}
+  .course:hover{transform:translateY(-8px);border-color:rgba(201,162,75,.55);box-shadow:0 24px 44px -18px rgba(0,0,0,.6)}
+  .course:hover::after{right:0}
+  .code{font:600 10.5px/1 var(--mono);letter-spacing:.26em;color:var(--gold);text-transform:uppercase}
+  .course h3{font-size:22px;font-weight:600;margin:14px 0 8px}
+  .course p{font-family:var(--sans);font-size:13.5px;color:var(--mut);min-height:3.2em}
+  .course .price{margin-top:18px;display:flex;align-items:baseline;justify-content:space-between}
+  .course .price b{font-size:28px;color:var(--gold-hi);font-weight:600;font-variant-numeric:tabular-nums}
+  .course .price span{font:500 10px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+  .menu-note{margin-top:18px;font:400 12px/1.6 var(--sans);color:var(--mut)}
+
+  /* ---------- gallery ---------- */
+  .work{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+  .shot{position:relative;border-radius:8px;overflow:hidden;border:1px solid rgba(201,162,75,.18);aspect-ratio:4/5}
+  .shot img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .shot:hover img{transform:scale(1.06)}
+  .shot .cap{position:absolute;inset:auto 0 0 0;padding:40px 18px 14px;
+    background:linear-gradient(180deg,transparent,rgba(10,31,23,.92));
+    font:600 11px/1.4 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-hi)}
+  .rv.dl1{transition-delay:.08s}.rv.dl2{transition-delay:.2s}.rv.dl3{transition-delay:.32s}
+
+  /* ---------- campus band ---------- */
+  .campus{position:relative;margin:0;max-width:none;padding:0;min-height:72vh;display:grid;place-items:center;overflow:hidden}
+  .campus img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.42) saturate(1.05)}
+  .campus .inner{position:relative;text-align:center;padding:80px 20px;max-width:760px}
+  .campus blockquote{font-size:clamp(24px,4vw,40px);font-style:italic;line-height:1.25;color:var(--cream);text-wrap:balance}
+  .campus .attr{margin-top:22px;font:600 11px/1 var(--mono);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+
+  /* ---------- honor code ---------- */
+  .steps3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:52px}
+  .step3{border-top:1px solid rgba(201,162,75,.3);padding-top:24px}
+  .step3 .rn{font-size:15px;color:var(--gold);font-style:italic;font-family:var(--serif)}
+  .step3 h3{font-size:21px;margin:10px 0 8px;font-weight:600}
+  .step3 p{font-family:var(--sans);font-size:14px;color:var(--mut)}
+
+  /* ---------- honor roll ---------- */
+  .roll{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:52px}
+  .quote{background:var(--ivy2);border:1px solid rgba(201,162,75,.18);border-radius:8px;padding:28px 26px}
+  .quote .stars{color:var(--gold);letter-spacing:.28em;font-size:13px;margin-bottom:14px}
+  .quote p{font-style:italic;font-size:16.5px;line-height:1.5}
+  .quote .who{margin-top:16px;font:600 10.5px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+
+  /* ---------- enroll footer ---------- */
+  .enroll{position:relative;text-align:center;border-top:1px solid rgba(201,162,75,.2)}
+  .enroll .laurel{font-size:44px;color:var(--gold);opacity:.85}
+  .enroll h2{margin:18px auto 0;max-width:16ch}
+  .enroll .contact{margin-top:30px;font-family:var(--sans);color:var(--mut);font-size:15px;line-height:2}
+  .enroll .contact a{color:var(--gold-hi);border-bottom:1px solid rgba(201,162,75,.4);transition:border-color .25s}
+  .enroll .contact a:hover{border-color:var(--gold-hi)}
+  .enroll .cta-row{justify-content:center}
+  footer{padding:26px 20px 34px;text-align:center;font:500 11px/1.8 var(--mono);letter-spacing:.14em;color:var(--mut);text-transform:uppercase}
+  footer a{color:var(--gold)}
+
+  @media (max-width:900px){
+    header{grid-template-columns:1fr;padding-top:96px;min-height:auto}
+    .hero-visual{max-width:420px;margin:10px auto 0}
+    .work{grid-template-columns:1fr;max-width:440px;margin-inline:auto}
+    .shot{aspect-ratio:4/4.6}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .rise,.rv{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+    .ribbon .track{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="crest" href="#top">
+    <span class="shield">IL</span>
+    <span class="wm">Ivey League<small>Barber · Charlotte</small></span>
+  </a>
+  <a class="nav-cta" href="https://bookthecut.co/iveyleague" target="_blank" rel="noopener">Book the Chair</a>
+</nav>
+
+<header id="top">
+  <div class="laurel-bg">❦</div>
+  <div>
+    <p class="eyebrow rise d1">University City · Charlotte, NC</p>
+    <h1>
+      <span class="row rise d2">Earn your</span>
+      <span class="row rise d3"><span class="it">sharpest</span> look.</span>
+    </h1>
+    <p class="lede rise d4">Welcome to <b>The Ivey League</b> — where a haircut is an education in detail. Precision fades, razor lineups, and beard work held to a higher standard.</p>
+    <div class="cta-row rise d5">
+      <a class="btn gold" href="https://bookthecut.co/iveyleague" target="_blank" rel="noopener">Book the Chair →</a>
+      <a class="btn ghost" href="tel:3368097847">336.809.7847</a>
+    </div>
+    <div class="stats rise d6">
+      <div class="stat"><b>5.0 ★</b><span>Client rating</span></div>
+      <div class="stat"><b>10+ yrs</b><span>Behind the chair</span></div>
+      <div class="stat"><b>@iveyleague_barber</b><span>Instagram</span></div>
+    </div>
+  </div>
+  <div class="hero-visual rise d4">
+    <div class="arch">
+      <img src="images/ivey/hero.jpg" alt="Ivey — master barber, Charlotte NC" width="1024" height="1024">
+      <span class="plate">Est. Charlotte · NC</span>
+    </div>
+  </div>
+</header>
+
+<div class="ribbon" aria-hidden="true">
+  <div class="track">
+    <span>Precision Fades ✦ Razor Lineups ✦ Beard Sculpting ✦ Hot Towel Finish ✦ Wave Care ✦&nbsp;</span>
+    <span>Precision Fades ✦ Razor Lineups ✦ Beard Sculpting ✦ Hot Towel Finish ✦ Wave Care ✦&nbsp;</span>
+  </div>
+</div>
+
+<section id="services">
+  <p class="sec-eyebrow rv">The Curriculum</p>
+  <h2 class="rv">Every chair visit is a <span class="it">masterclass.</span></h2>
+  <p class="sec-sub rv">Pick your course of study. Each service ends the same way — you, looking like the sharpest one in the room.</p>
+  <div class="courses">
+    <div class="course rv dl1">
+      <span class="code">FDE·101</span>
+      <h3>The Ivey Standard</h3>
+      <p>The signature fade or taper — consulted, mapped, and cut to your head shape. The one that carries the room.</p>
+      <div class="price"><b>$60</b><span>45 min</span></div>
+    </div>
+    <div class="course rv dl2">
+      <span class="code">GRM·201</span>
+      <h3>Cut + Beard Honors</h3>
+      <p>The full curriculum: signature cut plus hot-towel beard sculpting and a straight-razor finish.</p>
+      <div class="price"><b>$55</b><span>60 min</span></div>
+    </div>
+    <div class="course rv dl3">
+      <span class="code">LNP·110</span>
+      <h3>The Lineup</h3>
+      <p>Crisp edges restored between full cuts. In the chair, sharpened, and back to business.</p>
+      <div class="price"><b>$40</b><span>25 min</span></div>
+    </div>
+    <div class="course rv dl3">
+      <span class="code">SHV·210</span>
+      <h3>Hot Towel Shave</h3>
+      <p>Old-school ritual, modern precision — steam, straight razor, and skin left better than we found it.</p>
+      <div class="price"><b>$45</b><span>40 min</span></div>
+    </div>
+  </div>
+  <p class="menu-note rv">Concept menu — final services &amp; pricing set by Ivey.</p>
+</section>
+
+<section id="work">
+  <p class="sec-eyebrow rv">Body of Work</p>
+  <h2 class="rv">Proof you can <span class="it">see from across the room.</span></h2>
+  <div class="work">
+    <figure class="shot rv dl1"><img src="images/ivey/fade.jpg" alt="Crisp skin fade and lineup detail" loading="lazy"><figcaption class="cap">Definition · The Lineup</figcaption></figure>
+    <figure class="shot rv dl2"><img src="images/ivey/beard.jpg" alt="Hot towel beard sculpting with straight razor" loading="lazy"><figcaption class="cap">Ritual · Beard Honors</figcaption></figure>
+    <figure class="shot rv dl3"><img src="images/ivey/result.jpg" alt="Client admiring finished cut in mirror" loading="lazy"><figcaption class="cap">Graduation · The Reveal</figcaption></figure>
+  </div>
+</section>
+
+<div class="campus">
+  <img class="bg" src="images/ivey/interior.jpg" alt="" loading="lazy">
+  <div class="inner rv">
+    <blockquote>"A cut is thirty minutes. Carrying it is the whole week. I cut for the whole week."</blockquote>
+    <p class="attr">— Ivey · Founder, The Ivey League</p>
+  </div>
+</div>
+
+<section id="code">
+  <p class="sec-eyebrow rv">The Honor Code</p>
+  <h2 class="rv">Three promises, <span class="it">every visit.</span></h2>
+  <div class="steps3">
+    <div class="step3 rv dl1">
+      <span class="rn">I.</span>
+      <h3>Consult</h3>
+      <p>Head shape, grain, lifestyle, photos if you have them. We agree on the plan before a guard touches hair.</p>
+    </div>
+    <div class="step3 rv dl2">
+      <span class="rn">II.</span>
+      <h3>Execute</h3>
+      <p>Unhurried precision — the fade blended twice, the lineup squared to your features, no shortcuts.</p>
+    </div>
+    <div class="step3 rv dl3">
+      <span class="rn">III.</span>
+      <h3>Finish</h3>
+      <p>Hot towel, product matched to your hair, and the maintenance plan so it still looks cut on day six.</p>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <p class="sec-eyebrow rv">The Honor Roll</p>
+  <h2 class="rv">What the <span class="it">alumni</span> say.</h2>
+  <div class="roll">
+    <div class="quote rv dl1">
+      <div class="stars">★★★★★</div>
+      <p>"Best fade in Charlotte, hands down. He takes his time and it shows — I get stopped about my cut every single week."</p>
+      <div class="who">Booksy review</div>
+    </div>
+    <div class="quote rv dl2">
+      <div class="stars">★★★★★</div>
+      <p>"Booked for a lineup, left with a whole new standard. The attention to detail is different here."</p>
+      <div class="who">Booksy review</div>
+    </div>
+    <div class="quote rv dl3">
+      <div class="stars">★★★★★</div>
+      <p>"My son and I both sit in his chair now. On time, professional, and the cut lasts. That's rare."</p>
+      <div class="who">Booksy review</div>
+    </div>
+  </div>
+</section>
+
+<section class="enroll" id="book">
+  <div class="laurel">❦</div>
+  <h2>Ready to <span class="it">enroll?</span></h2>
+  <p class="contact">
+    5544 University City Blvd · Charlotte, NC 28213<br>
+    <a href="tel:3368097847">336.809.7847</a> · <a href="https://instagram.com/iveyleague_barber" target="_blank" rel="noopener">@iveyleague_barber</a>
+  </p>
+  <div class="cta-row">
+    <a class="btn gold" href="https://bookthecut.co/iveyleague" target="_blank" rel="noopener">Book the Chair →</a>
+    <a class="btn ghost" href="https://maps.google.com/?q=5544+University+City+Blvd+Charlotte+NC+28213" target="_blank" rel="noopener">Get Directions</a>
+  </div>
+</section>
+
+<footer>
+  Concept preview · crafted by <a href="https://symbioai.dev" target="_blank" rel="noopener">Symbio AI</a> · 2026
+</footer>
+
+<script>
+  // scroll reveals
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
