@@ -98,12 +98,12 @@ footer b{color:var(--orange)}
 .cb1{background:var(--orange);color:#fff}
 .cb2{border:1.5px solid #45677f;color:#fff}
 @media(min-width:820px){.callbar{display:none}}
-</style></head><body>
+</style></head><body><div style="position:sticky;top:0;z-index:99999;background:#7f1d1d;color:#fff;font:600 13px/1.45 system-ui,sans-serif;padding:9px 14px;text-align:center">PORTFOLIO DEMO — CONCEPT DESIGN, NOT A LIVE WEBSITE. Not affiliated with, endorsed by, or commissioned by this business. Names, services, prices, hours and contact details are illustrative only; calls, forms and orders are disabled.</div>
 <div class="concept">Concept preview — prepared for <b>MH Builders Unlimited LLC</b> by Symbio AI · not the live site</div>
 <nav><div class="nw">
   <div class="logo">MH BUILDERS UNLIMITED<small>BUY · SELL · RENOVATE · RELOCATE</small></div>
   <div class="nl"><a class="p" href="#work">Our Work</a><a class="p" href="#services">Services</a><a class="p" href="#why">Why Us</a>
-  <a class="ncta" href="tel:+19166679618">📞 (916) 667-9618</a></div>
+  <a class="ncta" href="#demo-disabled">📞 (916) 667-9618</a></div>
 </div></nav>
 
 <div class="hero"><div class="hb"></div><div class="hv"></div>
@@ -140,7 +140,7 @@ footer b{color:var(--orange)}
     </div>
     <div style="text-align:center">
       <a class="btn b1" href="#quote" style="display:inline-block">Get a Straight Answer</a>
-      <a class="phone" href="tel:+19165393288">(916) 539-3288</a>
+      <a class="phone" href="#demo-disabled">(916) 539-3288</a>
       <div class="lic">Call or text Kevin-Theo directly</div>
     </div>
   </div>
@@ -186,11 +186,11 @@ footer b{color:var(--orange)}
       <h2>Tell us about your home.</h2>
       <p>Two minutes now saves a week of phone tag. Send the basics and Kevin-Theo will come
       back with what's realistic — buy, renovate, move, or clear.</p>
-      <a class="phone" href="tel:+19166679618">(916) 667-9618</a>
+      <a class="phone" href="#demo-disabled">(916) 667-9618</a>
       <div class="lic">4831 Livoti Ave, Fair Oaks, CA 95628 · Lic #202357215570<br>
       Office (916) 667-9618 · Cell (916) 539-3288</div>
     </div>
-    <form class="form" onsubmit="event.preventDefault();alert('Concept preview — the live form emails Kevin-Theo directly.');">
+    <form onsubmit="return false"  class="form" onsubmit="event.preventDefault();alert('Concept preview — the live form emails Kevin-Theo directly.');">
       <label>Your name</label><input type="text" placeholder="First and last">
       <label>Phone</label><input type="tel" placeholder="(916) 000-0000">
       <label>What's going on?</label>
@@ -210,7 +210,7 @@ footer b{color:var(--orange)}
 
 <footer>Website concept by <b>Symbio AI</b> · symbioai.dev · custom sites for growing businesses</footer>
 <div class="callbar">
-  <a class="cb1" href="tel:+19166679618">📞 Call Now</a>
+  <a class="cb1" href="#demo-disabled">📞 Call Now</a>
   <a class="cb2" href="#quote">Free Quote</a>
 </div>
 </body></html>
