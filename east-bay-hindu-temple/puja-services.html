@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Puja Services | East Bay Hindu Temple</title>
-<meta name="description" content="Poojas & hawans, weddings, Ramayan & Katha, Vedic astrology, palmistry and horoscope readings with Pandit Rakesh Bhargav — 24+ years of experience in the U.S.">
+<title>Puja Services & Charges | East Bay Hindu Temple</title>
+<meta name="description" content="Complete puja pricing at East Bay Hindu Temple, Pittsburg CA - weddings, Navagraha, Satyanarayan Katha, Griha Pravesh, Shanti Havan, Mundan, Manglik puja, last rites and horoscope readings with Pandit Rakesh Bhargav.">
 <link rel="icon" href="img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cinzel:wght@500&family=Mukta:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -198,62 +198,256 @@ footer .social a{border-color:#ffffff2e}
  .brand .txt{display:none}
  .topbar .wrap{gap:4px 12px;font-size:12.5px}
 }
+
+/* ===== placeholder discipline blocks (Symbio build 2026-08-20) ===== */
+.need{background:repeating-linear-gradient(45deg,#fff4f4,#fff4f4 12px,#ffeaea 12px,#ffeaea 24px);
+ border:2px dashed #c0392b;border-radius:12px;padding:14px 18px;margin:16px 0;color:#8c2018;font-size:14.5px}
+.need b{display:block;font-family:'Marcellus',serif;font-size:13px;letter-spacing:2px;
+ text-transform:uppercase;color:#c0392b;margin-bottom:4px}
+.dark .need{background:#ffffff14;border-color:#ffb3ab;color:#ffd9d4}
+.dark .need b{color:#ffb3ab}
+.need.confirm{background:repeating-linear-gradient(45deg,#fffdf0,#fffdf0 12px,#fff6d6 12px,#fff6d6 24px);
+ border-color:#b8860b;color:#7a5c00}
+.need.confirm b{color:#b8860b}
+.unconf{display:inline-block;background:#c0392b;color:#fff;border-radius:12px;padding:1px 9px;
+ font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;vertical-align:middle}
+.conf{display:inline-block;background:#1e7a4c;color:#fff;border-radius:12px;padding:1px 9px;
+ font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;vertical-align:middle}
+.srcnote{font-size:13px;color:#8a7355;font-style:italic;margin-top:8px}
+.dark .srcnote{color:#e6c9a4}
+/* ===== pricing table ===== */
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:26px;
+ border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 8px 24px #0000000f}
+table.price{width:100%;border-collapse:collapse;min-width:720px}
+table.price th{background:linear-gradient(#7a0f12,#a01a1a);color:#ffe9bf;font-family:'Marcellus',serif;
+ font-weight:400;font-size:14px;letter-spacing:1px;padding:13px 14px;text-align:right;white-space:nowrap}
+table.price th:first-child{text-align:left}
+table.price td{padding:13px 14px;border-bottom:1px solid #f4ead3;text-align:right;
+ font-variant-numeric:tabular-nums;white-space:nowrap}
+table.price td:first-child{text-align:left;white-space:normal;font-weight:600;color:var(--maroon)}
+table.price tr:last-child td{border-bottom:0}
+table.price tr:nth-child(even) td{background:#fffaf0}
+table.price td.tot{font-weight:700;color:var(--red);font-size:16.5px}
+table.price .sub{display:block;font-size:12.5px;color:#8a7355;font-style:italic;font-weight:400}
+/* ===== service detail cards ===== */
+.svc{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:14px;
+ padding:24px 26px;box-shadow:0 6px 20px #0000000d;margin-top:20px}
+.svc h3{color:var(--red);font-size:22px;margin-bottom:2px}
+.svc .sk{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--saffron);font-weight:700}
+.svc .why{margin-top:10px;font-size:16px}
+.svc .money{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.svc .money span{background:#fbe9c8;color:var(--maroon);border-radius:18px;padding:4px 13px;
+ font-size:13.5px;font-weight:700}
+.svc .money span.t{background:var(--maroon);color:#ffe9bf}
+.samagri{background:#fffaf0;border:1px solid var(--line);border-radius:10px;padding:13px 16px;margin-top:14px}
+.samagri h4{font-family:'Marcellus',serif;color:var(--maroon);font-size:14px;letter-spacing:1.5px;
+ text-transform:uppercase;font-weight:400;margin-bottom:6px}
+.samagri ul{margin:0;padding-left:20px;font-size:14.5px;color:#5a4636;columns:2;column-gap:26px}
+@media(max-width:620px){.samagri ul{columns:1}}
+/* ===== shop ===== */
+.shopgrid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:26px}
+.item{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+ box-shadow:0 6px 20px #0000000d;display:flex;flex-direction:column}
+.item .ph{height:150px;background:repeating-linear-gradient(45deg,#f7ecd6,#f7ecd6 14px,#f1e2c4 14px,#f1e2c4 28px);
+ display:flex;align-items:center;justify-content:center;color:#a68a5b;font-size:13px;text-align:center;
+ padding:12px;font-style:italic}
+.item .bd{padding:16px 18px;flex:1;display:flex;flex-direction:column}
+.item h3{color:var(--maroon);font-size:18px;margin-bottom:4px}
+.item p{font-size:14px;color:#6a5436;flex:1}
+.item .pr{margin-top:10px;font-family:'Marcellus',serif;font-size:22px;color:var(--red)}
+/* ===== subscription tiers ===== */
+.subs{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:26px}
+.sub-t{background:#fff;border:2px solid var(--line);border-radius:16px;padding:24px;text-align:center;
+ box-shadow:0 8px 24px #0000000f}
+.sub-t.feat{border-color:var(--gold);box-shadow:0 12px 32px #c79a3a33}
+.sub-t .amt{font-family:'Marcellus',serif;font-size:40px;color:var(--red);line-height:1}
+.sub-t .per{font-size:14px;color:#8a7355}
+.sub-t h3{font-size:17px;letter-spacing:1px;text-transform:uppercase;color:var(--maroon);margin:10px 0 6px}
+.sub-t p{font-size:14.5px;color:#6a5436}
+/* ===== sponsor-an-event rows ===== */
+.sprow{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);
+ border-left:5px solid var(--saffron);border-radius:12px;padding:15px 18px;margin-top:12px;
+ box-shadow:0 5px 16px #0000000d}
+.sprow .ev{flex:1 1 210px;font-weight:700;color:var(--maroon);font-size:16.5px}
+.sprow .ev small{display:block;font-weight:400;color:#8a7355;font-style:italic;font-size:13px}
+.sprow .amt{font-family:'Marcellus',serif;font-size:24px;color:var(--red);min-width:96px;text-align:right}
+/* ===== pay methods ===== */
+.pays{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));margin-top:24px}
+.pay{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center;
+ box-shadow:0 6px 20px #0000000d}
+.pay .nm{font-family:'Marcellus',serif;color:var(--maroon);font-size:21px;margin-bottom:3px}
+.pay .hd{font-size:14px;color:#6a5436;word-break:break-word}
 </style></head><body>
 <div class="topbar"><div class="wrap">
-  <span>❖ 595 School Street, Pittsburg, CA 94565 &nbsp;·&nbsp; <span class="np">A Nonprofit Religious Organization</span></span>
-  <span><a href="mailto:punditrakesh@yahoo.com">✉ punditrakesh@yahoo.com</a></span>
-  <span>Pandit R K Bhargav <a href="tel:+19258120581">(925) 812-0581</a> &nbsp;·&nbsp;
+  <span>&#10070; 595 School Street, Pittsburg, CA 94565 &nbsp;&middot;&nbsp; <span class="np">A Nonprofit Religious Organization &middot; Est. 2004</span></span>
+  <span><a href="mailto:punditrakesh@yahoo.com">&#9993; punditrakesh@yahoo.com</a></span>
+  <span>Pandit R K Bhargav <a href="tel:+19258120581">(925) 812-0581</a> &nbsp;&middot;&nbsp;
         Temple <a href="tel:+19252520551">(925) 252-0551</a></span>
-  <span class="social"><a href="https://www.facebook.com/pittsburgeastbayhindutemple" target="_blank" rel="noopener">f&nbsp; Facebook</a><a href="https://maps.google.com/?cid=16124181771458457327" target="_blank" rel="noopener">❖ Google Listing</a></span>
+  <span class="social"><a href="https://www.facebook.com/pittsburgeastbayhindutemple" target="_blank" rel="noopener">f&nbsp; Temple Facebook</a><a href="https://maps.google.com/?cid=16124181771458457327" target="_blank" rel="noopener">&#10070; Google Listing</a><span style="background:#ffffff1a;border:1px dashed #ffb3ab;border-radius:16px;padding:2px 10px;font-size:12.5px;color:#ffd9d4" title="Instagram and Pandit Ji's own pages are not yet published on the live site">&#9888; IG + Pandit Ji socials &mdash; links needed</span></span>
 </div></div>
 <header class="nav"><div class="wrap">
   <a class="brand" href="index.html"><img src="img/logo.png" alt="East Bay Hindu Temple logo">
-    <span class="txt"><b>East Bay Hindu Temple</b><span>Pittsburg, CA</span></span></a>
-  <nav class="tabs" id="tabs"><a href="index.html" class="">Home</a><a href="about.html" class="">About Us</a><a href="puja-services.html" class="active">Puja Services</a><a href="events.html" class="">Events</a><a href="gallery.html" class="">Gallery</a><a href="book.html" class="">Book Online</a><a href="join.html" class="">Join Us</a><a href="visit.html" class="">Visit Us</a></nav>
-  <a class="donate-btn" href="donate.html">♥ Donate</a>
-  <button class="menu-btn" onclick="document.getElementById('tabs').classList.toggle('open')" aria-label="Menu">☰</button>
-</div></header><div class="hero" style="background-image:linear-gradient(rgba(80,8,10,.72),rgba(60,6,8,.82)),url('img/temple-altar.jpg')">
-  <div class="wrap"><div class="om-big">🕉</div><h1>Puja &amp; Seva Services</h1><p class="sub">Poojas, hawans, weddings, katha and Vedic astrology with Pandit Rakesh Bhargav — at the temple or in your home.</p><a class="btn" href="book.html">Request a Service</a><a class="btn ghost" href="tel:+19258120581">Call Pandit Ji</a></div></div><section><div class="wrap"><div class="split">
-            <div><p class="sec-label">Our Priest</p>
-              <h2 class="sec-title" style="text-align:left">Pandit Rakesh Bhargav — Astrologer &amp; Palmist</h2>
-              <p style="margin:10px 0">With over 24 years of experience in the U.S., Pandit Ji provides expert guidance on life's challenges. Facing problems in finance, business, marriage, relationships, love, health or wealth? Get trusted guidance through Vedic Astrology &amp; Palmistry. <b>Trusted remedies for a happy, peaceful life.</b></p>
-              <p style="margin:10px 0"><b>Pandit Ji Direct:</b> <a href="tel:+19258120581">(925) 812-0581</a>
-                 &nbsp;·&nbsp; <b>Temple:</b> <a href="tel:+19252520551">(925) 252-0551</a></p>
-              <div style="margin-top:14px"><a class="btn sm" href="book.html">Book a consultation</a></div></div>
-            <img src="img/pandit.jpg" alt="Pandit Rakesh Bhargav">
-          </div></div></section><section class="alt"><div class="wrap"><p class="sec-label">Services Provided</p>
-            <h2 class="sec-title">What Pandit Ji performs</h2><div class="rule"></div>
-            <p class="lead">The services published by the temple, performed in the authentic Vedic tradition.</p>
-            <div class="grid g3" style="margin-top:28px"><div class="card"><h3>✦ Poojas &amp; Hawans</h3><p>Temple and at-home poojas and sacred fire ceremonies for every occasion.</p></div><div class="card"><h3>❦ Wedding Ceremonies</h3><p>Traditional Vedic vivah ceremonies, from sagai through vidai.</p></div><div class="card"><h3>❖ Ramayan &amp; Katha</h3><p>Ramayan paath, Sundarkand and katha recitals with bhajan and kirtan.</p></div><div class="card"><h3>✴ Psychic Astrology</h3><p>Vedic astrology readings for finance, business, marriage and health.</p></div><div class="card"><h3>🕉 Spiritual Healing</h3><p>Guidance and remedies for peace of mind and family wellbeing.</p></div><div class="card"><h3>☸ Horoscope Readings</h3><p>Janam kundali preparation, matching and life-path guidance.</p></div><div class="card"><h3>✿ Removal of Negative Energies</h3><p>Shanti and cleansing rituals for home, business and self.</p></div></div>
-            <div class="note"><b>Call:</b> to confirm availability, the offerings needed and dakshina for any ceremony,
-            call Pandit Bhargav Ji at <a href="tel:+19258120581">(925) 812-0581</a> or email
-            <a href="mailto:punditrakesh@yahoo.com">punditrakesh@yahoo.com</a>.</div>
-            <p style="text-align:center;margin-top:34px;font-size:13.5px;color:#8a7355">
-              As published by the temple on its 2026 festival calendar:</p>
-            <img src="img/pandit-astrologer.jpg" alt="Pandit Rakesh Bhargav — Astrologer &amp; Palmist, services provided"
-              loading="lazy" style="display:block;margin:10px auto 0;max-width:820px;width:100%;border-radius:12px;
-              border:1px solid var(--line);box-shadow:0 8px 24px #0000000f">
-          </div></section><section><div class="wrap"><p class="sec-label">Also Commonly Requested</p>
-            <h2 class="sec-title">Ceremonies &amp; samskaras</h2><div class="rule"></div>
-            <p class="lead">Families regularly ask for these as well. <b>To be confirmed with Pandit Ji</b> —
-            they are not yet part of the temple's published service list.</p>
-            <div class="grid g3" style="margin-top:28px"><div class="card"><h3>✦ Satyanarayan Katha</h3><p>Group worship of Lord Vishnu for prosperity and gratitude.</p></div><div class="card"><h3>✦ Griha Pravesh</h3><p>Housewarming &amp; new-home purification ceremony.</p></div><div class="card"><h3>✦ Abhishekam</h3><p>Ceremonial bathing and worship of the deity.</p></div><div class="card"><h3>✦ Namkaran &amp; Mundan</h3><p>Baby naming and first-haircut samskaras.</p></div><div class="card"><h3>✦ Graha Shanti / Navagraha</h3><p>Planetary-peace pooja for health and harmony.</p></div><div class="card"><h3>✦ Antim Sanskar</h3><p>Last rites and memorial ceremonies performed with care.</p></div></div>
-          </div></section><section class="cta-band"><div class="wrap" style="text-align:center">
-            <h2 class="sec-title" style="color:#fff">Book a Puja</h2><div class="rule"></div>
-            <p>Tell us the occasion and your preferred date — Pandit Ji will confirm with you directly.</p>
-            <div style="margin-top:16px"><a class="btn gold" href="book.html">Request a Date</a>
-            <a class="btn ghost" href="tel:+19258120581">Call to Schedule</a></div></div></section>
+    <span class="txt"><b>East Bay Hindu Temple</b><span>Pittsburg, CA &middot; Est. 2004</span></span></a>
+  <nav class="tabs" id="tabs"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="puja-services.html" class="active">Puja Services</a><a href="events.html">Events</a><a href="shop.html">Gift Shop</a><a href="gallery.html">Gallery</a><a href="book.html">Book Online</a><a href="join.html">Join Us</a><a href="visit.html">Visit Us</a></nav>
+  <a class="donate-btn" href="donate.html">&hearts; Donate</a>
+  <button class="menu-btn" onclick="document.getElementById('tabs').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</div></header>
+<div class="hero" style="background-image:linear-gradient(rgba(80,8,10,.72),rgba(60,6,8,.82)),url('img/temple-altar.jpg')">
+  <div class="wrap"><div class="om-big">&#128303;</div><h1>Puja &amp; Seva Services</h1><p class="sub">Poojas, hawans, weddings, katha and Vedic astrology with Pandit Rakesh Bhargav &mdash; at the temple or in your home. Every charge is published openly below.</p><a class="btn" href="#charges">See all charges</a><a class="btn gold" href="book.html">Request a Service</a><a class="btn ghost" href="tel:+19258120581">Call Pandit Ji</a></div></div>
+
+<section id="charges"><div class="wrap">
+  <div class="sec-label">Pricing</div>
+  <h2 class="sec-title">Puja Services &amp; Charges</h2><div class="rule"></div>
+  <p class="lead">Every charge below was given directly by Pandit R K Bhargav. Where the temple takes a
+  share, and where supplies can be provided for you, it is shown separately so nothing is a surprise.</p>
+  <div class="tablewrap"><table class="price">
+<tr><th>Service</th><th>Pandit Ji</th><th>Temple</th><th>Supplies</th><th>Total with supplies</th></tr>
+<tr><td>Wedding (Vivah Sanskar)<span class="sub">Held at your venue or in your home.</span></td><td>$1,100</td><td>&mdash;</td><td>$150</td><td class="tot">$1,250</td></tr>
+<tr><td>Wedding at the Temple<span class="sub">One all-inclusive price for up to 200 guests &mdash; includes the temple hall rent and Pandit Ji's dakshina.</span></td><td>$2,100</td><td>included</td><td>included</td><td class="tot">$2,100</td></tr>
+<tr><td>Navagraha Puja</td><td>$251</td><td>$101</td><td>$75</td><td class="tot">$427</td></tr>
+<tr><td>Satyanarayan Katha</td><td>$251</td><td>$101</td><td>$75</td><td class="tot">$427</td></tr>
+<tr><td>House Warming (Griha Pravesh)</td><td>$251</td><td>$101</td><td>$75</td><td class="tot">$427</td></tr>
+<tr><td>Shanti Havan and Puja</td><td>$251</td><td>$101</td><td>$75</td><td class="tot">$427</td></tr>
+<tr><td>Rot Katta Puja</td><td>$251</td><td>$101</td><td>$75</td><td class="tot">$427</td></tr>
+<tr><td>Mundan Puja</td><td>$251</td><td>$101</td><td>$75</td><td class="tot">$427</td></tr>
+<tr><td>Manglik Puja<span class="sub">Supplies were not quoted in the meeting.</span></td><td>$501</td><td>&mdash;</td><td>not quoted</td><td class="tot">$501</td></tr>
+<tr><td>Funeral / Last Rites (Antim Sanskar)<span class="sub">*Supplies figure derived from the quoted with-supplies total.</span></td><td>$1,100</td><td>&mdash;</td><td>$150*</td><td class="tot">$1,250</td></tr>
+<tr><td>Horoscope Scribing</td><td>$51</td><td>&mdash;</td><td>&mdash;</td><td class="tot">$51</td></tr>
+<tr><td>Horoscope / Palm Reading</td><td>$25</td><td>&mdash;</td><td>&mdash;</td><td class="tot">$25</td></tr>
+</table></div>
+  <div class="note">Reading the table: <b>Pandit Ji</b> is his dakshina, <b>Temple</b> is the temple's
+  share, and <b>Supplies</b> is the optional samagri bundle if you would like the temple to arrange the
+  items rather than buying them yourself. The last column is what you pay with supplies included.</div>
+  <div class="need confirm"><b>Confirm before publishing</b>These charges were recorded at the meeting
+  with Pandit Ji on 30 June 2026 and re-confirmed as current. Two gaps remain: (1) the supplies figure
+  for the funeral is <i>derived</i> from the $1,250 with-supplies total, not separately quoted;
+  (2) no supplies figure was quoted for the Manglik puja. Please confirm both.</div>
+  <div class="need"><b>Needed from Pandit Ji</b>Prices for the other services he advertises on the 2026
+  calendar &mdash; Ramayan &amp; Katha, Spiritual Healing, and Removal of Negative Energies. They are
+  listed on the temple's own flyer but no charge has been given for them.</div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="sec-label">What each puja means</div>
+  <h2 class="sec-title">Why families do these</h2><div class="rule"></div>
+  <p class="lead">In plain English &mdash; what the ceremony is, and the reason people ask for it.
+  If you are new to this, or explaining it to your children, start here.</p>
+  <div class="svc" id="wedding-vivah-sanskar"><span class="sk">Vivah Sanskar</span><h3>Wedding (Vivah Sanskar)</h3>
+<p class="why">A Hindu wedding is not signed, it is vowed &mdash; before Agni, the sacred fire, with the families of both sides as witnesses. The seven pheras around the fire and the seven promises that go with them are what actually make the marriage. Pandit Ji explains each step in English as he performs it, so grandparents and grandchildren alike follow what is being promised.</p><div class="money"><span>Pandit Ji $1,100</span><span>Supplies $150</span><span class="t">Total $1,250</span></div><div class="samagri"><h4>Puja supply list (samagri)</h4><ul><li>Mandap and havan kund</li><li>Samidha (mango wood) and ghee</li><li>Havan samagri mix</li><li>Varmala (two garlands)</li><li>Mangalsutra and sindoor</li><li>Gathbandhan cloth</li><li>Kalash with water, mango leaves and coconut</li><li>Seven grains (sapta-dhanya)</li><li>Roli, akshat, haldi, kumkum</li><li>Paan leaves, supari, fruits, mishri</li><li>Panchamrit &mdash; milk, curd, ghee, honey, sugar</li><li>Camphor, incense, cotton wicks</li></ul><p class="srcnote">Typical samagri for this ceremony &mdash; <b>to be confirmed by Pandit Ji</b>. Where the $75 supplies option is taken, the temple provides these items.</p></div>
+<p style="margin-top:14px"><a class="btn sm" href="book.html">Request this service</a>
+<a class="btn sm gold" href="tel:+19258120581">Call Pandit Ji</a></p></div>
+<div class="svc" id="wedding-at-the-temple"><span class="sk">Vivah at East Bay Hindu Temple</span><h3>Wedding at the Temple</h3>
+<p class="why">The same complete Vivah Sanskar, performed in the temple hall in front of the deities. One price covers the hall, the ceremony and Pandit Ji's dakshina for a gathering of up to 200 people, so families do not have to price a venue separately. For many couples this is the simplest and the most traditional way to marry.</p><div class="money"><span>Pandit Ji $2,100</span><span>Temple rent included</span><span class="t">Total $2,100</span></div><div class="samagri"><h4>Puja supply list (samagri)</h4><ul><li>Included in the temple package &mdash; Pandit Ji arranges the full samagri</li><li>Families usually bring their own varmala, mangalsutra and wedding clothes</li></ul><p class="srcnote">Typical samagri for this ceremony &mdash; <b>to be confirmed by Pandit Ji</b>. Where the $75 supplies option is taken, the temple provides these items.</p></div>
+<p style="margin-top:14px"><a class="btn sm" href="book.html">Request this service</a>
+<a class="btn sm gold" href="tel:+19258120581">Call Pandit Ji</a></p></div>
+<div class="svc" id="navagraha-puja"><span class="sk">Nine-planet peace puja</span><h3>Navagraha Puja</h3>
+<p class="why">In Vedic tradition the nine grahas &mdash; the sun, the moon and seven planetary influences &mdash; shape the timing of things in a person's life. When a period feels stuck, or a horoscope shows a difficult planetary phase, this puja is performed to settle those influences. Families come for it before a big decision, after a run of bad luck, or simply once a year for peace of mind.</p><div class="money"><span>Pandit Ji $251</span><span>Temple $101</span><span>Supplies $75</span><span class="t">Total $427</span></div><div class="samagri"><h4>Puja supply list (samagri)</h4><ul><li>Nine grains (nav-anna), one for each graha</li><li>Nine cloths in the nine graha colours</li><li>Samidha for each graha</li><li>Havan kund and ghee</li><li>Roli, akshat, haldi, kumkum</li><li>Flowers and garland</li><li>Fruits and mishri</li><li>Camphor, incense, cotton wicks</li><li>Kalash with water and mango leaves</li><li>Coconut for the purnahuti</li></ul><p class="srcnote">Typical samagri for this ceremony &mdash; <b>to be confirmed by Pandit Ji</b>. Where the $75 supplies option is taken, the temple provides these items.</p></div>
+<p style="margin-top:14px"><a class="btn sm" href="book.html">Request this service</a>
+<a class="btn sm gold" href="tel:+19258120581">Call Pandit Ji</a></p></div>
+<div class="svc" id="satyanarayan-katha"><span class="sk">Sat Narayan Katha</span><h3>Satyanarayan Katha</h3>
+<p class="why">The Satyanarayan Katha is a gathering to thank Lord Vishnu after something good has happened &mdash; a new job, a new baby, a house, an exam passed, a recovery. The story is read aloud in five parts and everyone present listens together, which is why it works so well with children and elders in the same room. It ends with sheera prasad shared by all.</p><div class="money"><span>Pandit Ji $251</span><span>Temple $101</span><span>Supplies $75</span><span class="t">Total $427</span></div><div class="samagri"><h4>Puja supply list (samagri)</h4><ul><li>Sooji (rava), ghee and sugar for the sheera prasad</li><li>Banana leaves and stems for the mandap</li><li>Panchamrit &mdash; milk, curd, ghee, honey, sugar</li><li>Tulsi leaves</li><li>Roli, akshat, haldi, kumkum</li><li>Flowers and garland</li><li>Paan leaves, supari, coconut</li><li>Fruits and mishri / batasha</li><li>Camphor, incense, cotton wicks</li><li>Kalash with water and mango leaves</li></ul><p class="srcnote">Typical samagri for this ceremony &mdash; <b>to be confirmed by Pandit Ji</b>. Where the $75 supplies option is taken, the temple provides these items.</p></div>
+<p style="margin-top:14px"><a class="btn sm" href="book.html">Request this service</a>
+<a class="btn sm gold" href="tel:+19258120581">Call Pandit Ji</a></p></div>
+<div class="svc" id="house-warming-griha-pravesh"><span class="sk">Griha Pravesh</span><h3>House Warming (Griha Pravesh)</h3>
+<p class="why">Before a family sleeps a first night in a new home, the house itself is welcomed and settled. Pandit Ji purifies the rooms, installs the kalash, and the family boils milk until it overflows &mdash; the sign of abundance entering the house. It is a warm, short ceremony that most families follow with a meal for their neighbours.</p><div class="money"><span>Pandit Ji $251</span><span>Temple $101</span><span>Supplies $75</span><span class="t">Total $427</span></div><div class="samagri"><h4>Puja supply list (samagri)</h4><ul><li>Kalash with water, mango leaves and coconut</li><li>Milk to boil over on the new stove</li><li>A new broom</li><li>Gangajal / gomutra for purification</li><li>Toran for the main door</li><li>Rangoli colours</li><li>Roli, akshat, haldi, kumkum</li><li>Flowers, fruits and mishri</li><li>Camphor, incense, cotton wicks</li><li>Havan samagri and ghee</li></ul><p class="srcnote">Typical samagri for this ceremony &mdash; <b>to be confirmed by Pandit Ji</b>. Where the $75 supplies option is taken, the temple provides these items.</p></div>
+<p style="margin-top:14px"><a class="btn sm" href="book.html">Request this service</a>
+<a class="btn sm gold" href="tel:+19258120581">Call Pandit Ji</a></p></div>
+<div class="svc" id="shanti-havan-and-puja"><span class="sk">Shanti Havan</span><h3>Shanti Havan and Puja</h3>
+<p class="why">A havan is worship through fire: offerings are given to Agni while mantras are chanted, and the smoke is understood to carry them onward. A Shanti Havan is asked for when a household wants calm restored &mdash; after illness, after conflict, after a loss, or at the start of a new venture. People often describe the room as feeling lighter afterwards.</p><div class="money"><span>Pandit Ji $251</span><span>Temple $101</span><span>Supplies $75</span><span class="t">Total $427</span></div><div class="samagri"><h4>Puja supply list (samagri)</h4><ul><li>Havan kund</li><li>Samidha &mdash; mango wood sticks</li><li>Havan samagri mix</li><li>Pure ghee</li><li>Coconut for the purnahuti</li><li>Roli, akshat, haldi, kumkum</li><li>Flowers and garland</li><li>Fruits and mishri</li><li>Camphor, incense, cotton wicks</li><li>Kalash with water and mango leaves</li></ul><p class="srcnote">Typical samagri for this ceremony &mdash; <b>to be confirmed by Pandit Ji</b>. Where the $75 supplies option is taken, the temple provides these items.</p></div>
+<p style="margin-top:14px"><a class="btn sm" href="book.html">Request this service</a>
+<a class="btn sm gold" href="tel:+19258120581">Call Pandit Ji</a></p></div>
+<div class="svc" id="rot-katta-puja"><span class="sk">Rot Katha</span><h3>Rot Katta Puja</h3>
+<p class="why">Rot Katha is a vow-keeping puja: a family that asked the Devi for something and received it comes back to complete the promise. A thick sweet rot is prepared in ghee and gur, offered, and then shared &mdash; traditionally it is eaten within the home and not carried outside. It is one of the most personal ceremonies families ask Pandit Ji for.</p><div class="money"><span>Pandit Ji $251</span><span>Temple $101</span><span>Supplies $75</span><span class="t">Total $427</span></div><div class="samagri"><h4>Puja supply list (samagri)</h4><ul><li>Wheat flour, gur (jaggery) and ghee for the rot</li><li>Roli, akshat, haldi, kumkum</li><li>Red chunri for the Devi</li><li>Flowers and garland</li><li>Fruits and mishri</li><li>Camphor, incense, cotton wicks</li><li>Kalash with water and mango leaves</li><li>Coconut</li></ul><p class="srcnote">Rot Katha is observed slightly differently by different families and regions. Pandit Ji should confirm the exact samagri and the rules his families follow.</p></div>
+<p style="margin-top:14px"><a class="btn sm" href="book.html">Request this service</a>
+<a class="btn sm gold" href="tel:+19258120581">Call Pandit Ji</a></p></div>
+<div class="svc" id="mundan-puja"><span class="sk">Mundan Sanskar</span><h3>Mundan Puja</h3>
+<p class="why">Mundan is a child's first haircut, offered as a blessing for a long and healthy life. The hair a child is born with is given back, and the ceremony marks the child stepping properly into the family and the community. It is short, cheerful, and usually the whole extended family comes.</p><div class="money"><span>Pandit Ji $251</span><span>Temple $101</span><span>Supplies $75</span><span class="t">Total $427</span></div><div class="samagri"><h4>Puja supply list (samagri)</h4><ul><li>New razor / fresh blade</li><li>Silver or steel bowl</li><li>New clothes for the child</li><li>Milk and curd</li><li>Gangajal</li><li>Roli, akshat, haldi, kumkum</li><li>Flowers and garland</li><li>Fruits, mishri and sweets</li><li>Camphor, incense, cotton wicks</li><li>Havan samagri and ghee</li></ul><p class="srcnote">Typical samagri for this ceremony &mdash; <b>to be confirmed by Pandit Ji</b>. Where the $75 supplies option is taken, the temple provides these items.</p></div>
+<p style="margin-top:14px"><a class="btn sm" href="book.html">Request this service</a>
+<a class="btn sm gold" href="tel:+19258120581">Call Pandit Ji</a></p></div>
+<div class="svc" id="manglik-puja"><span class="sk">Mangal Dosha Nivaran</span><h3>Manglik Puja</h3>
+<p class="why">When Mars sits in certain houses of a birth chart, the horoscope is called manglik, and families traditionally have the dosha settled before a marriage is fixed. This puja is the remedy: specific mantras and offerings made on Pandit Ji's reading of the individual chart. Because it is based on one person's kundali, no two are identical.</p><div class="money"><span>Pandit Ji $501</span><span>Supplies not quoted</span><span class="t">Total $501</span></div><div class="need"><b>Needed from Pandit Ji</b>Manglik puja samagri is prescribed individually after Pandit Ji reads the birth chart. NEEDED FROM PANDIT: the standard samagri list he issues to families, and whether the $501 includes supplies or not.</div>
+<p style="margin-top:14px"><a class="btn sm" href="book.html">Request this service</a>
+<a class="btn sm gold" href="tel:+19258120581">Call Pandit Ji</a></p></div>
+<div class="svc" id="funeral--last-rites-antim-sanskar"><span class="sk">Antim Sanskar</span><h3>Funeral / Last Rites (Antim Sanskar)</h3>
+<p class="why">Antim Sanskar is the last of the sixteen sanskars, the final service a family performs for someone they love. Pandit Ji guides the family through the rites and the days that follow, in whatever order the family's tradition asks for. He is reachable directly at any hour for this &mdash; families should call rather than book online.</p><div class="money"><span>Pandit Ji $1,100</span><span>Supplies $150*</span><span class="t">Total $1,250</span></div><div class="samagri"><h4>Puja supply list (samagri)</h4><ul><li>Gangajal</li><li>Tulsi leaves</li><li>Til (sesame seeds)</li><li>Kusha grass</li><li>White cloth</li><li>Rice or barley flour for pind daan</li><li>Ghee</li><li>Camphor and cotton wicks</li><li>Flowers and garland</li><li>Earthen pot</li></ul><p class="srcnote">Typical samagri for this ceremony &mdash; <b>to be confirmed by Pandit Ji</b>. Where the $75 supplies option is taken, the temple provides these items.</p></div>
+<p style="margin-top:14px"><a class="btn sm" href="book.html">Request this service</a>
+<a class="btn sm gold" href="tel:+19258120581">Call Pandit Ji</a></p></div>
+<div class="svc" id="horoscope-scribing"><span class="sk">Janam Kundali preparation</span><h3>Horoscope Scribing</h3>
+<p class="why">Pandit Ji writes out a full janam kundali from a birth date, exact time and place. Families use it for name selection, for matching before a marriage, and to understand which planetary period a person is passing through. It is kept and referred back to for a lifetime, so parents often have one made for each child.</p><div class="money"><span>Pandit Ji $51</span><span class="t">Total $51</span></div><div class="need"><b>Needed from Pandit Ji</b>No samagri required. Please have the exact date, time and city of birth ready.</div>
+<p style="margin-top:14px"><a class="btn sm" href="book.html">Request this service</a>
+<a class="btn sm gold" href="tel:+19258120581">Call Pandit Ji</a></p></div>
+<div class="svc" id="horoscope--palm-reading"><span class="sk">Jyotish &amp; Hast Rekha consultation</span><h3>Horoscope / Palm Reading</h3>
+<p class="why">A sitting with Pandit Ji &mdash; who has read charts and palms in the U.S. for over 24 years &mdash; about whatever is actually on your mind: work, money, marriage, family, health. He gives a plain reading and, where it helps, a simple remedy you can do at home. At $25 it is meant to be reachable for anyone who wants guidance.</p><div class="money"><span>Pandit Ji $25</span><span class="t">Total $25</span></div><div class="need"><b>Needed from Pandit Ji</b>No samagri required. Bring your birth details for a horoscope reading.</div>
+<p style="margin-top:14px"><a class="btn sm" href="book.html">Request this service</a>
+<a class="btn sm gold" href="tel:+19258120581">Call Pandit Ji</a></p></div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+  <div class="sec-label">Our Priest</div>
+  <h2 class="sec-title">Pandit Rakesh Bhargav &mdash; Astrologer &amp; Palmist</h2><div class="rule"></div>
+  <div class="split"><div>
+    <p>With over 24 years of experience in the U.S., Pandit Ji provides expert guidance on life's
+    challenges. Facing problems in finance, business, marriage, relationships, love, health or wealth?
+    Get trusted guidance through Vedic Astrology &amp; Palmistry. Trusted remedies for a happy,
+    peaceful life.</p>
+    <div class="incl"><span>Poojas &amp; Hawans</span><span>Wedding Ceremonies</span>
+      <span>Ramayan &amp; Katha</span><span>Psychic Astrology</span><span>Spiritual Healing</span>
+      <span>Horoscope Readings</span><span>Removal of Negative Energies</span></div>
+    <p style="margin-top:16px">Pandit Ji Direct <a href="tel:+19258120581" style="color:#ffe9bf;font-weight:700">(925) 812-0581</a>
+      &nbsp;&middot;&nbsp; Temple <a href="tel:+19252520551" style="color:#ffe9bf;font-weight:700">(925) 252-0551</a></p>
+    <p style="margin-top:14px"><a class="btn gold" href="book.html">Book a consultation</a></p>
+    <p class="srcnote">Text above is the temple's own wording from its 2026 festivals calendar.</p>
+  </div><div>
+    <img src="img/pandit.jpg" alt="Pandit Rakesh Bhargav">
+    <div class="need"><b>Needed from Pandit Ji</b>An updated portrait photograph for this page. The
+    image shown is cropped from the printed 2026 calendar and is low resolution.</div>
+  </div></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-label">Visiting</div>
+  <h2 class="sec-title">Hours of Service</h2><div class="rule"></div>
+  <div style="max-width:620px;margin:0 auto"><table class="hours">
+<tr><td>Monday</td><td>10:00 AM &ndash; 4:00 PM</td></tr>
+<tr><td>Tuesday</td><td>10:00 AM &ndash; 8:00 PM</td></tr>
+<tr><td>Wednesday</td><td>Closed</td></tr>
+<tr><td>Thursday</td><td>Closed</td></tr>
+<tr><td>Friday</td><td>10:00 AM &ndash; 4:00 PM</td></tr>
+<tr><td>Saturday</td><td>10:00 AM &ndash; 4:00 PM</td></tr>
+<tr><td>Sunday</td><td>10:00 AM &ndash; 4:00 PM</td></tr>
+</table>
+<div class="note">Please be aware that our hours change during celebrations and festivals. For further
+information or inquiries, feel free to call Pandit Rakesh Bhargav ji at
+<a href="tel:+19258120581">(925) 812-0581</a>.</div>
+<div class="need confirm"><b>Confirm with Pandit Ji</b>The live site states two different Thursday
+hours &mdash; the hours panel says <i>Thursday: Closed</i>, while the footer says <i>&ldquo;Thursday to
+Monday: 10:00 Am 4:00 Pm&rdquo;</i> and that only Wednesday is closed. This page currently follows the
+hours panel (Wed &amp; Thu closed). Which is correct?</div></div>
+</div></section>
+
+<section class="cta-band"><div class="wrap"><h2 class="sec-title" style="color:#fff">Ready to book?</h2>
+  <div class="rule"></div>
+  <p>Every date is confirmed personally with Pandit Ji before it is final. Tell us the occasion and
+  he will call you back.</p>
+  <div style="margin-top:18px"><a class="btn gold" href="book.html">Request a Date</a>
+  <a class="btn ghost" href="tel:+19258120581">Call (925) 812-0581</a></div></div></section>
+
 <footer><div class="wrap"><div class="cols">
-  <div><h4>East Bay Hindu Temple</h4>595 School Street, Pittsburg, CA 94565<br>A Nonprofit Religious Organization.<br>Tax Exemption ID (EIN): 46-2375980<br>
-     <div style="margin-top:10px"><span class="social"><a href="https://www.facebook.com/pittsburgeastbayhindutemple" target="_blank" rel="noopener">f&nbsp; Facebook</a><a href="https://maps.google.com/?cid=16124181771458457327" target="_blank" rel="noopener">❖ Google Listing</a></span></div></div>
+  <div><h4>East Bay Hindu Temple</h4>595 School Street, Pittsburg, CA 94565<br>A Nonprofit Religious Organization &middot; Est. 2004<br>Tax Exemption ID (EIN): 46-2375980<br>
+     <div style="margin-top:10px"><span class="social"><a href="https://www.facebook.com/pittsburgeastbayhindutemple" target="_blank" rel="noopener">f&nbsp; Temple Facebook</a><a href="https://maps.google.com/?cid=16124181771458457327" target="_blank" rel="noopener">&#10070; Google Listing</a></span></div>
+     <div class="need" style="margin-top:12px;font-size:13px"><b>Needed from Pandit Ji</b>Temple Instagram, plus Rakesh Bhargav's own Facebook &amp; Instagram links. Only the temple Facebook page is published today.</div></div>
   <div><h4>Contact</h4>Temple: <a href="tel:+19252520551">(925) 252-0551</a><br>
      Pandit Bhargav Ji: <a href="tel:+19258120581">(925) 812-0581</a><br>
      <a href="mailto:punditrakesh@yahoo.com">punditrakesh@yahoo.com</a><br>
      <a href="https://www.eastbayhindutemple.com">www.eastbayhindutemple.com</a></div>
-  <div><h4>Visit</h4>Mon, Fri–Sun 10–4 · Tue 10–8<br>Wed &amp; Thu closed<br>
-     <span style="color:#caa">Hours vary during festivals</span><br><a href="https://maps.google.com/?cid=16124181771458457327">Get directions ↗</a></div>
-  <div><h4>Explore</h4><a href="index.html">Home</a><br><a href="about.html">About Us</a><br><a href="puja-services.html">Puja Services</a><br><a href="events.html">Events</a><br><a href="gallery.html">Gallery</a><br><a href="book.html">Book Online</a><br><a href="join.html">Join Us</a><br><a href="visit.html">Visit Us</a><br><a href="donate.html">Donate</a></div>
+  <div><h4>Hours of Service</h4>Monday 10:00 AM &ndash; 4:00 PM<br>Tuesday 10:00 AM &ndash; 8:00 PM<br>
+     Wednesday &mdash; Closed<br>Thursday &mdash; Closed<br>Friday 10:00 AM &ndash; 4:00 PM<br>
+     Saturday 10:00 AM &ndash; 4:00 PM<br>Sunday 10:00 AM &ndash; 4:00 PM<br>
+     <span style="color:#caa">Hours change during celebrations and festivals.</span><br>
+     <a href="https://maps.google.com/?cid=16124181771458457327">Get directions &#8599;</a></div>
+  <div><h4>Explore</h4><a href="index.html">Home</a><br><a href="about.html">About Us</a><br><a href="puja-services.html">Puja Services</a><br><a href="events.html">Events</a><br><a href="shop.html">Gift Shop</a><br><a href="gallery.html">Gallery</a><br><a href="book.html">Book Online</a><br><a href="join.html">Join Us</a><br><a href="visit.html">Visit Us</a><br><a href="donate.html">Donate</a></div>
 </div>
-<div class="credit">🕉 &nbsp;Jai Mata Di &nbsp;·&nbsp; Modernized website concept designed by
-  <b>Symbio AI</b> · symbioai.dev &nbsp;—&nbsp; a redesign preview for East Bay Hindu Temple</div>
-</div></footer></body></html>
+<div class="credit">&#128303; &nbsp;Jai Mata Di &nbsp;&middot;&nbsp; Modernized website concept designed by
+  <b>Symbio AI</b> &middot; symbioai.dev &nbsp;&mdash;&nbsp; a redesign preview for East Bay Hindu Temple</div>
+</div></footer>
+</body></html>
