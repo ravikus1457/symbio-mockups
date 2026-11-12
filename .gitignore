@@ -1,0 +1,5 @@
+
+# secrets never belong in git
+.env
+.env.*
+!.env.example
